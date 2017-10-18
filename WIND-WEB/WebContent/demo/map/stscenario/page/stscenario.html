@@ -1,0 +1,117 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>stscenario.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta http-equiv="pragram" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache, must-revalidate"> 
+    <meta http-equiv="expires" content="0"> 
+    <link rel="stylesheet" type="text/css" href="../../../css/reset.css"/>
+	<link rel="stylesheet" type="text/css" href="../../../css/common.css"/>
+	<link rel="stylesheet" type="text/css" href="../../../css/inc.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/stscenario.css"/>
+	<link rel="stylesheet" type="text/css" href="../../../lib/jQuery/css/smoothness/jquery-ui-1.8.22.custom.css" />
+	<script type="text/javascript" src="../../../lib/jQuery/jquery-1.7.2.js"></script>
+	<script type="text/javascript" src="../../../lib/jQuery/jquery.form.js"></script>
+	<script type="text/javascript" src="../../../lib/jQuery/jquery-ui-1.8.22.custom.min.js"></script>
+
+	<link rel="stylesheet" type="text/css"
+		href="../../../lib/dynatree-1.0.2/src/skin/ui.dynatree.css" />
+	<script type="text/javascript"
+		src="../../../lib/dynatree-1.0.2/src/jquery.dynatree.min.js"></script>
+	<link rel="stylesheet" type="text/css"
+			href="../../../lib/artDialog4.1.6/skins/default.css" />
+		<script type="text/javascript"
+			src="../../../lib/artDialog4.1.6/artDialog.js"></script>
+	<script type="text/javascript" src="../../../js/Tianditu.js"></script>
+	<script type="text/javascript" src="../js/Stscenario.js"></script>
+	<script type="text/javascript" src="../js/stscenario-list.js"></script>
+	<script type="text/javascript">
+		Tianditu.showLevel(1,"专题地图","stscenario/page/stscenario.html");
+	</script>
+  </head>
+  
+  <body>
+	<div class="wrapper white94">
+		<div class="stscenario-box">
+			<div class="stscenario-box-title">
+				<span class="now-address"><a href="../../scenario/page/scenario.html">地图管理</a></span>
+				<span>>></span>
+				<span><a href="stscenario.html">专题地图</a></span>
+			</div>
+			<div class="stscenario-box-headline">
+				<span>专题地图</span>
+			</div>
+			<div class="stscenario-box-table">
+				<table class="list">
+					<caption>
+						<div class="groupbox">
+							<div class="fright">
+								<input type="search fleft" class="search" onfocus="onFocus()" value=""/>
+								<button type="button" class="btn searchbtn" onclick="search()">搜索</button>
+							</div>
+							<div class="select">
+							</div>
+						</div>
+					</caption>
+					<thead>
+						<tr><th class="nameth">方案名称</th><th class="dateth" width="12%">创建时间</th><th class="dateth">方案描述</th><th class="actionth" width="25%">操作</th></tr>
+					</thead>
+					<tbody id="stscenarioTemplate" style="display: none;">
+						<tr rowid="%{rowid}%" stsName=%{name}% class="even">
+							<td name="stsName">%{name}%</td><td>%{createTime}%</td><td>%{desc}%</td>
+							   <td> <a class="action-btn action-start" href="javascript:void(0);" onclick="userPerm(this)">用户权限</a>
+							    <a class="action-btn action-start" href="javascript:void(0);" onclick="rolePerm(this)">角色权限</a>
+							    <a class="action-btn action-start" href="javascript:void(0);" onclick="orgPerm(this)">机构权限</a>
+							</td>
+						</tr>
+					</tbody>
+					
+					
+					<tbody id="stscenarioList">
+					</tbody>
+					
+					<tbody style="display: none;" id="nomessage">
+						<tr>	
+							<td colspan="4">
+								暂无记录
+							</td>
+						</tr>
+					</tbody>
+					
+					<tfoot>
+					<tr><td colspan="4">
+						<div id="pager">
+					</div>
+					</td></tr>
+					</tfoot>
+					
+					
+				</table>
+			</div>
+		</div>
+	</div>
+	<div id="stscenario-orgPerm-panel" class="hide-dialog">
+		<div class="normal-text">
+			当前专题地图:
+			<span class="bold" id="currStsName"></span>
+		</div>
+		<div class="tree-panel">
+			<form id="stscenarioPermForm" method="post">
+				<div class="tree-title">
+					<div class="tree-innertitle">
+						功能列表
+					</div>
+				</div>
+				<div class="tree-container" id="tree-container">
+				</div>
+				<input type="hidden" id="scenarioId" name="scenarioId"/>
+				<input type="hidden" id="orgIds" name="orgIds"/>
+			</form>
+		</div>
+	</div>
+  </body>
+</html>

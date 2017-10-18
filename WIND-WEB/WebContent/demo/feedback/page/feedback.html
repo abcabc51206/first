@@ -1,0 +1,88 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>feedback.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta http-equiv="pragram" content="no-cache">
+    <link rel="stylesheet" type="text/css" href="../../css/reset.css"/>
+	<link rel="stylesheet" type="text/css" href="../../css/common.css"/>
+	<link rel="stylesheet" type="text/css" href="../../css/inc.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/feedback.css"/>
+	<link rel="stylesheet" type="text/css" href="../../lib/artDialog4.1.6/skins/default.css" />
+	<script type="text/javascript" src="../../lib/artDialog4.1.6/artDialog.js"></script>
+	<script type="text/javascript" src="../../lib/jQuery/jquery-1.7.2.js"></script>
+   	<script type="text/javascript" src="../../js/Tianditu.js"></script>
+    <script type="text/javascript" src="../js/Feedback.js" ></script>
+    <script type="text/javascript" src="../js/feedback-list.js" ></script>
+	<script type="text/javascript">
+		Tianditu.showLevel(1,"意见反馈","feedback/page/feedback.html");
+	</script>
+  </head>
+  
+  <body>
+	<div class="wrapper white94">
+		<div class="feedback-box">
+			<div class="feedback-box-title">
+				<span class="now-address"><a href="../../news/page/news.html">内容管理</a></span>
+				<span>>></span>
+				<span><a href="feedback.html">意见反馈</a></span>
+			</div>
+			<div class="feedback-box-headline">
+				<span>意见反馈</span>
+			</div>
+			<div class="feedback-box-table">
+				<table class="list">
+					<caption>
+						<div class="groupbox">
+							<div class="fright">
+								<input type="search fleft" class="search"/><button class="btn searchbtn" onclick="searchKeyWords()">搜索</button>
+							</div>
+							<div class="fleft">
+								<button class="btn" onclick="delFeedback()">删除</button>
+							</div>
+						</div>
+					</caption>
+					<thead>
+						<tr><th class="checkth" width="5%"><input id="chooseall" type="checkbox" onclick="TDT.chooseall(this,'feedbackList')"/></th><th class="nameth">内容</th><th class="companyth" width="8%">提问者</th><th class="emailth" width="8%">审核状态</th><th class="statusth" width="8%">回复状态</th><th class="dateth" width="14%">创建时间</th><th class="actionth" width="20%">操作</th></tr>
+					</thead>
+	 
+					<tbody id="feedbackTemplate" style="display: none;">
+						<tr  rowid="%{rowid}%" class="even">
+							<td><input type="checkbox" name="c1"  onclick="TDT.brightShow(this, 'feedbackList');" /></td><td>%{feedbackContent}%</td><td>%{userName}%</td><td>%{auditStatus}%</td><td>%{replyStatus}%</td><td>%{createTime}%</td>
+							<td><a class="action-btn action-view" href="javascript:void(0);"  %{replyview}%  onclick="goViewFeedback(this)">查看</a>
+							<a class="action-btn action-authorize"   href="javascript:void(0);"  %{audit}%  onclick="goAudit(this)"  >审核</a>
+							<a class="action-btn action-edit"  href="javascript:void(0);" %{replyedit}%   onclick="goReplyFeedback(this)"  >回复</a>
+							</td>
+						</tr>
+					</tbody>
+					
+					<tbody id="feedbackList">
+					</tbody>
+					
+					<tbody style="display: none;" id="nomessage">
+						<tr>
+							<td colspan="7" align="center">
+								暂无记录!
+							</td>
+						</tr>
+					</tbody>
+					
+					
+					
+					<tfoot>
+						<tr>
+							<td colspan="7">
+								<div id="pager"></div>
+							</td>
+						</tr>
+					</tfoot>
+				</table>
+			</div>
+		</div>
+	</div>
+	 
+  </body>
+</html>

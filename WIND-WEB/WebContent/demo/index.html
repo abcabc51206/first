@@ -1,0 +1,257 @@
+<!doctype html>
+<html>
+	<head>
+		<title>平台管理中心</title>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+		
+		<link rel="stylesheet" type="text/css" href="css/reset.css" />
+		<link rel="stylesheet" type="text/css" href="css/common.css" />
+		<link rel="stylesheet" type="text/css" href="css/inc.css" />
+		<link rel="stylesheet" type="text/css" href="css/index.css" />
+		
+		<script type="text/javascript" src="lib/In/in-min.js" autoload="true"
+			core="lib/jQuery/jquery-1.7.2.min.js"></script>
+		<!--使用In.js管理js模块-->
+		<script type="text/javascript" src="js/manager.js"></script>
+		<script type="text/javascript">
+
+	</script>
+	</head>
+	<body>
+		<div class="layout-container">
+			<div class="outer-center">
+				<div class="middle-center">
+					<div class="inner-container groupbox">
+						<div class="main-page">
+							<iframe src="map/scenario/page/scenario.html" frameborder="0"></iframe>
+						</div>
+					</div>
+				</div>
+				<div class="middle-west">
+					<div class="inner-container">
+						<div class="west-panel">
+							<div class="west-title">
+								<span>功能导航</span>
+							</div>
+							<ul class="lv1-list">
+								<li class="maps-management open">
+									<div class="handler">
+										<span class="toggle"></span>
+										<span class="title">地图管理</span>
+									</div>
+									<ul class="lv2-list">
+										<li class="selected">
+											<a href="map/scenario/page/scenario.html">基础地图</a>
+										</li>
+										<li>
+											<a href="map/stscenario/page/stscenario.html">专题地图</a>
+										</li>
+										<li>
+											<a href="map/correct/page/index.html">地图纠错</a>
+										</li>
+										<li>
+											<a href="map/plot/page/index.html">地图标绘</a>
+										</li>
+										<li>
+											<a href="map/analysis/page/index.html">缓冲区分析</a>
+										</li>
+										<li>
+											<a href="map/sar/page/sar.html">行政区划</a>
+										</li>
+										<li>
+											<a href="map/searchtype/page/searchtype.html">分类搜索</a>
+										</li>
+										<li>
+											<a href="map/wfsconfig/page/wfsconfig.html?type=1">地名配置</a>
+										</li>
+										<li>
+											<a href="map/wfsconfig/page/car-wfsconfig.html?type=3">驾车配置</a>
+										</li>
+										<li>
+											<a href="map/wfsconfig/page/bus-wfsconfig.html?type=2">公交配置</a>
+										</li>
+									</ul>
+								</li>
+								<li class="contents-management">
+									<div class="handler">
+										<span class="haschild toggle"></span>
+										<span class="title">内容管理</span>
+									</div>
+									<ul class="lv2-list">
+										<li class="selected">
+											<a href="news/page/news.html">新闻公告</a>
+										</li>
+										<li>
+											<a href="userguide/page/userguide.html">用户指南</a>
+										</li>
+										<li>
+											<a href="feedback/page/feedback.html">意见反馈</a>
+										</li>
+										<li>
+											<a href="demoapp/page/demoapp.html">示范应用</a>
+										</li>
+										<li>
+											<a href="cities/page/cities.html">市区互联</a>
+										</li>
+										<li>
+											<a href="standards/page/standards.html">下载中心</a>
+										</li>
+									</ul>
+								</li>
+								<li class="user-center">
+									<div class="handler">
+										<span class="haschild toggle"></span>
+										<span class="title">用户中心</span>
+									</div>
+									<ul class="lv2-list">
+										<li class="selected">
+											<a href="user/page/user.html">用户管理</a>
+										</li>
+										<li>
+											<a href="user/page/organization.html">机构管理</a>
+										</li>
+										<li>
+											<a href="user/page/role.html">角色管理</a>
+										</li>
+										<li>
+											<a href="user/page/permissions.html">权限管理</a>
+										</li>
+									</ul>
+								</li>
+								<li class="security-gateway">
+									<div class="handler">
+										<span class="haschild toggle"></span>
+										<span class="title">服务管理</span>
+									</div>
+									<ul class="lv2-list">
+										<li>
+											<a id="manager-site" href="javascript:void(0)" target="_blank">服务管理</a>
+										</li>
+										<li>
+											<a id="globe-server-site" href="javascript:void(0)" target="_blank">服务发布</a>
+										</li>
+									</ul>
+								</li>
+								<li class="journal-setting">
+									<div class="handler">
+										<span class="haschild toggle"></span>
+										<span class="title">日志管理</span>
+									</div>
+									<ul class="lv2-list">
+										<li class="selected">
+											<a href="log/page/user-log-day.html">用户访问统计</a>
+										</li>
+										<li class="selected">
+											<a href="log/page/operate-log-day.html">操作日志</a>
+										</li>
+									</ul>
+								</li>
+								<li class="system-setting">
+									<div class="handler">
+										<span class="haschild toggle"></span>
+										<span class="title">系统设置</span>
+									</div>
+									<ul class="lv2-list">
+										<li class="selected">
+											<a href="sysconf/page/sys-basic-conf.html">基本配置</a>
+										</li>
+										<li>
+											<a href="sysconf/page/sys-mail-conf.html">邮箱配置</a>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="middle-south">
+					<div class="inner-container">
+						<div class="site-info groupbox">
+							<div class="address">
+								<span>备案号：<a href="http://www.miibeian.gov.cn" target="_blank">鄂ICP备09018799号</a></span>
+								<span>版权所有 武大吉奥信息技术有限公司  电话：027-87196288 全国免费技术支持热线：800-880-9008</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="middle-north">
+					<div class="line"></div>
+				</div>
+			</div>
+			<div class="outer-north">
+				<div class="inner-container">
+					<div class="nav-links">
+						<div class="nav-center groupbox">
+							<div class="logo"></div>
+						</div>
+						<div class="nav-right"></div>
+						
+						<div class="logins groupbox">
+							<div class="logins-list">
+								<div class="unlogin">
+									<button>
+										<a href="index.html">登录</a>
+									</button>
+									<button>
+										<a href="../../user/page/register.html">注册</a>
+									</button>
+								</div>
+								<div class="logined">
+									<table>
+										<tr class="loginfo-user">
+											<td class="loginfo-left"></td>
+											<td class="loginfo-center">												
+												<span name="loginName" class="username"></span>
+												<img src="images/arrow.png" class="arrow" />
+											</td>
+											<td class="loginfo-right"></td>
+										</tr>
+										<tr class="user-action-td">
+											<td class="information-left"></td>
+											<td class="information-center">
+												<a id="myInfo" href="../../user/page/userinfo.html">我的资料</a>
+											</td>
+											<td class="information-right"></td>
+										</tr>
+										<tr class="user-action-td">
+											<td class="first information-left"></td>
+											<td class="password information-center">
+												<a id="modifypassword" href="../../user/page/modifypassword.html">密码修改</a>
+											</td>
+											<td class="information-right"></td>
+										</tr>
+										<tr class="user-action-td">
+											<td class="first information-left"></td>
+											<td class="password information-center">
+												<a class="login-out-a" href="j_spring_security_logout">退出</a>
+											</td>
+											<td class="information-right"></td>
+										</tr>
+										<tr class="user-action-td">
+											<td class="bottom-left"></td>
+											<td class="bottom-center"></td>
+											<td class="bottom-right"></td>
+										</tr>
+									</table>
+
+
+
+									<!--  <span class="user-info"> <span class="server">欢迎</span>
+										<span class="username"></span> <span class="server">!</span> </span>
+									<span class="loginoff"> <span class="server"><a
+											href="j_spring_security_logout">退出</a>
+									</span> </span>-->
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--  	<div class="outer-south">
+			<div class="inner-container"></div>
+		</div>-->
+		</div>
+		<div class="mask"></div>
+	</body>
+</html>

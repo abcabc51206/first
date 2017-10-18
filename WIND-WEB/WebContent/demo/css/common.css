@@ -1,0 +1,59 @@
+* {
+-webkit-text-size-adjust:none;
+}
+.blank2{
+	height:2px;
+	clear:both;
+}
+.blank4{
+	height:4px;
+	clear:both;
+}
+.blank8{
+	height:8px;
+	clear: both;
+}
+
+.groupbox:after{
+	content:".";
+	display:block;
+	height:0;
+	clear:both;
+	visibility:hidden;
+}
+.groupbox{
+	*zoom:1;
+}
+.relative{
+	position: relative;
+}
+.absolute{
+	position: absolute;
+}
+.full{
+	width:100%;
+	height:100%;
+}
+.fleft{
+	float:left;
+}
+.fright{
+	float: right;
+}
+.sp20{
+	margin:0 10px;
+}
+.v-shadow{
+	position: absolute;
+	right: -6px;
+	height: 100%;
+	width: 6px;
+	background: url("../images/v_shadow.png") center center repeat-y;
+}
+.h-shadow{
+	position: absolute;
+	bottom: -6px;
+	width: 100%;
+	height: 6px;
+	background: url("../images/h_shadow.png") center center repeat-x;
+}

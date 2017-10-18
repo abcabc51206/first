@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>userguide-view.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="../../css/reset.css"/>
+	<link rel="stylesheet" type="text/css" href="../../css/common.css"/>
+	<link rel="stylesheet" type="text/css" href="../../css/inc.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/userguide.css"/>
+	<script type="text/javascript" src="../../lib/jQuery/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" src="../../js/Tianditu.js"></script>
+	<script type="text/javascript" src="../js/Userguide.js"></script>
+	<script type="text/javascript" src="../js/userguide-view.js"></script>
+  </head>
+  
+  <body style="height: auto;">
+	<div class="wrapper white94">
+		<div class="userguide-box">
+			<div class="userguide-box-title">
+				查看用户指南
+			</div>
+			<div class="userguide-box-table">
+				<div class="title">
+					<h1 id="view-userguide-title"></h1>					
+				</div>
+				<div class="guide">
+					<span>[<span class="read">类别：</span>]<span id="view-userguide-type"></span>
+					</span>
+				</div>
+				<div class="content">
+						<span id="view-userguide-html"></span>
+				</div>
+				<div style="text-align: center;">
+					<input type="button" class="btn" value="返回" onclick="TDT.go('userguide.html');"/>
+				</div>
+			</div>
+		</div>
+	</div>
+  </body>
+</html>

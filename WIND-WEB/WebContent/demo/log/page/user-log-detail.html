@@ -1,0 +1,76 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>用户访问量详细</title>
+		<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+   		<meta http-equiv="description" content="this is my page">
+    	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    	<meta http-equiv="pragram" content="no-cache">
+    	<meta http-equiv="cache-control" content="no-cache, must-revalidate"> 
+    	<meta http-equiv="expires" content="0"> 
+    	<link rel="stylesheet" type="text/css" href="../../css/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/inc.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/counter.css"/>
+		<script type="text/javascript" src="../../lib/jQuery/jquery-1.7.2.js"></script>
+		
+		<link rel="stylesheet" type="text/css"
+			href="../../lib/artDialog4.1.6/skins/default.css" />
+		<script type="text/javascript"
+			src="../../lib/artDialog4.1.6/artDialog.js"></script>
+		
+		<script type="text/javascript" src="../../js/Tianditu.js"></script>
+		<script type="text/javascript" src="../js/LogUser.js"></script>
+		<script type="text/javascript" src="../js/user-log-detail.js"></script>
+	</head>
+	<body>
+	<div class="wrapper white94">
+		<div class="counter-box">
+			<div class="counter-box-table">
+				<div class="counter-table">
+					<table class="list">
+						<thead>
+							<tr>
+								<th class="checkth"><input type="checkbox"/></th>
+								<th class="nameth">用户名</th>
+								<th class="companyth">用户IP</th>
+								<th class="companyth">状态</th>
+								<th>访问时间</th></tr>
+						</thead>
+						<tbody id="logUserTemplate" style="display: none;">
+							<tr rowid=%{rowid}%>
+								<td>
+									<input type="checkbox"/>
+								</td>
+								<td>%{userName}%</td>
+								<td>%{userIp}%</td>
+								<td>%{state}%</td>
+								<td>%{visitTime}%</td>
+							</tr>
+						</tbody>
+										
+						<tbody id="logUserList">
+						</tbody>
+						
+						<tbody id="noData" style="display: none;">
+							<tr>
+								<td colspan="7">暂无记录！</td>
+							</tr>
+						</tbody>
+						
+						
+						<tfoot>
+						<tr><td colspan="7">
+							<div id="pager">
+						</div>
+						</td></tr>
+						</tfoot>
+						
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+  </body>
+</html>

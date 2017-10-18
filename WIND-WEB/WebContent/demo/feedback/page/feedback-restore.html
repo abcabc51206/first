@@ -1,0 +1,65 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>feedback-restore.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="../../css/reset.css"/>
+	<link rel="stylesheet" type="text/css" href="../../css/common.css"/>
+	<link rel="stylesheet" type="text/css" href="../../css/inc.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/feedback.css"/>
+	<script type="text/javascript" src="../../lib/jQuery/jquery-1.7.2.js"></script>
+	<script type="text/javascript" src="../../lib/jQuery/jquery.form.js"></script>
+	<script type="text/javascript" src="../../js/Tianditu.js"></script>
+	<script type="text/javascript" src="../js/Feedback.js" ></script>
+	<script type="text/javascript" src="../js/feedback-restore.js" ></script>
+	<script type="text/javascript">
+		Tianditu.showLevel(2,"意见反馈回复","feedback/page/feedback-restore.html");
+	</script>
+  </head>
+  
+  <body>
+    <div class="wrapper white94">
+		<div class="feedback-box">
+			<div class="feedback-box-title">
+				意见反馈回复
+			</div>
+			<div class="feedback-box-table"  style="width: 98%;height: 90%;">
+					<form id="feedbackUpdateForm" method="post">
+						<table class="table">
+							<tr class="suggest">
+								<td>
+									<span class="feedback-word content" id="content" ></span>
+									<span class="feedback-word  time"  id="createTime"></span>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<span class="feedback-word">回复:</span>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<textarea id="feedback-restore" name="feedbackReply.content" class="shadow" cols="30" rows="5"></textarea>
+									<span class="required"></span>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<span id="reply-content" style="display: none;" ></span>
+									<input type="hidden" id="feedback-id" name="feedbackReply.feedback.id"/>
+									<input type="hidden" id="feedback-id" name="feedbackReply.replier" value="zhuzj"/>
+									<input type="button" class="btn" value="答复" onclick="replySubmit()" />
+									<span class="em-1"></span>
+									<input type="button" class="btn" value="取消" onclick="TDT.go('feedback.html');" />
+								</td>
+							</tr>
+						</table>
+					</form>
+			</div>
+		</div>
+	</div>
+  </body>
+</html>

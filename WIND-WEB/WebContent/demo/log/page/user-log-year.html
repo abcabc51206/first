@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>每年动态</title>
+		<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+   		<meta http-equiv="description" content="this is my page">
+    	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    	<meta http-equiv="pragram" content="no-cache">
+    	<meta http-equiv="cache-control" content="no-cache, must-revalidate"> 
+    	<meta http-equiv="expires" content="0"> 
+    	<link rel="stylesheet" type="text/css" href="../../css/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/inc.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/counter.css"/>
+		<script type="text/javascript" src="../../lib/jQuery/jquery-1.7.2.js"></script>
+		<script src="../../lib//Highcharts-2.3.3/js/highcharts.js"></script>
+		<script src="../../lib//Highcharts-2.3.3/js/modules/exporting.js"></script>
+		<link rel="stylesheet" type="text/css"
+			href="../../lib/artDialog4.1.6/skins/default.css" />
+		<script type="text/javascript"
+			src="../../lib/artDialog4.1.6/artDialog.js"></script>
+		<script type="text/javascript" src="../../js/Tianditu.js"></script>
+		<script type="text/javascript" src="../js/LogUser.js"></script>
+		<script type="text/javascript" src="../js/user-log-year.js"></script>
+	</head>
+	<body>
+	<div class="wrapper white94">
+		<div class="counter-box">
+			<div class="counter-box-title">
+				<span class="now-address"><a href="user-log-day.html">日志管理</a></span>
+				<span>>></span>
+				<span><a href="user-log-day.html">用户访问统计</a></span>
+			</div>
+			<div class="counter-box-head">
+				<ul>
+					<li onclick="changeSt(1)">每日动态</li>
+					<li onclick="changeSt(2)">每月动态</li>
+					<li onclick="changeSt(3)">过去30天</li>
+					<li class="select">每年动态</li>
+				</ul>
+			</div>
+			<div class="content">
+				<select id="stYear"></select>
+				<button type="button" onclick="stYear()">查询</button>
+				<div class="counter-box-content" id="container"></div>
+				<button class="btn information groupbox" onclick="logDetail()">详细信息</button>
+			</div>
+		</div>
+	</div>
+  </body>
+</html>

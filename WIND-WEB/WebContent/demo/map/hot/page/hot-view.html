@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>hot-view.html</title>
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="../../../css/reset.css"/>
+	<link rel="stylesheet" type="text/css" href="../../../css/common.css"/>
+	<link rel="stylesheet" type="text/css" href="../../../css/inc.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/hot.css"/>
+	<script type="text/javascript" src="../../../lib/jQuery/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" src="../../../js/Tianditu.js"></script>
+	
+	<script type="text/javascript" src="../js/Hot.js"></script>
+	<script type="text/javascript" src="../js/hot-view.js"></script>
+	<script type="text/javascript">
+		Tianditu.showLevel(2,"查看地图热点","map/hot/page/hot-view.html");
+	</script>
+  </head>
+  
+  <body>
+	<div class="wrapper white94">
+		<div class="hot-box">
+			<div class="hot-box-title">
+				查看地图热点
+			</div>
+			<div class="hot-box-table">
+				<table class="table">
+					<tr><td colspan="2"><img id="pic-src" width="100" height="100" src="../images/zwtp.jpg"/><input type="hidden" id="file-id"/></td></tr>
+					<tr><td class="label"><label>热点类型:</label></td><td><span class="normal-text" id="hotType"></span></td></tr>
+					<tr><td class="label"><label>热点名称</label></td><td><span class="normal-text" id="hotName"></span></td></tr>
+					<tr><td class="tlabel"><label>地<span class="em-1"></span><span class="em-1"></span>址:</label></td><td><span class="normal-text" id="address"></span></td></tr>
+					<tr><td class="tlabel"><label>经<span class="em-1"></span><span class="em-1"></span>度:</label></td><td><span class="normal-text" id="lon"></span></td></tr>
+					<tr><td class="tlabel"><label>纬<span class="em-1"></span><span class="em-1"></span>度:</label></td><td><span class="normal-text" id="lat"></span></td></tr>
+					<tr><td class="tlabel"><label>比<span class="em-1-2"></span>例<span class="em-1-2"></span>尺:</label></td><td><span class="normal-text" id="zoom"> </span></td></tr>
+					<tr><td class="tlabel"><label>创建时间:</label></td><td><span class="normal-text" id="createTime"></span></td></tr>
+					<tfoot>
+						<tr>
+							<td colspan="2" >
+								<input type="button" class="btn" value="返回" onclick="TDT.go('hot.html');"/>
+							</td>
+						</tr>
+					</tfoot>
+				</table>
+			</div>
+		</div>
+	</div>
+  </body>
+</html>

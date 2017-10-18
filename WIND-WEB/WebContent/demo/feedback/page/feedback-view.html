@@ -1,0 +1,97 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>feedback-view.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="../../css/reset.css"/>
+	<link rel="stylesheet" type="text/css" href="../../css/common.css"/>
+	<link rel="stylesheet" type="text/css" href="../../css/inc.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/feedback.css"/>
+	<script type="text/javascript" src="../../lib/jQuery/jquery-1.7.2.js"></script>
+   	<script type="text/javascript" src="../../js/Tianditu.js"></script>
+    <script type="text/javascript" src="../js/Feedback.js" ></script>
+    <script type="text/javascript" src="../js/feedback-view.js" ></script>
+    <script type="text/javascript">
+		Tianditu.showLevel(2,"查看意见","feedback/page/feedback-view.html");
+	</script>
+  </head>
+  
+  <body>
+	<div class="wrapper white94">
+		<div class="feedback-box">
+			<div class="feedback-box-title">
+				查看意见
+			</div>
+			<div class="feedback-box-table">
+				<table class="table" border="1 solid red">
+					<tr><!--  class="suggest" -->
+						<td width="250px">
+							<font >姓<span class="em-1"><span class="em-1"><span class="em-1"><span class="em-1">名:</font> 
+							<span id="userName"></span>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<font >反馈时间:</font> 
+							<span  id="createTime"></span>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<font >电子邮件:</font> 
+							<span id="userNameEmail"></span>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<font >反馈内容:</font> 
+							<span id="content" style="word-wrap:break-word;"></span>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<font >回复状态:</font> 
+							<span id="replyState"></span>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<font >审核状态:</font> 
+							<span id="auditStatus"></span>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<font >审<span class="em-1">核<span class="em-1">人:</font> 
+							<span id="reviewers"></span>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<font >审核意见:</font> 
+							<span id="auditSuggerstion"></span>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<span>答<span class="em-1"><span class="em-1"><span class="em-1"><span class="em-1">复:</span>
+							<span id="reply-content"></span>
+						</td>
+					</tr>
+					<tfoot>
+						<tr>
+							<td colspan="2" >
+								<input id="#feedback-id" type="hidden" >
+								<button type="button" class="btn" onclick="TDT.go('feedback.html');" >返回</button>
+							</td>
+						</tr>
+					</tfoot>
+				</table>
+			</div>
+		</div>
+	</div>
+  </body>
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>permissions-add.html</title>
+
+		<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+		<meta http-equiv="description" content="this is my page">
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<link rel="stylesheet" type="text/css" href="../../css/reset.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/common.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/inc.css" />
+		<link rel="stylesheet" type="text/css" href="../css/perm.css" />
+		<link rel="stylesheet" type="text/css"
+			href="../../lib/artDialog4.1.6/skins/default.css" />
+		<link rel="stylesheet" type="text/css"
+			href="../../lib/dynatree-1.0.2/src/skin/ui.dynatree.css" />
+		<link rel="stylesheet" type="text/css"
+			href="../../lib/select-1.0/skins/css/css.css" />
+
+		<script type="text/javascript"
+			src="../../lib/artDialog4.1.6/artDialog.js"></script>
+		<script type="text/javascript" src="../../lib/jQuery/jquery-1.7.2.js"></script>
+		<script type="text/javascript" src="../../lib/jQuery/jquery.form.js"></script>
+		<script type="text/javascript"
+			src="../../lib/jQuery/jquery-ui-1.8.22.custom.min.js"></script>
+
+		<script type="text/javascript"
+			src="../../lib/dynatree-1.0.2/src/jquery.dynatree.js"></script>
+		<script type="text/javascript" src="../../lib/select-1.0/select.js"></script>
+
+		<script type="text/javascript" src="../../js/Tianditu.js"></script>
+		<script type="text/javascript" src="../js/Permissions.js"></script>
+		<script type="text/javascript" src="../js/permissions-add.js"></script>
+		<script type="text/javascript">
+			Tianditu.showLevel(2,"添加权限","user/page/permissions-add.html");
+		</script>
+	</head>
+
+	<body>
+		<div class="wrapper white94">
+			<div class="perm-box">
+				<div class="perm-box-title">
+					<span class="now-address"><a href="permissions.html">权限管理</a></span>
+					<span>>></span>
+					<span>添加权限资源</span>
+				</div>
+				<div class="perm-box-table">
+					<form id="permissionsAddForm" method="post">
+						<table class="table">
+							<tr>
+								<td class="label">
+									<label for="perm-code">
+										资源代码:
+									</label>
+								</td>
+								<td>
+									<span class="shadow-c">
+										<span class="shadow-left">&nbsp;</span>
+										<input id="perm-code" name="perm.permCode" class="shadow" />
+										<span class="shadow-right">&nbsp;</span>
+									</span>
+									<span class="required"></span>
+								</td>
+							</tr>
+							<tr>
+								<td class="label">
+									<label for="perm-name">
+										资源名称:
+									</label>
+								</td>
+								<td>
+									<span class="shadow-c">
+										<span class="shadow-left">&nbsp;</span>
+										<input id="perm-name" name="perm.permName" class="shadow" />
+										<span class="shadow-right">&nbsp;</span>
+									</span>
+									<span class="required"></span>
+								</td>
+							</tr>
+							<tr>
+								<td class="label">
+									<label for="parent-perm">
+										上级资源:
+									</label>
+								</td>
+								<td>
+									<input id="parent-perm">
+								</td>
+							</tr>
+							<tr>
+								<td class="label">
+									<label for="perm-url">
+										URL地址:
+									</label>
+								</td>
+								<td>
+									<span class="shadow-c">
+										<span class="shadow-left">&nbsp;</span>
+										<input id="perm-url" name="perm.permUrl" class="shadow" />
+										<span class="shadow-right">&nbsp;</span>
+									</span>
+									<span class="required"></span>
+								</td>
+							</tr>
+							<tr>
+								<td class="label">
+									<label for="perm-urlType">
+										URL类型:
+									</label>
+								</td>
+								<td>
+									  <select class="shadow" name="perm.permUrlType">
+										<option value="Module">模块</option>
+										<option value="Action">操作</option>
+									</select>
+									<!--<div class="add-select" ><input type="text" value="模块"/><button></button>
+										<ul >
+											<li>操作</li>
+										</ul>
+										</div>-->
+									<span class="required"><span>
+								</td>
+							</tr>
+							<tr>
+								<td class="label">
+									<label for="perm-display">
+										是否显示:
+									</label>
+								</td>
+								<td>
+									<label>
+										<input checked="checked" type="radio" name="perm.permDisplay" value="1"/>
+										是
+									</label>
+									<label>
+										<input type="radio" name="perm.permDisplay" value="0" />
+										否
+									</label>
+								</td>
+							</tr>
+							<tr>
+								<td class="label">
+									<label for="perm-status">
+										状
+										<span class="em-1"></span><span class="em-1"></span>态:
+									</label>
+								</td>
+								<td>
+									<label>
+										<input checked="checked" type="radio" name="perm.permUsesMark" value="1"/>
+										启用
+									</label>
+									<label>
+										<input type="radio" name="perm.permUsesMark" value="0" />
+										停用
+									</label>
+								</td>
+							</tr>
+							<tr>
+								<td class="label">
+									<label for="perm-type">
+										资源类型:
+									</label>
+								</td>
+								<td>
+									 <select id="perm-type" name="perm.permType">
+										<option value="Portal">门户网站</option>
+										<option value="Resource">资源中心</option>
+										<option value="Admin">管理中心</option>
+										
+									</select>
+									<!--<div class="add-select" ><input type="text" value="门户网站"/><button></button>
+										<ul >
+											<li>资源中心</li>
+											<li>共享交换</li>
+											<li>管理中心</li>
+										</ul>
+										</div>-->
+									<span class="required"></span>
+								</td>
+							</tr>
+							<tr>
+								<td class="tlabel">
+									<label for="perm-remark">
+										资源描述:
+									</label>
+								</td>
+								<td>
+									<textarea id="perm-remark" name="perm.permRemark" class="shadow" cols="60" rows="4"></textarea>
+								</td>
+							</tr>
+							<tr>
+							    <td></td>
+								<td>
+									<input class="btn" type="button" onclick="addPerm()"
+										value="确认提交" />
+									<input type="reset" class="btn" value="重置信息" />
+									<input type="button" class="btn" value="取消"
+										onclick="TDT.go('permissions.html');" />
+								</td>
+							</tr>
+						</table>
+					</form>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

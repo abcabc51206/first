@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>sar-view.html</title>
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="../../../css/reset.css"/>
+	<link rel="stylesheet" type="text/css" href="../../../css/common.css"/>
+	<link rel="stylesheet" type="text/css" href="../../../css/inc.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/sar.css"/>
+	<script type="text/javascript" src="../../../lib/jQuery/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" src="../../../js/Tianditu.js"></script>
+		<script type="text/javascript" src="../js/Sar.js"></script>
+	<script type="text/javascript" src="../js/sar-view.js"></script>
+	<script type="text/javascript">
+		Tianditu.showLevel(2,"查看行政区划","map/sar/page/sar-view.html");
+	</script>
+  </head>
+  
+  <body>
+	<div class="wrapper white94">
+		<div class="sar-box">
+			<div class="sar-box-title">
+				查看行政区
+			</div>
+			<div class="sar-box-table">
+				<table class="table">
+					<tr><td class="label"><label>区域编码:</label></td>
+						<td><span id="code" class="normal-text"></span></td>
+					</tr>
+					<tr><td class="label"><label>区域名称:</label></td>
+						<td><span id="areaName" class="normal-text"></span></td>
+					</tr>
+					<tr><td class="label"><label>名称简称:</label></td>
+						<td><span id="abbr" class="normal-text"></span></td>
+					</tr>
+					<tr><td class="label"><label>上级行政区:</label></td>
+						<td><span class="normal-text" id="parentAreaName" ></span></td></tr>
+					<tr><td class="label"><label>等<span class="em-1"></span><span class="em-1"></span>级:</label></td>
+						<td><span class="normal-text" id="level" ></span></td></tr>
+					<tr><td class="label"><label>图层级别:</label></td>
+						<td><span class="normal-text" id="zoom"></span></td></tr>
+						
+					<tr><td class="label"><label>坐<span class="em-1"></span><span class="em-1"></span>标:</label></td>
+						<td>经度:<span class="normal-text" id="lon"></span>纬度:<span class="normal-text" id="lat"></span></td></tr>
+						
+					<tr><td class="tlabel"><label >备<span class="em-1"></span><span class="em-1"></span>注:</label></td>
+						<td><span class="normal-text" id="brief"></span></td></tr>
+					<tfoot>
+						<tr>
+							<td colspan="2" >
+								<input type="button" class="btn" value="返回" onclick="TDT.go('sar.html');"/>
+							</td>
+						</tr>
+					</tfoot>
+				</table>
+			</div>
+		</div>
+	</div>
+  </body>
+</html>

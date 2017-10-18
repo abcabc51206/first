@@ -1,0 +1,21 @@
+.content table td{
+	background:#fff;
+	vertical-align:middle;
+}
+td .arrow-tt-node-content{
+	width:100%;
+	text-align:center;
+}
+.content .headerbg td{
+	padding:10px 0;
+	background:#245394;
+	text-align:center;
+	color:#fff;
+	font-weight:bold;
+}
+.content .arrow-highlight-bg-color-row td{
+	background:rgb(232, 242, 254);
+}
+.service-type{
+	color:#00f;
+}

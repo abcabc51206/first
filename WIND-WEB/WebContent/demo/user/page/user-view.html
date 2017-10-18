@@ -1,0 +1,104 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>user.html</title>
+		<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+		<meta http-equiv="description" content="this is my page">
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<link rel="stylesheet" type="text/css" href="../../css/reset.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/common.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/inc.css" />
+		<link rel="stylesheet" type="text/css" href="../css/user.css" />
+		<script type="text/javascript"
+			src="../../lib/jQuery/jquery-1.7.2.min.js"></script>
+		<script type="text/javascript" src="../../js/Tianditu.js"></script>
+		<script type="text/javascript" src="../js/User.js"></script>
+		<script type="text/javascript" src="../js/user-view.js"></script>
+		<script type="text/javascript">
+		Tianditu.showLevel(2,"查看用户","user/page/user-view.html");
+	</script>
+	</head>
+
+	<body>
+		<div class="wrapper white94">
+			<div class="user-box">
+				<div class="user-box-title">
+					查看用户
+				</div>
+				<div class="user-box-table">
+					<table class="table">
+						<tr>
+							<td class="label">
+								<label for="user-loginname">
+									登录账号:
+								</label>
+							</td>
+							<td>
+								<input id="user-loginname" class="no-border-input"
+									readonly="readonly" />
+							</td>
+						</tr>
+						<tr>
+							<td class="label">
+								<label for="user-userEmail">
+									电子邮箱:
+								</label>
+							</td>
+							<td>
+								<input id="user-userEmail" class="no-border-input"
+									readonly="readonly" />
+							</td>
+						</tr>
+						<tr>
+							<td class="label">
+								<label for="user-orgName">
+									所属机构:
+								</label>
+							</td>
+							<td>
+								<span class="normal-text"><input id="user-orgName"
+										class="no-border-input" readonly="readonly" /> </span>
+							</td>
+						</tr>
+						<tr>
+							<td class="label">
+								<label for="user-status">
+									状
+									<span class="em-1"></span><span class="em-1"></span>态:
+								</label>
+							</td>
+							<td>
+								<span class="normal-text"><input id="user-userUsesMark"
+										class="no-border-input" readonly="readonly" /> </span>
+							</td>
+						</tr>
+						<tr>
+							<td class="label">
+								<label for="user-date">
+									有效期限:
+								</label>
+							</td>
+							<td>
+								从
+								<span class="normal-text"><input
+										id="user-userEnabledTime" class="no-border-input"
+										readonly="readonly" /> </span>到
+								<span class="normal-text"><input
+										id="user-userInvalidTime" class="no-border-input"
+										readonly="readonly" /> </span>
+							</td>
+						</tr>
+						<tfoot>
+							<tr>
+								<td colspan="2">
+									<input type="button" class="btn" value="返回"
+										onclick="TDT.go('user.html');" />
+								</td>
+							</tr>
+						</tfoot>
+					</table>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,332 @@
+html{
+	background: #fff;
+}
+html,body{
+	width:100%;
+	padding:0;
+}
+table{
+	padding:0;
+	margin:0;
+}
+.wrapper{
+	width:100%;
+	height:100%;
+}
+.wfsconfig-box  div.wfsconfig-box-title{
+	margin-top:5px;
+	padding-left:10px;
+	height:34px;
+	line-height:28px;
+	background:url("../images/title_bg.png") repeat-x;
+}
+.wfsconfig-box-title span,a{
+	color:#000;
+	font-size:13px;
+	font-family:"新宋体";
+}
+.wfsconfig-box-title span.now-address{
+	padding-left:15px;
+	padding-top:2px;
+	background:url("../images/title.png") left center no-repeat;
+}
+.wfsconfig-box-headline{
+	margin-left:20px;
+	padding:10px 0;
+	border-bottom:1px solid #cbcbcb;
+}
+.wfsconfig-box-headline span{
+	color:#333333;
+	font-weight:bold;
+	font-size:14px;
+	font-family:"微软雅黑";
+}
+.car-wfsconfig-nav{
+	height:30px;
+	line-height:30px;
+	padding-left:20px;
+	background:#e8e8e8;
+}
+.car-wfsconfig-nav span{
+	padding:5px 18px;
+	color:#3272a5;
+	font-weight:bold;
+	background:url("../images/car_config.png") no-repeat;
+}
+.car-wfsconfig-nav .car{
+	padding:5px 25px;
+}
+.car-wfsconfig-nav .car-wfsconfig-select{
+	background:url("../images/car_config_select.png") no-repeat;
+}
+.wfsconfig-box-table{
+	position:relative;
+	padding:0 20px;
+}
+.wfsconfig-box-table table{	
+	width:100%;
+}
+.wfsconfig-box-table .list{
+	border-collapse:collapse;
+	border:1px solid #6790b7;
+}
+.wfsconfig-box-table .list caption{
+	padding:16px 0;
+}
+.wfsconfig-box-table .list th{
+	background:#1e5c97;
+	border:1px solid #3888e9;
+	padding:12px 0;
+}
+.wfsconfig-box-table .list td{
+	padding:8px 0;
+	text-align:center;
+	color:#3272a6;
+	border:1px solid #00ff00;
+}
+.wfsconfig-box-table .list tfoot td{
+	padding:10px 0;
+	background:#fff;
+	text-algin:left;
+}
+.wfsconfig-box-table .list .odd td{
+	background:#fff;
+}
+.table td{
+	padding:8px 0;
+	color:#0b467a;
+	/*vertical-align:middle;*/
+}
+.wfsconfig-box-table table .label,.wfsconfig-box-table table .tlabel{
+	width:8%;
+}
+.wfsconfig-box-table .table .tlabel{
+	vertical-align:top;
+}
+.label .btn{
+	margin-right:20px;
+}
+.searchbtn{
+	margin-left:-4px;
+}
+
+.fleft .{
+	margin-right:20px;
+}
+
+.normal-text{
+	color:#333;
+	padding:0 4px;
+}
+p.normal-text{text-indent:2em;}
+a.modify-action{text-decoration:underline;}
+
+.wfsconfig-button{
+	height:32px;
+	width:80px;
+}
+.btn-short{
+	width:62px;
+	height:32px;
+	line-height:32px;
+	margin-left:10px;
+	color:#fff;
+	border:none;
+	background: url("../images/btn_short.png") center center no-repeat;
+	cursor:pointer;
+}
+
+.select{
+	color:#0670bb;
+}
+
+.no-border-input{
+	border-left:0px;
+	border-top:0px;
+	border-right:0px;
+	border-bottom:1px;
+	background-color: #F0F4F7;
+}
+
+.no-border-textarea{
+	overflow:auto; 
+	background-attachment:fixed;
+	background-repeat:no-repeat;   
+	border-style:solid;
+	border-color:#FFFFFF;
+	background-color: #F0F4F7;
+}
+
+.validate-tip{
+	color: #666666;
+}
+.lat{
+	position:absolute;
+	left:380px;
+}
+.wfsconfig-panel{
+	position:absolute;
+	padding:16px 0;
+	width:190px;
+}
+.tree-panel{
+	height:100%;
+	border:1px solid #286aa0;
+}
+.tree-panel .tree-title{
+	height:33px;
+	line-height:33px;
+	border:none;
+	background:url(../images/tree_title_bg.jpg);
+}
+.tree-panel .tree-innertitle{background:none;}
+.tree-container{
+	overflow:hidden;
+	overflow-y:auto;
+	width:100%;
+}
+.wfsconfig-table{
+	padding-left:200px;
+}
+/*锟斤拷钮锟斤拷式*/
+.wfsconfig-button{
+	position:relative;
+	top:-3px;
+	width:100px;
+	border:none;
+	font-weight:bold;
+	font-size:12px;
+	font-family:"锟斤拷锟斤拷锟斤拷";
+	color:#666666;
+	background:url("../images/wfsconfig_button.png") no-repeat;
+}
+.wfsconfig-button:hover{
+	cursor:pointer;
+	background:url("../images/wfsconfig_button_hover.png") no-repeat;
+}
+
+select{
+	width:200px;
+	height:30px;
+}
+.station label:hover{
+	cursor:pointer;
+}
+.select-bg{
+	position:relative;
+	padding:6px 15px;
+	padding-bottom:8px;
+	background:url("../images/select_bg.png") no-repeat;
+	z-index:1000;
+}
+.label-bg{
+	padding:6px 15px;
+	background:url("../images/label_bg.png") no-repeat;
+}
+.center{
+	padding-left:20px;
+	padding-right:20px;
+}
+table .children{
+	width:100%;
+}
+table .field{
+	margin-bottom:10px;
+}
+table .children select{
+	margin-left:20px;
+}
+table .children label{
+	padding:16 0px;
+}
+table .children td.label{
+	width:100px;
+}
+table .field td{
+	border:1px solid #cedbe1;
+	text-align:center;
+}
+table .field input{
+	/*border-color:#155d94;*/
+}
+table .children .children-select td{
+	color:#ff3300;
+}
+table .field tr:hover td{
+	color:#ff3300;
+}
+.a{
+	position:relative;
+	width:500px;
+	height:200px;
+	padding:10px;
+	margin-top:7px;
+	background:#fff;
+	border:1px solid #8da8b3;
+	overflow-y:scroll;
+	display:none;
+}
+.table{
+	display:none;
+}
+.car-address{
+	margin-top:10px;
+}
+.car-address label{
+	width:0;
+}
+.car-address input{
+	width:260px;
+}
+.car-address .car-button td{
+	padding-top:30px;
+	padding-left:30px;
+}
+.car-address .car-button td input{
+	width:100px;
+}
+.table .register{
+	color:#999999;
+	font-size:12px;
+}
+.car-wfsconfig-nav span:hover{
+	cursor:pointer;
+}
+.clear{
+	clear:both;
+}
+.sort-list{
+	line-height:30px;
+}
+.sort-list .sortlabel{
+	float:left;
+	padding-top:3px;
+	line-height:18px;
+	width:100px;
+}
+.sort-list .sortselect{
+	float:left;
+	margin-left:10px;
+	line-height:18px;
+	width:240px;
+}
+.sort-list .required{
+	line-height:18px;
+	float:left;
+	width:130px;
+	color:red;
+}
+.url-type input{
+	width:50px;
+}
+.childTable{
+	display:none;
+}
+.childTable td{
+	padding:8px 0;
+	color:#0b467a;
+	/*vertical-align:middle;*/
+}
+.car-address tr.qh{
+	height:150px;
+}

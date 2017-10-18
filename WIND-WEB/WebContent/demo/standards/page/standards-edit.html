@@ -1,0 +1,168 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>standards-edit.html</title>
+		<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+		<meta http-equiv="description" content="this is my page">
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta http-equiv="pragram" content="no-cache">
+		<meta http-equiv="expires" content="0">
+		<link rel="stylesheet" type="text/css" href="../../css/reset.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/common.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/inc.css" />
+		
+		<link rel="stylesheet" type="text/css" href="../css/standards.css" />
+		
+		<script type="text/javascript" src="../../lib/jQuery/jquery-1.7.2.min.js"></script>
+		<script type="text/javascript" src="../../lib/jQuery/jquery.form.js"></script>
+		
+		<link rel="stylesheet" type="text/css" href="../../lib/jQuery/css/smoothness/jquery-ui-1.8.22.custom.css" />
+		<script type="text/javascript" src="../../lib/jQuery/jquery-ui-1.8.22.custom.min.js"></script>
+
+		<link rel="stylesheet" type="text/css" href="../../lib/artDialog4.1.6/skins/default.css" />
+		<script type="text/javascript" src="../../lib/artDialog4.1.6/artDialog.js"></script>
+		
+		<link rel="stylesheet" type="text/css" href="../../lib/dynatree-1.0.2/src/skin/ui.dynatree.css"/>
+		<script type="text/javascript" src="../../lib/dynatree-1.0.2/src/jquery.dynatree.min.js"></script>
+
+		<link rel="stylesheet" type="text/css" href="../../lib/select-1.0/skins/css/css.css"/>
+		<script type="text/javascript" src="../../lib/select-1.0/select.js"></script>
+		
+		
+		<script type="text/javascript" src="../../js/Tianditu.js"></script>
+		<script type="text/javascript" src="../js/Standards.js"></script>
+		<script type="text/javascript" src="../js/standards-edit.js"></script>
+		<script type="text/javascript">
+			Tianditu.showLevel(2,"编辑标准规范","standards/page/standards-edit.html");
+		</script>
+	</head>
+	<body>
+		<div class="wrapper white94">
+			<div class="standards-box">
+				<div class="standards-box-title">
+					编辑下载文件
+				</div>
+				<div class="standards-box-table">
+					<form id="uploadForm" method="post" enctype="multipart/form-data">
+						<table class="table">
+							<tr>
+								<td class="label">
+									<label>
+										文
+										<span class="em-1"></span><span class="em-1"></span>件:
+									</label>
+								</td>
+								<td>
+									<input type="file" name="file" />
+									<input type="button" value="上传"
+										onclick="uploadPic('uploadForm');" />
+									<span class="required"></span>
+									<input type="hidden" id="file-name" name="fileName" />
+									<input type="hidden" id="file-type" name="fileType" />
+								</td>
+							</tr>
+							<tr>
+								<td class="label">
+								</td>
+								<td>
+									<input type="hidden" id="file-id" name="fileId" />
+									<span class="validate-tip">（文件格式为pdf|doc|docx|txt。）</span>
+								</td>
+							</tr>
+						</table>
+					</form>
+					<form id="standardsUpdateForm" method="post">
+						<table class="table">
+							<tr>
+								<td class="label">
+									<label for="standards-code">
+										文件代码:
+									</label>
+								</td>
+								<td>
+									<span class="shadow-c">
+										<span class="shadow-left">&nbsp;</span>
+										<input id="standards-code" name="standarDoc.stCode" class="shadow" />
+										<span class="shadow-right">&nbsp;</span>
+									</span>
+									<span class="required"></span>
+								</td>
+							</tr>
+							<tr>
+								<td class="label">
+									<label for="standards-name">
+										文件名称:
+									</label>
+								</td>
+								<td>
+									<span class="shadow-c">
+										<span class="shadow-left">&nbsp;</span>
+										<input id="standards-name" name="standarDoc.stName" class="shadow" />
+										<span class="shadow-right">&nbsp;</span>
+									</span>
+									<span class="required"></span>
+								</td>
+							</tr>
+								<tr>
+								<td class="label">
+									<label for="standards-year">
+										发布年份:
+									</label>
+								</td>
+								<td>
+									<span class="shadow-c">
+										<span class="shadow-left">&nbsp;</span>
+										<input id="standards-year" name="standarDoc.stYear" class="shadow" readonly="readonly"/>
+										<span class="shadow-right">&nbsp;</span>
+									</span>
+									<span class="required"></span>
+								</td>
+							</tr>
+								<tr>
+								<td class="label">
+									<label for="standards-type">
+										文件类别:
+									</label>
+								</td>
+								<td>
+									<input id="standards-type"/>
+									<span class="required"></span>
+								</td>
+							</tr>
+							<tr>
+								<td class="label">
+									<label for="standards-brief">
+										简
+										<span class="em-1"></span><span class="em-1"></span>述:
+									</label>
+								</td>
+								<td>
+									<textarea id ="standards-brief" name="standarDoc.stBrief" rows="5" cols="40"></textarea>
+									<span class="required"></span>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<input type="hidden" id="standards-file-id" name="standarDoc.stFileId"/>
+									<input type="hidden" id="standards-id" name="standarDoc.id"/>
+									<input class="btn" type="button" onclick="editStandards()"
+										value="保存" />
+									<span class="em-1"></span>
+									<input type="reset" class="btn" value="重置" />
+									<span class="em-1"></span>
+									<input type="button" class="btn" value="取消"
+										onclick="TDT.go('standards.html');" />
+								</td>
+							</tr>
+						</table>
+					</form>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
+
+
+
+
+

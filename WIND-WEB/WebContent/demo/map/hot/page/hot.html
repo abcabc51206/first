@@ -1,0 +1,128 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>hot.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta http-equiv="pragram" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache, must-revalidate"> 
+    <meta http-equiv="expires" content="0"> 
+    <link rel="stylesheet" type="text/css" href="../../../css/reset.css"/>
+	<link rel="stylesheet" type="text/css" href="../../../css/common.css"/>
+	<link rel="stylesheet" type="text/css" href="../../../css/inc.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/hot.css"/>
+	
+	
+	<link rel="stylesheet" type="text/css" href="../../../css/modify-jQuery.css"/>
+  	<script type="text/javascript" src="../../../lib/dynatree-1.0.2/jquery/jquery.js"></script>
+  	<script type="text/javascript" src="../../../lib/jQuery/jquery.form.js"></script>
+  	<script type="text/javascript" src="../../../lib/dynatree-1.0.2/jquery/jquery-ui.custom.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="../../../lib/dynatree-1.0.2/src/skin/ui.dynatree.css"/>
+	<script type="text/javascript" src="../../../lib/dynatree-1.0.2/src/jquery.dynatree.min.js"></script>
+	
+	
+  	<link rel="stylesheet" type="text/css" href="../../../lib/dynatree-1.0.2/doc/contextmenu/jquery.contextMenu.css"/>
+	<script src="../../../lib/dynatree-1.0.2/doc/contextmenu/jquery.contextMenu.js" type="text/javascript"></script>
+	
+	<link rel="stylesheet" type="text/css" href="../../../lib/artDialog4.1.6/skins/default.css" />
+	<script type="text/javascript" src="../../../lib/artDialog4.1.6/artDialog.js"></script>	
+	<script type="text/javascript" src="../../../js/Tianditu.js"></script>
+	<script type="text/javascript" src="../js/Hot.js"></script>
+	<script type="text/javascript" src="../js/hot-list.js"></script>
+	<script type="text/javascript">
+		Tianditu.showLevel(1,"地图热点","map/hot/page/hot.html");
+	</script>
+  </head>
+  
+  <body>
+	<div class="wrapper white94">
+		<div class="hot-box">
+			<div class="hot-box-title">
+				<span class="now-address"><a href="../../scenario/page/scenario.html">地图管理</a></span>
+				<span>>></span>
+				<span><a href="hot.html">地图热点</a></span>
+			</div>
+			<div class="hot-box-headline">
+				<span>地图热点</span>
+			</div>
+			<div class="hot-box-table">
+				<div id="hot-panel" class="hot-panel">
+					<div class="tree-panel">
+						<div class="tree-title"><div class="tree-innertitle">地图热点</div></div>
+						<div class="tree-container" id="tree-container">
+						</div>
+					</div>
+				</div>
+				<div class="hot-table">
+				<table class="list">
+					<caption>
+						<div class="groupbox">
+							<div class="fright">
+								<input type="search fleft" class="search"/><button type="button" class="btn searchbtn" onclick="search()">搜索</button>
+							</div>
+							<div class="fleft">
+								<button type="button" class="btn" onclick="TDT.go('hot-add.html')">添加</button><button type="button" class="btn" onclick="delHot();">删除</button>
+							</div>
+						</div>
+					</caption>
+					<thead>
+						<tr><th class="checkth"><input id="chooseall" type="checkbox" onclick="TDT.chooseall(this,'hotList')"/></th><th class="nameth">类型</th><th class="companyth">名称</th><th class="dateth">地址</th><th width="6%">经度</th><th width="6%">维度</th><th>比例尺</th><th width="14%">创建时间</th><th class="actionth">操作</th></tr>
+					</thead>
+
+					<tbody id="hotTemplate" style="display: none;">
+						<tr rowid=%{rowid}% class="even">
+							<td><input type="checkbox" name="c1" onclick="TDT.brightShow(this, 'hotList');" /></td><td>%{hotType}%</td><td>%{hotName}%</td><td>%{adress}%</td><td>%{lon}%</td><td>%{lat}%</td><td>%{zoom}%<td>%{createTime}%</td>
+							<td><a class="action-btn action-view" href="javascript:;" onclick="goViewHot(this);">查看</a><a class="action-btn action-edit" href="javascript:;" onclick="goEditHot(this);">编辑</a><a class="action-btn action-stick" href="javascript:;" onclick="upToTop(this);">置顶</a><a class="action-btn action-up" href="javascript:;" onclick="up(this);">上移</a><a class="action-btn action-down" href="javascript:;" onclick="down(this);">下移</a><a class="action-btn action-bottom" href="javascript:;" onclick="downToBottom(this);">置底</a></td>
+						</tr>
+					</tbody>
+					
+					<tbody id="hotList">
+					</tbody>
+					
+					<tbody style="display: none;" id="nomessage">
+						<tr>
+							<td colspan="9">
+								暂无记录
+							</td>
+						</tr>
+					</tbody>
+					
+					<tfoot>
+						<tr>
+							<td colspan="9">
+								<div id="pager"> </div>
+							</td>
+						</tr>
+					</tfoot>
+				</table>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="hotCategoryAddDia" style="display: none;">
+		<form id="hotCategoryAddForm" method="post">
+			
+			<input type="hidden" id="parentId" name="hotCategory.mapHotCategory.id"/>
+			<label>中文名称：</label> <input type="text" id="chName" name="hotCategory.chName"/>
+			<span class='required'>*</span> 
+		</form>
+	</div>
+	<div id="hotCategoryUpdateDia" style="display: none;">
+		<form id="hotCategoryUpdateForm" method="post">
+			<input type="hidden" id="id" name="hotCategory.id"/>
+			<input type="hidden" id="parentId" name="hotCategory.mapHotCategory.id"/>
+			<label>中文名称：</label> <input type="text" id="hotCategory-chName" name="hotCategory.chName"/>
+			<span class='required'>*</span> 
+		</form>
+	</div>
+		<!-- Definition of context menu -->
+	<ul id="myMenu" class="contextMenu">
+		<li class="add"><a href="#add">添加</a></li>
+	    <li class="edit"><a href="#edit">编辑</a></li>
+	    <li class="delete"><a href="#delete">删除</a></li>
+	</ul>
+  </body>
+</html>

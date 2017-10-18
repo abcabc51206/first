@@ -1,0 +1,135 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>user.html</title>
+
+		<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+		<meta http-equiv="description" content="this is my page">
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<link rel="stylesheet" type="text/css" href="../../css/reset.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/common.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/inc.css" />
+		<link rel="stylesheet" type="text/css" href="../css/perm.css" />
+		<script type="text/javascript"
+			src="../../lib/jQuery/jquery-1.7.2.min.js"></script>
+		<script type="text/javascript" src="../../js/Tianditu.js"></script>
+		<script type="text/javascript" src="../js/Permissions.js"></script>
+		<script type="text/javascript" src="../js/permissions-view.js"></script>
+		<script type="text/javascript">
+			Tianditu.showLevel(2,"查看权限","user/page/permissions-view.html");
+		</script>
+	</head>
+
+	<body>
+		<div class="wrapper white94">
+			<div class="perm-box">
+				<div class="perm-box-title">
+					查看权限资源
+				</div>
+				<div class="perm-box-table">
+					<form>
+						<table class="table">
+							<tr>
+								<td class="label">
+									<label for="perm-code">
+										资源代码:
+									</label>
+								</td>
+								<td>
+									<span id="perm-code" class="normal-text"></span>
+								</td>
+							</tr>
+							<tr>
+								<td class="label">
+									<label for="perm-name">
+										资源名称:
+									</label>
+								</td>
+								<td>
+									<span id="perm-name" class="normal-text"></span>
+								</td>
+							</tr>
+							<tr>
+								<td class="label">
+									<label for="parent-perm">
+										上级资源:
+									</label>
+								</td>
+								<td>
+									<span id="parent-perm" class="normal-text"></span>
+								</td>
+							</tr>
+							<tr>
+								<td class="label">
+									<label for="perm-url">
+										URL地址:
+									</label>
+								</td>
+								<td>
+									<span id="perm-url" class="normal-text"></span>
+								</td>
+							</tr>
+							<tr>
+								<td class="label">
+									<label for="perm-urlType">
+										URL类型:
+									</label>
+								</td>
+								<td>
+									<span id="perm-urlType" class="normal-text">1111</span>
+								</td>
+							</tr>
+							<tr>
+								<td class="label">
+									<label for="perm-display">
+										是否显示：
+									</label>
+								</td>
+								<td>
+									<span id="perm-display" class="normal-text"></span>
+								</td>
+							</tr>
+							<tr>
+								<td class="label">
+									<label for="perm-status">
+										状
+										<span class="em-1"></span><span class="em-1"></span>态:
+									</label>
+								</td>
+								<td>
+									<span id="perm-status" class="normal-text"></span>
+								</td>
+							</tr>
+							<tr>
+								<td class="label">
+									<label for="perm-type">
+										资源类型:
+									</label>
+								</td>
+								<td>
+									<span id="perm-type" class="normal-text"></span>
+								</td>
+							</tr>
+							<tr>
+								<td class="tlabel">
+									<label for="perm-remark">
+										资源描述:
+									</label>
+								</td>
+								<td>
+									<p id="perm-remark" class="normal-text">
+									</p>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<input type="button" class="btn" value="返回" onclick="Tianditu.go('permissions.html')"/>
+								</td>
+							</tr>
+						</table>
+					</form>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

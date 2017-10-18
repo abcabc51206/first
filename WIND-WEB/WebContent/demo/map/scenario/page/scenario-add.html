@@ -1,0 +1,103 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>scenario.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta http-equiv="pragram" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache, must-revalidate"> 
+    <meta http-equiv="expires" content="0"> 
+    <link rel="StyleSheet" href="../../../lib/artDialog4.1.6/skins/default.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../css/reset.css"/>
+	<link rel="stylesheet" type="text/css" href="../../../css/common.css"/>
+	<link rel="stylesheet" type="text/css" href="../../../css/inc.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/scenario.css"/>
+	
+	<script type="text/javascript" src="../../../lib/jQuery/jquery-1.7.2.js"></script>
+	<script type="text/javascript" src="../../../lib/jQuery/jquery.form.js"></script>
+	<script type="text/javascript" src="../../../lib/artDialog4.1.6/artDialog.js"></script>
+	<script type="text/javascript" src="../../../js/Tianditu.js"></script>
+	<script type="text/javascript" src="../js/Scenario.js"></script>
+	<script type="text/javascript" src="../js/scenario-add.js" ></script>
+	
+	<script type="text/javascript">
+		Tianditu.showLevel(2,"创建方案","map/scenario/page/scenario-add.html");
+	</script>
+	<style>table.table{table-layout:fixed; }</style>
+  </head>
+  
+  <body>
+	<div class="wrapper white94">
+		<div class="scenario-box">
+			<div class="scenario-box-title">
+				<span class="now-address"><a href="scenario.html">基础地图</a></span>
+				<span>>></span>
+				<span>方案创建</span>
+			</div>
+		</div>
+		<div id="createScenarioDiv" class="createScenarioDiv">
+			<form id="uploadForm" method="post" enctype="multipart/form-data">
+				<table class="table">
+					<colgroup><col width="85px"/></colgroup>
+					<tr>
+						<td class="label">
+							<label>
+								方案图片:
+							</label>
+						</td>
+						<td>
+							<input type="file" name="file" />
+							<input type="button" value="上传" onclick="uploadPic('uploadForm');" />
+							<span class="required"></span>
+							<input type="hidden" id="file-name" name="fileName" />
+							<input type="hidden" id="file-type" name="fileType" />
+						</td>
+					</tr>
+					<tr>
+						<td class="label">
+						</td>
+						<td>
+							<img id="pic-src" width="100" height="100"
+								src="../images/zwtp.jpg" style="margin-left: 8px;" />
+							<span class="validate-tip">（图片格式为jpg|jpeg|png。）</span>
+						</td>
+					</tr>
+				</table>
+			</form>
+			<div id='addDiv'>
+				<div class='config-content'>
+					<div class='config-content-item '>
+						<span class='config-content-item-title'>名<span class='char2'></span>称:</span>
+						<input id='createInput' name='userScenario.usName' type='text' class='cn-ipt'>
+						<input id='file-id' name='fileId' type='hidden'>
+					</div>
+					<div class='config-content-item groupbox'>
+					   <span class='config-content-item-title'>
+						类<span class='char2'></span>型:</span>
+						<span class='select'>
+							<select name='userScenario.usScenarioType' >
+								<option value=''>请选择</option>
+								<option value='Vector' >矢量</option>
+								<option value='Image'>影像</option>
+								<option value='DEM'>地形</option>
+							    <option value='Globe'>三维</option>
+							</select>
+						</span>
+					</div>
+					<div class='config-content-item '>
+						<label><span class='config-content-item-title'>描<span class='char2'></span>述:</span>
+						<span class='textarea'><textarea name='userScenario.usScRemark' cols='50' rows='4'></textarea></span>
+						</label>
+					</div>
+					<div class="config-sub">
+					    <input type="button" class="btn" value="确定"/>
+					    <input type="reset" class="btn" id="config-reset" value="取消"/>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+  </body>
+</html>

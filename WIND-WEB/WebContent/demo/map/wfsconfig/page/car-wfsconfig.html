@@ -1,0 +1,151 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>car-wfsconfig.html</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=8" />
+		<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+		<meta http-equiv="description" content="this is my page">
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta http-equiv="pragram" content="no-cache">
+		<meta http-equiv="expires" content="0">
+		<link rel="stylesheet" type="text/css" href="../../../css/reset.css" />
+		<link rel="stylesheet" type="text/css" href="../../../css/common.css" />
+		<link rel="stylesheet" type="text/css" href="../../../css/inc.css" />
+		<link rel="stylesheet" type="text/css" href="../css/car-wfsconfig.css" />
+		<link rel="stylesheet" type="text/css"
+			href="../../../lib/artDialog4.1.6/skins/default.css" />
+		<link rel="stylesheet" type="text/css"
+			href="../../../lib/select-1.0/skins/css/css.css" />
+		<link rel="stylesheet" type="text/css"
+			href="../../../lib/dynatree-1.0.2/src/skin/ui.dynatree.css" />
+		<script type="text/javascript"
+			src="../../../lib/jQuery/jquery-1.7.2.js"></script>
+		<script type="text/javascript"
+			src="../../../lib/jQuery/jquery.form.js"></script>
+		<script type="text/javascript"
+			src="../../../lib/jQuery/jquery.json-2.2.js"></script>
+		<script type="text/javascript"
+			src="../../../lib/jQuery/jquery-ui-1.8.22.custom.min.js"></script>
+		<script type="text/javascript"
+			src="../../../lib/OpenLayers/OpenLayers-min.js"></script>
+		<script type="text/javascript"
+			src="../../../lib/GeoGlobeSDK/GeoGlobeJS.min.js"></script>
+		<script type="text/javascript" src="../../../lib/select-1.0/select.js"></script>
+		<script type="text/javascript"
+			src="../../../lib/artDialog4.1.6/artDialog.js"></script>
+		<script type="text/javascript"
+			src="../../../lib/dynatree-1.0.2/src/jquery.dynatree.js"></script>
+		<script type="text/javascript" src="../../../js/Tianditu.js"></script>
+		<script type="text/javascript" src="../js/CarSrvconfig.js"></script>
+		<script type="text/javascript" src="../js/car-wfsconfig-edit.js"></script>
+	</head>
+	<body>
+		<div class="wrapper white94">
+			<div class="wfsconfig-box">
+				<div class="wfsconfig-box-title">
+					<span class="now-address"><a
+						href="../../scenario/page/scenario.html">地图管理</a>
+					</span>
+					<span>>></span>
+					<span><a href="car-wfsconfig.html">驾车配置</a>
+					</span>
+				</div>
+				<div class="wfsconfig-box-headline">
+					<span>驾车配置</span>
+				</div>
+				<div class="wfsconfig-box-table">
+					<form id="routeConfUpdateForm" method="post">
+						<table class="table ">
+							<tbody>
+								<tr>
+									<td class="register" colspan="5">
+										提示：此驾车服务配置信息用于驾车查询线路结果
+									</td>
+								</tr>
+								<tr>
+									<td colspan="5">
+										<span class="url-type" id="urltype"> <input
+												type="radio" name="url_type" checked="checked" urlType="tdt" />
+											天地图服务 <input type="radio" name="url_type" urlType="rs" /> 吉奥服务 </span>
+									</td>
+								</tr>
+								<tr class="qh">
+									<td colspan="5">
+										<table class="childTable">
+											<tr>
+												<td class="label">
+													<label>
+														驾车服务地址：
+													</label>
+												</td>
+												<td class="tdt-td">
+													<span class="shadow-c"> <span class="shadow-left">&nbsp;</span>
+														<input id="tdt-url" type="text" class="shadow"> <span
+														class="shadow-right">&nbsp;</span> </span>
+													<span class="required">*</span>
+												</td>
+											</tr>
+										</table>
+										<table class="childTable">
+											<tr>
+												<td class="label">
+													<label>
+														驾车服务地址：
+													</label>
+												</td>
+												<td class="rs-td">
+													<span class="shadow-c"> <span class="shadow-left">&nbsp;</span>
+														<input id="rs-url" type="text" class="shadow"> <span
+														class="shadow-right">&nbsp;</span> </span>
+													<button type="button" class="wfsconfig-button"
+														onclick="getRouteServiceInfo()">
+														获取服务信息
+													</button>
+													<span class="required">*</span>
+												</td>
+											</tr>
+											<tr>
+												<td class="label">
+													<label>
+														图层：
+													</label>
+												</td>
+												<td>
+													<select id="rs-layer" class="shadow">
+													</select>
+													<span class="required">*</span>
+												</td>
+
+											</tr>
+										</table>
+									</td>
+								</tr>
+								<tr class="car-button">
+									<td></td>
+									<td>
+										<input id="sysconf-id" type="hidden" name="sysconf.id" />
+										<input id="sysconf-argsName" type="hidden"
+											name="sysconf.argsName" />
+										<input id="sysconf-argsValue" type="hidden"
+											name="sysconf.argsValue" />
+										<input id="sysconf-argsDesc" type="hidden"
+											name="sysconf.argsDesc" />
+										<input class="btn" type="button" onclick="resetCarSrvConf();"
+											value="重置" />
+										<input class="btn" type="button" onclick="saveRouteconfig();"
+											value="保存" />
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</form>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
+
+
+
+
+

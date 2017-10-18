@@ -1,0 +1,204 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>sar-add.html</title>
+		<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+		<meta http-equiv="description" content="this is my page">
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta http-equiv="pragram" content="no-cache">
+		<meta http-equiv="expires" content="0">
+		<link rel="stylesheet" type="text/css" href="../../../css/reset.css" />
+		<link rel="stylesheet" type="text/css" href="../../../css/common.css" />
+		<link rel="stylesheet" type="text/css" href="../../../css/inc.css" />
+		<link rel="stylesheet" type="text/css" href="../css/sar.css" />
+		<link rel="stylesheet" type="text/css" href="../../../lib/artDialog4.1.6/skins/default.css" />
+		<link rel="stylesheet" type="text/css" href="../../../lib/dynatree-1.0.2/src/skin/ui.dynatree.css"/>
+		<link rel="stylesheet" type="text/css" href="../../../lib/select-1.0/skins/css/css.css"/>
+		<!--
+		<script type="text/javascript" src="../../../lib/jQuery/jquery-1.7.2.min.js"></script>
+		  -->
+		<script type="text/javascript" src="../../../lib/artDialog4.1.6/artDialog.js"></script>
+		<script type="text/javascript" src="../../../lib/jQuery/jquery-1.7.2.js"></script>
+		<script type="text/javascript" src="../../../lib/jQuery/jquery.form.js"></script>
+		<script type="text/javascript" src="../../../lib/jQuery/jquery-ui-1.8.22.custom.min.js"></script>
+		
+		<script type="text/javascript" src="../../../lib/dynatree-1.0.2/src/jquery.dynatree.js"></script>
+		<script type="text/javascript" src="../../../lib/select-1.0/select.js"></script>
+		
+		<script type="text/javascript" src="../../../js/Tianditu.js"></script>
+		<script type="text/javascript" src="../js/Sar.js"></script>
+		<script type="text/javascript" src="../js/sar-add.js"></script>
+		<script type="text/javascript">
+			Tianditu.showLevel(2,"添加行政区划","map/sar/page/sar-add.html");
+		</script>
+	</head>
+	<body>
+		<div class="wrapper white94">
+			<div class="sar-box">
+				<div class="sar-box-title">
+					<span class="now-address"><a href="sar.html">行政区划</a></span>
+					<span>>></span>
+					<span>添加行政区</span>
+				</div>
+				<div class="sar-box-table">
+					<form id="sarAddForm" method="post">
+						<table class="table">
+							<tr>
+								<td  class="label">
+									<label>
+										区域编码:
+									</label>
+								</td>
+								<td>
+									<span class="shadow-c">
+										<span class="shadow-left">&nbsp;</span>
+										<input id="sar-code" name="sar.code" class="shadow" />
+										<span class="shadow-right">&nbsp;</span>
+									</span>
+									<span class="required">*</span>
+								</td>
+							</tr>
+							<tr>
+								<td class="label">
+									<label>
+										区域名称:
+									</label>
+								</td>
+								<td>
+									<span class="shadow-c">
+										<span class="shadow-left">&nbsp;</span>
+										<input id="sar-name" name="sar.areaName" class="shadow" />
+										<span class="shadow-right">&nbsp;</span>
+									</span>
+									<span class="required">*</span>
+								</td>
+							</tr>
+								<tr>
+								<td class="label">
+									<label for="sar-short">
+										名称简称:
+									</label>
+								</td>
+								<td>
+									<span class="shadow-c">
+										<span class="shadow-left">&nbsp;</span>
+										<input id="sar-short" name="sar.abbr" class="shadow" />
+										<span class="shadow-right">&nbsp;</span>
+									</span>
+									<span class="required">*</span>
+								</td>
+							</tr>
+								<tr>
+								<td class="label">
+									<label for="sar-prev">
+										上级行政区:
+									</label>
+								</td>
+								<td>
+									<input id="sar-prev">
+									 <span class="required"></span>
+								</td>
+							</tr>
+							<tr>
+								<td class="label">
+									<label for="sar-level">
+										显示等级:
+									</label>
+								</td>
+								<td>
+									<select id="sar-level" name="sar.level">
+										<option>1</option>
+										<option>2</option>
+										<option>3</option>
+										<option>4</option>
+										<option>5</option>
+									</select>
+									<span class="required"></span>
+								</td>
+							</tr>
+							<tr>
+								<td class="label">
+									<label for="sar-sort">
+										图层级别:
+									</label>
+								</td>
+								<td>
+									<select id="sar-sort" name="sar.zoom" >
+										<option value="1">1</option>
+										<option value="2">2</option>
+										<option value="3">3</option>
+										<option value="4">4</option>
+										<option value="5">5</option>
+										<option value="6">6</option>
+										<option value="7">7</option>
+										<option value="8">8</option>
+										<option value="9">9</option>
+										<option value="10">10</option>
+										<option value="11">11</option>
+										<option value="12">12</option>
+										<option value="13">13</option>
+										<option value="14">14</option>
+										<option value="15">15</option>
+										<option value="16">16</option>
+										<option value="17">17</option>
+										<option value="18">18</option>
+										<option value="19">19</option>
+										<option value="20">20</option>
+									</select>
+									<span class="required"></span>
+								</td>
+							</tr>
+							
+							<tr>
+								<td class="label">
+									<label>
+										坐<span class="em-1"></span><span class="em-1"></span>标:
+									</label>
+								</td>
+								<td>
+									<span class="label-c groupbox">经度</span>
+									<span class="shadow-c">
+										<span class="shadow-left">&nbsp;</span>
+										<input type="text" name="sar.lon" class="shadow" />
+										<span class="shadow-right">&nbsp;</span>
+									</span>
+									<span class="label-c lat groupbox">纬度</span>
+								 	<span class="shadow-c">
+										<span class="shadow-left">&nbsp;</span>
+										<input type="text" name="sar.lat" class="shadow"/>
+										<span class="shadow-right">&nbsp;</span>
+									</span>
+								</td>
+							</tr>
+							<tr>
+								<td class="label">
+									<label for="sar-resume">
+										描
+										<span class="em-1"></span><span class="em-1"></span>述:
+									</label>
+								</td>
+								<td>
+									<textarea id ="sar-resume" name="sar.brief" rows="5" cols="40"></textarea>
+									<span class="required"></span>
+								</td>
+							</tr>
+							<tr>
+							    <td></td>
+								<td>
+									<input class="btn" type="button" onclick="addSarForm()" value="确认提交" />
+									<input type="reset" class="btn" value="重置信息" />
+									<input type="button" class="btn" value="取消" onclick="TDT.go('sar.html');" />
+								</td>
+							</tr>
+						</table>
+					</form>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
+
+
+
+
+

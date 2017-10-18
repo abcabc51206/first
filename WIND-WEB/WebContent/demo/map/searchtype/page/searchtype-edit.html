@@ -1,0 +1,160 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>research-edit.html</title>
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="../../../css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="../../../css/common.css"/>
+	<link rel="stylesheet" type="text/css" href="../../../css/inc.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/searchtype.css"/>
+			<link rel="stylesheet" type="text/css" href="../../../lib/artDialog4.1.6/skins/default.css" />
+		<link rel="stylesheet" type="text/css" href="../../../lib/dynatree-1.0.2/src/skin/ui.dynatree.css"/>
+		<link rel="stylesheet" type="text/css" href="../../../lib/select-1.0/skins/css/css.css"/>
+		
+		<script type="text/javascript" src="../../../lib/artDialog4.1.6/artDialog.js"></script>
+		<script type="text/javascript" src="../../../lib/jQuery/jquery-1.7.2.js"></script>
+		<script type="text/javascript" src="../../../lib/jQuery/jquery.form.js"></script>
+		<script type="text/javascript" src="../../../lib/jQuery/jquery-ui-1.8.22.custom.min.js"></script>
+		
+		<script type="text/javascript" src="../../../lib/dynatree-1.0.2/src/jquery.dynatree.js"></script>
+		<script type="text/javascript" src="../../../lib/select-1.0/select.js"></script>
+		
+		<script type="text/javascript" src="../../../js/Tianditu.js"></script>
+		<script type="text/javascript" src="../js/SearchType.js"></script>
+		<script type="text/javascript" src="../js/searchType-edit.js"></script>
+		<script type="text/javascript">
+			Tianditu.showLevel(2,"编辑分类","map/searchtype/page/searchtype-edit.html");
+		</script>
+  </head>
+  
+  <body>
+	<div class="wrapper white94">
+		<div class="research-box">
+			<div class="research-box-title">
+				编辑分类
+			</div>
+			<div class="research-box-table">
+					<form id="uploadForm" method="post" enctype="multipart/form-data">
+						<table class="table">
+							<tr>
+								<td class="label">
+									<label>
+										搜索类型图片:
+									</label>
+								</td>
+								<td>
+									<input type="file" name="file" />
+									<input type="button" value="上传"
+										onclick="uploadPic('uploadForm');" />
+									<span class="required"></span>
+									<input type="hidden" id="file-name" name="fileName" />
+									<input type="hidden" id="file-type" name="fileType" />
+								</td>
+							</tr>
+							<tr>
+								<td class="label">
+								</td>
+								<td>
+									<input type="hidden" id="file-id" name="fileId" />
+									<img id="pic-src" width="20" height="20"
+										src="../images/zwtp.jpg" />
+									<span class="validate-tip">（图片格式为jpg|jpeg|png。）</span>
+								</td>
+							</tr>
+						</table>
+					</form>
+					<form id="searchTypeUpdateForm" method="post">
+						<table class="table">
+							<tr>
+								<td class="label">
+									<label for="research-name">
+										分类编码:
+									</label>
+								</td>
+								<td>
+								<span class="shadow-c">
+									<span class="shadow-left">&nbsp;</span>
+									<input id="searchType-code" name="searchType.code" class="shadow" />
+									<span class="shadow-right">&nbsp;</span>
+								</span>
+									<span class="required"></span>
+								</td>
+							</tr>
+							<tr>
+								<td class="label">
+									<label for="research-name">
+										分类名称:
+									</label>
+								</td>
+								<td>
+								<span class="shadow-c">
+									<span class="shadow-left">&nbsp;</span>
+									<input id="searchType-chName" name="searchType.chName" class="shadow" />
+									<span class="shadow-right">&nbsp;</span>
+								</span>
+									<span class="required"></span>
+								</td>
+							</tr>
+							<tr>
+								<td class="label">
+									<label for="searchType-parentId">
+										上级分类:
+									</label>
+								</td>
+								<td>
+									<input id="searchType-parentId" >
+								</td>
+							</tr>
+									<tr>
+								<td class="label">
+									<label for="searchType-level">
+										等
+										<span class="em-1"></span><span class="em-1"></span>级:
+									</label>
+								</td>
+								<td>
+									<select id="searchType-level" name="searchType.level">
+										<option>1</option>
+										<option>2</option>
+										<option>3</option>
+										<option>4</option>
+									</select>
+									<span class="required"></span>
+									
+								</td>
+							</tr>
+							<tr>
+								<td class="label">
+									<label for="searchType-remark">
+										备
+										<span class="em-1"></span><span class="em-1"></span>注:
+									</label>
+								</td>
+								<td>
+									<textarea id="searchType-remark" name="searchType.remark"
+										class="shadow" rows="5" cols="60"></textarea>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<input type="hidden" id="searchType-file-id" name="searchType.fileId"/>
+									<input type="hidden" id="searchType-id" name="searchType.id"/>
+									<input type="hidden" id="searchType-sort" name="searchType.sort"/>
+									<input class="btn" type="button" onclick="editSearchType()"
+										value="保存" />
+									<span class="em-1"></span>
+									<input type="reset" class="btn" value="重置信息" />
+									<span class="em-1"></span>
+									<input type="button" class="btn" value="取消"
+										onclick="TDT.go('searchtype.html');" />
+								</td>
+							</tr>
+						</table>
+					</form>
+			</div>
+		</div>
+	</div>
+  </body>
+</html>

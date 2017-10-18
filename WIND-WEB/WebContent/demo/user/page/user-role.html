@@ -1,0 +1,121 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>user-role.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="../../css/reset.css" />
+	<link rel="stylesheet" type="text/css" href="../../css/common.css" />
+	<link rel="stylesheet" type="text/css" href="../../css/inc.css" />
+	<link rel="stylesheet" type="text/css" href="../css/user.css" />
+	<link rel="stylesheet" type="text/css" href="../../css/modify-jQuery.css" />
+	
+	<script type="text/javascript" src="../../lib/jQuery/jquery-1.7.2.js"></script>
+	<script type="text/javascript" src="../../lib/jQuery/jquery.form.js"></script>
+	<script type="text/javascript" src="../../lib/jQuery/jquery-ui-1.8.22.custom.min.js"></script>
+
+	<link rel="stylesheet" type="text/css"
+		href="../../lib/dynatree-1.0.2/src/skin/ui.dynatree.css" />
+	<script type="text/javascript"
+		src="../../lib/dynatree-1.0.2/src/jquery.dynatree.min.js"></script>
+	<link rel="stylesheet" type="text/css"
+		href="../../lib/artDialog4.1.6/skins/default.css" />
+	<script type="text/javascript"
+		src="../../lib/artDialog4.1.6/artDialog.js"></script>
+	<script type="text/javascript" src="../../js/Tianditu.js"></script>
+	<script type="text/javascript" src="../js/User.js"></script>
+	<script type="text/javascript" src="../js/Role.js"></script>
+	<script type="text/javascript" src="../js/user-role-list.js"></script>
+
+  </head>
+  
+  <body>
+	<div class="wrapper white94">
+		<div class="user-box">
+			<div class="user-box-title">
+				用户角色管理
+				<span style="margin-left: 360px;"><label>当前用户：</label><span id="currUserLoginName"></span></span>
+			</div>
+			<div class="user-box-table">
+				<table class="list">
+						<caption>
+							<div class="groupbox">
+								<div class="fleft">
+									<input type="button" class="btn" value="授予用户"
+										onclick="authorizeRoleToUser()" />
+									<input type="button" class="btn" value="返回" onclick="Tianditu.go('user.html')"/>
+								</div>
+							</div>
+						</caption>
+						<thead>
+							<tr>
+								<th class="checkth">
+									<input id="chooseall" type="checkbox"
+										onclick="TDT.chooseall(this,'userRoleList')" />
+								</th>
+								<th class="nameth">
+									角色名称
+								</th>
+								<th class="statusth">
+									角色描述
+								</th>
+								<th class="companyth">
+									是否启用
+								</th>
+								<th class="actionth">
+									操作
+								</th>
+							</tr>
+						</thead>
+						<tbody id="userRoleTemplate" style="display: none;">
+							<tr rowid="%{rowid}%" class="%{class}%">
+								<td>
+									<input type="checkbox" %{checked}%
+										onclick="TDT.brightShow(this, 'userRoleList');" />
+								</td>
+								<td name="roleName">
+									%{roleName}%
+								</td>
+								<td>
+									%{roleRemark}%
+								</td>
+								<td>
+									%{roleStatus}%
+								</td>
+								<td>
+									<a class="action-btn action-authorize" href="javascript:void(0);"
+										onclick="authorizePermToRole(this)">授权</a>
+								</td>
+							</tr>
+						</tbody>
+
+						<tbody id="userRoleList">
+						</tbody>
+
+					</table>
+			</div>
+		</div>
+	</div>
+	<div id="role-panel" class="hide-dialog">
+		<div class="normal-text">
+			当前角色:
+			<span class="bold" id="currRoleName"></span>
+		</div>
+		<div class="tree-panel">
+			<form id="rolePermForm" method="post">
+				<div class="tree-title">
+					<div class="tree-innertitle">
+						功能列表
+					</div>
+				</div>
+				<div class="tree-container" id="tree-container">
+				</div>
+				<input type="hidden" id="roleId" name="roleId"/>
+				<input type="hidden" id="permIds" name="permIds"/>
+			</form>
+		</div>
+	</div>
+  </body>
+</html>

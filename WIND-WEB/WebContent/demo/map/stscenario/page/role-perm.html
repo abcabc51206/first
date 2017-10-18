@@ -1,0 +1,99 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>role-perm.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="../../../css/reset.css" />
+	<link rel="stylesheet" type="text/css" href="../../../css/common.css" />
+	<link rel="stylesheet" type="text/css" href="../../../css/inc.css" />
+	<link rel="stylesheet" type="text/css" href="../../../user/css/user.css" />
+	
+	<script type="text/javascript" src="../../../lib/jQuery/jquery-1.7.2.js"></script>
+	<script type="text/javascript" src="../../../lib/jQuery/jquery.form.js"></script>
+	<script type="text/javascript" src="../../../lib/jQuery/jquery-ui-1.8.22.custom.min.js"></script>
+
+	<link rel="stylesheet" type="text/css"
+		href="../../../lib/artDialog4.1.6/skins/default.css" />
+	<script type="text/javascript"
+		src="../../../lib/artDialog4.1.6/artDialog.js"></script>
+	<script type="text/javascript" src="../../../js/Tianditu.js"></script>
+	<script type="text/javascript" src="../js/Stscenario.js"></script>
+	<script type="text/javascript" src="../js/role-perm.js"></script>
+
+  </head>
+  
+  <body>
+	<div class="wrapper white94">
+		<div class="user-box">
+			<div class="user-box-title">
+				<span class="now-address"><a href="../../scenario/page/scenario.html">地图管理</a></span>
+				<span>>></span>
+				<span><a href="stscenario.html">专题地图</a></span>
+				<span>>></span>
+				<span>角色权限</span>
+				<span style="margin-left: 300px;"><label>当前专题方案：</label><span id="currStsName"></span></span>
+			</div>
+			<div class="user-box-table">
+				<table class="list">
+						<caption>
+							<div class="groupbox">
+								<div class="fleft">
+									<input type="button" class="btn" value="授予角色"
+										onclick="authorizeStsToRole()" />
+									<input type="button" class="btn" value="返回" onclick="Tianditu.go('stscenario.html')"/>
+								</div>
+								<div class="fright">
+									<input type="search fleft" class="search" onfocus="onFocus()" value="请输入关键字"/>
+									<button type="button" class="btn searchbtn" onclick="search()">搜索</button>
+								</div>
+							</div>
+						</caption>
+					<thead>
+						<tr>
+							<th class="checkth" width="40px;">
+								<input id="chooseall" type="checkbox"
+									onclick="TDT.chooseall(this,'roleList')" />
+							</th>
+							<th class="nameth">
+								角色名称
+							</th>
+							<th class="statusth">
+								角色描述
+							</th>
+						</tr>
+					</thead>
+					<tbody id="roleTemplate" style="display: none;">
+						<tr rowid="%{rowid}%" class="%{class}%">
+							<td>
+								<input type="checkbox" %{checked}%
+									onclick="TDT.brightShow(this, 'roleList');" />
+							</td>
+							<td name="roleName">
+								%{roleName}%
+							</td>
+							<td>
+								%{roleRemark}%
+							</td>
+						</tr>
+					</tbody>
+
+					<tbody id="roleList">
+					</tbody>
+				
+					<tbody style="display: none;" id="noData">
+						<tr>
+							<td colspan="3">
+								暂无记录
+							</td>
+						</tr>
+					</tbody>
+
+					</table>
+			</div>
+		</div>
+	</div>
+  </body>
+</html>

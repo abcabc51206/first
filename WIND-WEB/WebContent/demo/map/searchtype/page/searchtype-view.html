@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>research-view.html</title>
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="../../../css/reset.css"/>
+	<link rel="stylesheet" type="text/css" href="../../../css/common.css"/>
+	<link rel="stylesheet" type="text/css" href="../../../css/inc.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/searchtype.css"/>
+	<script type="text/javascript" src="../../../lib/jQuery/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" src="../../../js/Tianditu.js"></script>
+	
+		<script type="text/javascript" src="../js/SearchType.js"></script>
+	<script type="text/javascript" src="../js/searchType-view.js"></script>
+	<script type="text/javascript">
+		Tianditu.showLevel(2,"查看分类","map/searchtype/page/searchtype-view.html");
+	</script>
+  </head>
+  
+  <body>
+	<div class="wrapper white94">
+		<div class="research-box">
+			<div class="research-box-title">
+				查看分类详情
+			</div>
+			<div class="research-box-table">
+				<table class="table">
+					<tr><td class="label"><img id="pic-src" width="20" height="20" src="../images/zwtp.jpg"/></td><td></td></tr>
+					<tr><td class="label"><label for="research-name">分类编码:</label></td><td><span class="normal-text" id="classCode"></span></td></tr>
+					<tr><td class="label"><label for="research-name">分类名称:</label></td><td><span class="normal-text" id="chName"></span></td></tr>
+					<tr><td class="label"><label for="research-sort">上级分类:</label></td><td><span class="normal-text" id="parentcnName"></span></td></tr>
+					<tr><td class="label"><label for="research-level">等<span class="em-1"></span><span class="em-1"></span>级:</label></td><td><span class="normal-text" id="level"></span></td></tr>
+					<tr><td class="tlabel"><label for="research-brief">备<span class="em-1"></span><span class="em-1"></span>注:</label></td><td><span class="normal-text" id="remark"></span></td></tr>
+					<tfoot>
+						<tr>
+							<td colspan="2" >
+								<input type="button" class="btn" value="返回" onclick="TDT.go('searchtype.html');"/>
+							</td>
+						</tr>
+					</tfoot>
+				</table>
+			</div>
+		</div>
+	</div>
+  </body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>系统邮箱配置</title>
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="../../css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/common.css"/>
+	<link rel="stylesheet" type="text/css" href="../../css/inc.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/sysconf.css"/>
+	<link rel="stylesheet" type="text/css" href="../../lib/artDialog4.1.6/skins/default.css" />
+	<script type="text/javascript" src="../../lib/artDialog4.1.6/artDialog.js"></script>
+	<script type="text/javascript" src="../../lib/jQuery/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" src="../../lib/jQuery/jquery.form.js"></script>
+	<script type="text/javascript" src="../../lib/jQuery/jquery.json-2.2.js"></script>
+	<script type="text/javascript" src="../../js/Tianditu.js"></script>
+	<script type="text/javascript" src="../js/Sysconf.js"></script>
+	<script type="text/javascript" src="../js/sys-mail-conf.js"></script>
+	<script type="text/javascript">
+		Tianditu.showLevel(2,"邮箱配置","sysconf/page/sys-mail-conf.html");
+	</script>
+  </head>
+  
+  <body>
+	<div class="wrapper white94">
+		<div class="sysconf-box">
+			<div class="sysconf-box-title">
+				邮箱配置
+			</div>
+			<div class="sysconf-box-table">
+				<table class="table">
+					<tr>
+						<td class="label">
+							<label>
+								系统邮箱主机地址：
+							</label>
+						</td>
+						<td>
+							<span class="shadow-c">
+								<span class="shadow-left">&nbsp;</span>
+								<input id="mailServerHost" class="shadow" />
+								<span class="shadow-right">&nbsp;</span>
+							</span>
+						</td>
+					</tr>
+					<tr>
+						<td class="label">
+							<label>
+								系统邮箱主机端口号：
+							</label>
+						</td>
+						<td>
+							<span class="shadow-c">
+								<span class="shadow-left">&nbsp;</span>
+								<input id="mailServerPort" class="shadow" />
+								<span class="shadow-right">&nbsp;</span>
+							</span>
+						</td>
+					</tr>
+					<tr>
+						<td class="label">
+							<label>
+								主机验证：
+							</label>
+						</td>
+						<td>
+						<span class="shadow-c">
+							<select id="isValidate">
+								<option value="true">是</option>
+								<option value="false" selected="selected">否</option>
+							</select>
+						</span>
+						</td>
+					</tr>
+					<tr>
+						<td class="label">
+							<label>
+								启用状态：
+							</label>
+						</td>
+						<td>
+						<span class="shadow-c">
+							<select id="isEnable">
+								<option value="true" selected="selected">是</option>
+								<option value="false">否</option>
+							</select>
+						</span>
+						</td>
+					</tr>
+					<tr>
+						<td class="label">
+							<label>
+								系统邮箱用户名：
+							</label>
+						</td>
+						<td>
+							<span class="shadow-c">
+								<span class="shadow-left">&nbsp;</span>
+								<input id="userName" class="shadow" />
+								<span class="shadow-right">&nbsp;</span>
+							</span>
+						</td>
+					</tr>
+					<tr>
+						<td class="label">
+							<label>
+								系统邮箱密码：
+							</label>
+						</td>
+						<td>
+							<span class="shadow-c">
+								<span class="shadow-left">&nbsp;</span>
+								<input id="password" class="shadow" />
+								<span class="shadow-right">&nbsp;</span>
+							</span>
+						</td>
+					</tr>
+					<tr>
+						<td class="label">
+							<label>
+								邮件标题前缀：
+							</label>
+						</td>
+						<td>
+							<span class="shadow-c">
+								<span class="shadow-left">&nbsp;</span>
+								<input id="subject" class="shadow" />
+								<span class="shadow-right">&nbsp;</span>
+							</span>
+						</td>
+					</tr>
+					<tr>
+						<td class="label">
+							<label>
+								管理员邮箱地址：
+							</label>
+						</td>
+						<td>
+							<span class="shadow-c">
+								<span class="shadow-left">&nbsp;</span>
+								<input id="adminEmails" class="shadow" />
+								<span class="shadow-right">&nbsp;</span>
+							</span>
+							<span class="remark">多个邮箱地址以逗号分隔。</span>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2">
+							<input type="hidden" id="sysconf-id" name="sysconf.id"/>
+							<input type="hidden" id="sysconf-name" name="sysconf.argsName"/>
+							<span class="em-1"></span>
+							<input type="button" class="btn" value="重置" onclick="resetSysMailConf()"/>
+							<input class="btn" type="button" onclick="saveSysMailConf()"
+								value="保存" />
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+  </body>
+</html>

@@ -1,0 +1,207 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>user.html</title>
+
+		<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+		<meta http-equiv="description" content="this is my page">
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<link rel="stylesheet" type="text/css" href="../../css/reset.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/common.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/inc.css" />
+
+		<script type="text/javascript" src="../../lib/jQuery/jquery-1.7.2.js"></script>
+		<script type="text/javascript" src="../../lib/jQuery/jquery.form.js"></script>
+
+		<link rel="stylesheet" type="text/css"
+			href="../../lib/jQuery/css/smoothness/jquery-ui-1.8.22.custom.css" />
+		<script type="text/javascript"
+			src="../../lib/jQuery/jquery-ui-1.8.22.custom.min.js"></script>
+
+		<link rel="stylesheet" type="text/css"
+			href="../../lib/artDialog4.1.6/skins/default.css" />
+		<script type="text/javascript"
+			src="../../lib/artDialog4.1.6/artDialog.js"></script>
+
+		<link rel="stylesheet" type="text/css"
+			href="../../lib/dynatree-1.0.2/src/skin/ui.dynatree.css" />
+		<script type="text/javascript"
+			src="../../lib/dynatree-1.0.2/src/jquery.dynatree.min.js"></script>
+
+		<link rel="stylesheet" type="text/css"
+			href="../../lib/select-1.0/skins/css/css.css" />
+		<script type="text/javascript" src="../../lib/select-1.0/select.js"></script>
+
+		<script type="text/javascript" src="../../js/Tianditu.js"></script>
+
+		<link rel="stylesheet" type="text/css" href="../css/user.css" />
+		<script type="text/javascript" src="../js/Organization.js"></script>
+		<script type="text/javascript" src="../js/User.js"></script>
+		<script type="text/javascript" src="../js/user-edit.js"></script>
+		<script type="text/javascript">
+		Tianditu.showLevel(2,"编辑用户","user/page/user-edit.html");
+	</script>
+	</head>
+
+	<body>
+		<div class="wrapper white94">
+			<div class="user-box">
+				<div class="user-box-title">
+					编辑用户
+				</div>
+				<div class="user-box-table">
+					<form id="userUpdateForm" method="post">
+						<table class="table">
+							<tr>
+								<td class="label">
+									<label for="user-loginname">
+										登录账号:
+									</label>
+								</td>
+								<td>
+									<span id="user-loginname" style="color:#000;"></span>&nbsp&nbsp&nbsp
+									<a class="modify-action" href="javascript:void(0)" onclick="modifyPwd()">修改密码?</a>
+								</td>
+							</tr>
+							<tr>
+								<td class="label">
+									<label for="user-userEmail">
+										电子邮箱:
+									</label>
+								</td>
+								<td>
+									<span class="shadow-c">
+										<span class="shadow-left">&nbsp;</span>
+										<input id="user-userEmail" type="text" name="user.userInfo.userEmail" class="shadow"/>
+										<span class="shadow-right">&nbsp;</span>
+									</span>
+									<span class="required"></span>
+								</td>
+							</tr>
+							<tr>
+								<td class="label">
+									<label for="user-org">
+										所属机构:
+									</label>
+								</td>
+								<td>
+									<input id="user-org" />
+									<span class="required"></span>
+								</td>
+							</tr>
+							<tr>
+								<td class="label">
+									<label for="user-status">
+										状
+										<span class="em-1"></span><span class="em-1"></span>态:
+									</label>
+								</td>
+								<td>
+									<label>
+										<input checked="checked" type="radio" name="user.userUsesMark"
+											value="1" />
+										启用
+									</label>
+									<label>
+										<input type="radio" name="user.userUsesMark" value="0" />
+										停用
+									</label>
+								</td>
+							</tr>
+							<tr>
+								<td class="label">
+									<label for="user-date">
+										有效期限:
+									</label>
+								</td>
+								<td>
+									<span class="label-c">从</span>
+									<span class="shadow-c">
+										<span class="shadow-left">&nbsp;</span>
+										<input id="user-userEnabledTime" name="user.userEnabledTime" style="min-width: 100px;"  class="shadow datefrom" />
+										<span class="shadow-right">&nbsp;</span>
+									</span>
+								
+									<span class="label-c lat">到</span>
+									<span class="shadow-c">
+										<span class="shadow-left">&nbsp;</span>
+										<input id="user-userInvalidTime" name="user.userInvalidTime" style="min-width: 100px;"  class="shadow dateto" />
+										<span class="shadow-right">&nbsp;</span>
+									</span>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<input type="hidden" id="user-id" name="user.userId"/>
+									<input type="button" class="btn" value="保存"
+										onclick="saveUser()" />
+									<span class="em-1"></span>
+									<input type="reset" class="btn" value="重置" />
+									<span class="em-1"></span>
+									<input type="button" class="btn" value="取消"
+										onclick="TDT.go('user.html');" />
+								</td>
+							</tr>
+						</table>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div id="modify-password" class="hide-dialog">
+			<form id="pwdUpdateForm" method="post">
+				<table class="table">
+					<tr>
+						<td class="label">
+							<label for="user-oldPwd">
+								原
+								<span class="span.em-1-2"></span>密
+								<span class="span.em-1-2"></span>码:
+							</label>
+						</td>
+						<td>
+							<span class="shadow-c">
+								<span class="shadow-left">&nbsp;</span>
+								<input type="password" id="user-oldPwd" name="user.userPassword" class="shadow" />
+								<span class="shadow-right">&nbsp;</span>
+							</span>
+							<span class="required"></span>
+						</td>
+					</tr>
+					<tr>
+						<td class="label">
+							<label for="user-loginname">
+								新
+								<span class="span.em-1-2"></span>密
+								<span class="span.em-1-2"></span>码:
+							</label>
+						</td>
+						<td>
+							<span class="shadow-c">
+								<span class="shadow-left">&nbsp;</span>
+								<input type="password" id="user-newPwd" name="newPwd" class="shadow" />
+								<span class="shadow-right">&nbsp;</span>
+							</span>
+							<span class="required"></span>
+						</td>
+					</tr>
+					<tr>
+						<td class="label">
+							<label for="user-loginname">
+								确认密码:
+							</label>
+						</td>
+						<td>
+							<span class="shadow-c">
+								<span class="shadow-left">&nbsp;</span>
+								<input type="password" id="user-newPwd2" name="newPwd2" class="shadow" />
+								<span class="shadow-right">&nbsp;</span>
+								</span>
+							<span class="required"><span>
+						</td>
+					</tr>
+				</table>
+				<input type="hidden" id="m-user-loginname" name="user.userLoginName"/>
+				</from>
+		</div>
+	</body>
+</html>

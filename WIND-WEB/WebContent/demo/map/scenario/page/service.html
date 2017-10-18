@@ -1,0 +1,351 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>serivce.html</title>
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <link rel="StyleSheet" href="../../../lib/artDialog4.1.6/skins/default.css" type="text/css" />
+    <link rel="StyleSheet" href="../../../lib/tabletree/tabletree4j.css" type="text/css" />
+    <link rel="StyleSheet" href="../../../lib/jQuery/css/smoothness/jquery-ui-1.8.22.custom.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../css/reset.css"/>
+	<link rel="stylesheet" type="text/css" href="../../../css/common.css"/>
+	<link rel="stylesheet" type="text/css" href="../../../css/inc.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/private.css" />
+	<link rel="StyleSheet" href="../../../lib/NewForSDK/css/openLayers.css" type="text/css" />
+	<link rel="stylesheet" type="text/css" href="../css/tabletree.css" />
+	<link rel="stylesheet" type="text/css" href="../css/scenario.css"/>
+	
+	<script type="text/javascript" src="../../../lib/jQuery/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" src="../../../lib/jQuery/jquery.form.js"></script>
+	<script type="text/javascript" src="../../../lib/jQuery/jquery.json-2.2.js"></script>
+	<script type="text/javascript" src="../../../lib/jQuery/jquery-ui-1.8.22.custom.min.js"></script>
+	<script type="text/javascript" src="../../../lib/artDialog4.1.6/artDialog.js"></script>
+	
+	<script type="text/javascript" src="../../../lib/OpenLayers/OpenLayers-debug.js"></script>
+	<script type="text/javascript" src="../../../lib/GeoGlobeSDK/GeoGlobeJS.debug.js"></script>
+	<script type="text/javascript" src="../../../lib/NewForSDK/PanZoomBar.js"></script>
+	<script type="text/javascript" src="../../../lib/NewForSDK/buding.js"></script>
+	<script type="text/javascript" src="../../../lib/NewForSDK/MapHotfix.js"></script>
+	<script type="text/javascript" src="../../../lib/NewForSDK/BaseLayerGroupHotfix.js"></script>
+	<script type="text/javascript" src="../../../lib/NewForSDK/IE10patch.js"></script>
+	<script type="text/javascript" src="../../../lib/NewForSDK/GlobeTileCapabilities.js"></script>
+	<script type="text/javascript" src="../../../sysconf/js/Sysconf.js"></script>
+	    
+    <script type="text/javascript" src="../../js/scenario.js"></script>
+    <script type="text/javascript" src="../../js/ScenariosInfo.js"></script>
+	
+	<script type="text/javascript" src="../../../lib/tabletree/Core4j.js"></script>
+	<script type="text/javascript" src="../../../lib/tabletree/TableTree4j.js"></script>
+	
+	<script type="text/javascript" src="../../../js/Tianditu.js"></script>
+	<script type="text/javascript" src="../js/ServiceView.js"></script>
+	<script type="text/javascript" src="../js/Service.js"></script>
+	<script type="text/javascript" src="../js/service-list.js"></script>
+	<script type="text/javascript">
+		Tianditu.showLevel(2,"查看方案","map/scenario/page/service.html");
+	</script>
+	<style>
+	/*hack tableTree*/
+	#services table{
+		table-layout:auto;
+	}
+	</style>
+  </head>
+  
+  <body>
+  	<iframe class="iframeDialog"  id="iframeDialog"></iframe>
+	<div class="wrapper white94">
+		<div class="scenario-box content">
+			<div class="scenario-box-title">
+				<span>查看方案</span>
+				<button type="button" class="btn button groupbox" onclick="TDT.go('scenario.html');">返回</button>
+			</div>
+			<div class="scenario-box-table">
+				<div class="map-container" id="map"></div>
+				<div id="services"></div>
+			</div>
+		</div>
+	</div>
+	<div id="addServiceDia" style="display: none;">
+			<div class='service-add-source-wrap'>
+				<ul class='groupbox service-add-source-menu'>
+					<li class='selected' onclick="addOrcsw('add')">
+						手动添加
+						<input id="add" type="hidden"   value="add" />
+					</li>
+					<li onclick="addOrcsw('csw')">
+						服务列表
+						<input id="csw" type="hidden"  />
+					</li>
+				   </ul>
+				<form id="selectAddForm" method="post">
+					<div class='service-add-source-type selected'>
+						<span class='service-add-source-type-title'><img
+								src='../images/dzpe_jt.png' />类型选择</span>
+						<dl class='service-add-source-type-list' id="inputServiceList" >
+							
+						</dl>
+						<dl class='service-add-options'>
+							<dt class='config-content-item'>
+								<span>服务资源：</span>
+								<input id="userService-usSrvURL" class='cn-ipt' name="userService.usSrvURL" />
+								<input id="US_SRV_SC_ID" type="hidden"  name="userService.mapUserScenario.id" />
+								<input id="usSrvType" type="hidden"  name="userService.usSrvType" />
+								<input id="usSrvCap" type="hidden"  name="userService.usSrvCap"  />
+								<input type="button" value="验证资源" onclick="checkService()">
+								<span class="required">*</span>
+							</dt>
+							<!-- 
+							<dt class='config-content-item'>
+								<span>服务名称：</span>
+								<input class='cn-ipt' name="userService.usSrvName" />
+								<span  class="required">*</span>
+							</dt>
+							 -->
+							<dt class='config-content-item'>
+								<span>服务版本：</span>
+								<input id="userService-usSrvVersion" class='cn-ipt' name="userService.usSrvVersion" />
+								<span class="required">*</span>
+							</dt>
+						</dl>
+  						<dl class='service-add-options' id="selectLayer">
+						     <dt class='config-content-item'>
+									<span class="fl-label">选择图层：</span>
+									<div class="layer-list-wrap groupbox">
+										<table >
+										<tr id="layerlistTemple" style="display:none;">
+											<td>
+												<span class="fl-label layer-item"  layerid=%{layerid}% ><input class="selectLayer"  type="checkbox" checked=true /> <label>%{layername}%</label> <a href="javascript:void(0)" class="setLayer" >设置</a></span>
+											</td>
+										</tr>
+											<tbody id="layerlist">
+											</tbody>
+										</table>
+									</div>
+							 </dt>
+						  </dl>						
+					</div>
+				</form>
+				   
+					<div class='service-add-source-type'>
+						<dl>
+							<dt class='config-content-item service-add-source-search groupbox'>
+								<button id="searchCswBtn" type="button" class='aui_state_highlight'>
+									搜索
+								</button>
+								<input type="text" id="srvKeyword" class='cn-ipt' />
+							</dt>
+							<table class='service-add-source-type-table'>
+								<thead>
+									<th><input type='checkbox' name='c1' /></th>
+									<th>名称</th>
+									<th>地址</th>
+									<th>类型</th>
+									<th>版本</th>
+								</thead>
+								<tbody id="fromCSWTemplate" style="display: none;">
+									<tr class='%{even}%'>
+										<td>
+											<input type='checkbox' name="usSrvFlag" value="%{mdId}%" />
+											<input type="hidden" name="usSrvName"  value="%{serviceName}%" > 
+											<input type="hidden" name="usSrvURL"  value="%{serviceURL}%" >
+											<input type="hidden" name="usSrvType"  value="%{displayServiceType}%" >	
+											<input type="hidden" name="usSrvVersion" value="%{version}%" >	
+										</td>
+										<td>
+										%{serviceName}%
+										</td>
+										<td>
+										%{serviceURL}%
+										</td>
+										<td>
+										%{displayServiceType}%
+										</td>
+										<td>
+										%{version}% 
+										</td>
+									</tr>
+								</tbody>
+								<tbody id="fromCSWList">
+								</tbody>
+								<tbody id="noData" style="display: none;">
+									<tr>
+										<td colspan="5">暂无记录！</td>
+									</tr>
+								</tbody>
+								<tfoot>
+									<tr><td colspan="5">
+										<div id="pager">
+									</div>
+									</td></tr>
+								</tfoot>
+							</table>
+						</dl>
+					</div>
+					
+			</div> 
+		<div id="inputServiceTemplate" style="display: none;">
+			<dt>
+				<label class='show-title'>
+					%{image}%
+					<input type="radio" onclick="inputValue(this)" name="userService.usSrvDisplayType" value="%{radioValue}%"/>
+					<input type="hidden" value="%{svrTypeName}%" >
+					<span>%{title}%</span>
+				</label>
+				<span class='description'>%{description}%</span>
+			</dt>
+		</div>
+		<div id="wfssetting" style="display: none;">
+			<div class='config-content-item groupbox'><span class='config-content-item-title'>服务名称:</span><span class='config-content-item-text' id="wfssetSrnName">%{srvName}%</span></div>
+			<div class='config-content-item groupbox'><span class='config-content-item-title'>服务类型:</span><span class='config-content-item-text' id="wfssetSrnType">%{srvType}%</span></div>
+			<div class='config-content-item groupbox'><span class='config-content-item-title'>服务地址:</span><span class='config-content-item-text' id="wfssetSrnURL">%{srvURL}%</span></div>
+			<div class='config-content-item groupbox'><span class='config-content-item-title'>图层列表:</span><span class='select'><select><option>请选择</option><option>图层1</option></select></span></div>
+			<div class='config-content-item groupbox'><span class='config-content-item-title'>图层名称:</span><input type='text' class='cn-ipt'/></div>
+			<div class='config-content-item groupbox'><span class='config-content-item-title'>是否显示:</span><label><input type='radio' name='r2' checked="checked"/>是</label><label><input type='radio' name='r2'/>否</label></div>
+			<div class='config-content-item groupbox'><span class='config-content-item-title'>查询字段:</span><span class='select'><select><option>请选择</option><option>图层1</option></select></span></div>
+			<div class='config-content-item groupbox'><span class='config-content-item-title'>显示字段:</span>
+				<div class='config-content-item-big-text'>
+					<ul class='groupbox service-config-attributes-tab'>
+						<li class='selected'>
+							列表显示
+						</li>
+						<li>
+							浮云显示
+						</li>
+					</ul>
+					<div class='service-config-attributes-content  selected'>
+						<div class='config-content-item'>
+							<span class='config-content-item-title'><label><input type='checkbox' name='c2'/>服务名称:</label></span><input type='text' class='cn-ipt' value='1'/>
+						</div>
+						<div class='config-content-item'>
+							<span class='config-content-item-title'><label><input type='checkbox' name='c2'/>服务名称:</label></span><input type='text' class='cn-ipt'/>
+						</div>
+						<div class='config-content-item'>
+							<span class='config-content-item-title'><label><input type='checkbox' name='c2'/>服务名称:</label></span><input type='text' class='cn-ipt'/>
+						</div>
+						<div class='config-content-item'>
+							<span class='config-content-item-title'><label><input type='checkbox' name='c2'/>服务名称:</label></span><input type='text' class='cn-ipt'/>
+						</div>
+						<div class='config-content-item'>
+							<span class='config-content-item-title'><label><input type='checkbox' name='c2'/>服务名称:</label></span><input type='text' class='cn-ipt'/>
+						</div>
+						<div class='config-content-item'>
+							<span class='config-content-item-title'><label><input type='checkbox' name='c2'/>服务名称:</label></span><input type='text' class='cn-ipt'/>
+						</div>
+					</div>
+					<div class='service-config-attributes-content'>
+						<div class='config-content-item'>
+							<span class='config-content-item-title'><label><input type='checkbox' name='c2'/>服务名称:</label></span><input type='text' class='cn-ipt'/>
+						</div>
+						<div class='config-content-item'>
+							<span class='config-content-item-title'><label><input type='checkbox' name='c2'/>服务名称:</label></span><input type='text' class='cn-ipt'/>
+						</div>
+						<div class='config-content-item'>
+							<span class='config-content-item-title'><label><input type='checkbox' name='c2'/>服务名称:</label></span><input type='text' class='cn-ipt'/>
+						</div>
+						<div class='config-content-item'>
+							<span class='config-content-item-title'><label><input type='checkbox' name='c2'/>服务名称:</label></span><input type='text' class='cn-ipt'/>
+						</div>
+						<div class='config-content-item'>
+							<span class='config-content-item-title'><label><input type='checkbox' name='c2'/>服务名称:</label></span><input type='text' class='cn-ipt'/>
+						</div>
+						<div class='config-content-item'>
+							<span class='config-content-item-title'><label><input type='checkbox' name='c2'/>服务名称:</label></span><input type='text' class='cn-ipt'/>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="ditusetting" style="display: none;">
+			<div class='config-content-item groupbox'><span class='config-content-item-title'>服务类型:</span><span class='config-content-item-text' id="dituSetSrnType">%{srvType}%</span></div>
+			<div class='config-content-item groupbox'><span class='config-content-item-title'>服务地址:</span><span class='config-content-item-text' id="dituSetSrnURL">%{srvURL}%</span></div>
+			<div class='config-content-item groupbox'><span class='config-content-item-title'>镜像地址:</span><span class='config-content-item-text'><textarea id="dituSetusSrvMirrorURL" name="usSrvMirrorURL" rows="2" cols="30" ></textarea></span></div>
+			<div class='config-content-item groupbox'><span class='config-content-item-title' style="margin-right: 56px;margin-top: 5px"></span><span class='config-content-item-text required' >*  多个镜像地址以分号;分隔</span></div>
+			<div class='config-content-item groupbox'><span class='config-content-item-title'>图层名称:</span><span class='config-content-item-text' id="dituSetlayername">%{srvType}%</span></div>
+			<div class='config-content-item groupbox'><span class='config-content-item-title'>图层别名:</span><input type='text'  class='cn-ipt' id="dituSetSrnName" /></div>
+			
+			<div class='config-content-item groupbox' style="height:100px;" id="layerlevel"><span class='config-content-item-title'>图层级别:</span><span class='config-content-item-text'>
+				<div style="border:1px #ccc solid; width:300px;height:100px;overflow:auto;">
+					<table class="children field">
+							<tr>
+								<td style="width:40px;background-image: none; background-attachment: scroll; background-repeat: repeat; background-position-x: 0%; background-position-y: 0%; background-size: auto; background-origin: padding-box; background-clip: border-box; background-color: rgb(240, 244, 247);">
+									<input type="checkbox" enabled="true" />
+								</td>
+								<td style="width:100px;background-image: none; background-attachment: scroll; background-repeat: repeat; background-position-x: 0%; background-position-y: 0%; background-size: auto; background-origin: padding-box; background-clip: border-box; background-color: rgb(240, 244, 247);">
+									图层级别
+								</td>
+							</tr>
+							<tbody id="showlayerlevelListTemplate" style="display: none;">
+								<tr>
+									<td>
+										<input type="checkbox" %{!islevelhidden}%  layerlevel="%{layerlevel}%" />
+									</td>
+									<td name="showTitle">%{layerlevel}%</td>
+								</tr>
+							</tbody>
+
+							<tbody id="showlayerlevelList"></tbody>
+
+					</table>				
+				</div>
+			</span></div>
+			<div class='config-content-item groupbox' id="dituSet-dimensions-div" style="display:none;"><span class='config-content-item-title'>时间版本:</span><span class='select' ><select id="dituSet-dimensions"></select></span></div>
+			<div class='config-content-item groupbox'><span class='config-content-item-title'>图片格式:</span><span class='select' ><select id="dituSet-imageformat"></select></span></div>
+			<div class='config-content-item groupbox'><span class='config-content-item-title'>是否显示:</span><label><input type='radio' name='visibility' value="true" checked="checked"/>是</label><label><input type='radio' value="false" name='visibility'/>否</label></div>
+			<div class='config-content-item groupbox'><span class='config-content-item-title'>
+				透明度:  <input type="text" id="dituTransp" name="opacity"  style="border:0; color:#f6931f; font-weight:bold;" >
+				<div id="slider-range-max" ></div>
+				<input id="jsonResult" type="hidden">
+			</div>
+		</div>
+		<div id="layersetting" style="display: none;">
+			<div class='config-content-item groupbox'><span class='config-content-item-title'>图层名称:</span><span class='config-content-item-text' id="setlayer-layername"></span></div>
+			<div class='config-content-item groupbox'><span class='config-content-item-title'>图层别名:</span><input type='text'  class='cn-ipt' id="setlayer-layeralias" /></div>
+			<div class='config-content-item groupbox' style="height:100px;" id="layerlevel"><span class='config-content-item-title'>图层级别:</span><span class='config-content-item-text'>
+				<div style="border:1px #ccc solid; width:300px;height:100px;overflow:auto;">
+					<table class="children field">
+							<tr>
+								<td style="width:40px;background-image: none; background-attachment: scroll; background-repeat: repeat; background-position-x: 0%; background-position-y: 0%; background-size: auto; background-origin: padding-box; background-clip: border-box; background-color: rgb(240, 244, 247);">
+									<input type="checkbox" enabled="true" />
+								</td>
+								<td style="width:100px;background-image: none; background-attachment: scroll; background-repeat: repeat; background-position-x: 0%; background-position-y: 0%; background-size: auto; background-origin: padding-box; background-clip: border-box; background-color: rgb(240, 244, 247);">
+									图层级别
+								</td>
+							</tr>
+							<!--  
+							<tbody id="showlayerlevelListTemplate" style="display: none;">
+								<tr>
+									<td>
+										<input type="checkbox" checked="%{!islevelhidden}%"  layerlevel="%{layerlevel}%" />
+									</td>
+									<td name="showTitle">%{layerlevel}%</td>
+								</tr>
+							</tbody>
+							-->
+							<tbody id="setlayer-layerlevel"></tbody>
+
+					</table>				
+				</div>
+			</span></div>
+			<div class='config-content-item groupbox' id="setlayer-dimensions-div" style="display:none;"><span class='config-content-item-title'>时间版本:</span><span class='select' ><select id="setlayer-dimensions"></select></span></div>
+			<div class='config-content-item groupbox'><span class='config-content-item-title'>图片格式:</span><span class='select'><select id="setlayer-imageformat"></select></span></div>
+			<div class='config-content-item groupbox'><span class='config-content-item-title'>
+				透明度:  <input type="text" id="setlayer-opacity" name="opacity"  style="border:0; color:#f6931f; font-weight:bold;" >
+				<div id="setlayer-opacity-slider" ></div>
+			</div>
+		</div>	
+		<div id="editSceDiv" style="display: none;">
+			<div id='editDiv'>
+				<div class='config-content'>
+				<div class='config-content-item groupbox'>
+					<label>
+					<span class='config-content-item-title'>名<span class='char2'></span>称:</span>
+					<input id='edit-Input' name='userScenario.usName' type='text' class='cn-ipt'>
+				</label></div>
+				</div>
+		   </div>
+		</div>
+	</div>
+  </body>
+</html>

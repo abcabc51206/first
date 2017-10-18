@@ -1,0 +1,336 @@
+.content{
+	padding:10px;
+	background:#fff;
+}
+.private-title{
+	position:relative;
+	height:40px;
+	line-height:40px;
+	margin-bottom:4px;
+	border-bottom:1px solid #ccc;
+}
+.private-title .show-title{
+	position:absolute;
+	margin:0 20px;
+	padding:0 20px;
+	border:1px solid #ccc;
+	border-bottom:0;
+	color:#369;
+	background:#fff;
+}
+.private-title .forms{
+	position: absolute;
+    right: 0;
+    top: 6px;
+}
+.private-title .forms *{
+	float:left;
+}
+.private-title .forms .btn{
+	margin:0 4px;
+	padding: 0 4px;
+	height:26px;
+	line-height:26px;
+	border:1px solid #bfbfbf;
+	background:url("../images/scenario_btn.png") repeat;
+}
+.private-title .forms select{
+	width:150px;
+	height:27px;
+	margin:0 4px;
+	padding:4px 0;
+	border:1px solid #ccc;
+	background:url("../images/input_shadow.png") no-repeat;
+}
+.private-title .forms label{
+	margin:0 4px;
+	line-height:22px;
+}
+.private-title .forms .search-ipt{
+	width:140px;
+	height:22px;
+	margin:0 4px;
+	padding:0 5px;
+	border:1px solid #ccc;
+	background:url("../images/input_shadow.png") no-repeat;
+}
+.private-title .forms .search-btn{
+	width:24px;
+	height:24px;
+	border:none;
+	background:url("../images/find.png") no-repeat;
+	cursor:pointer;
+}
+.downbtn-container{
+	position:relative;
+	z-index:20;
+	cursor:pointer;
+}
+.downbtn-container .downbtn-list{
+	position:absolute;
+	width:100%;
+	left:0;top:0px;
+	display:none;
+	z-index:200;
+}
+.downbtn-container.open{
+	z-index:21;
+}
+.downbtn-handler{
+	padding:6px 0;
+}
+.downbtn-container.open .downbtn-list{
+	display:block;
+	text-align:left;
+	z-index:201;
+}
+.downbtn-container.open .downbtn-handler{
+	visibility:hidden;
+}
+.downbtn-list-item{
+	float:left;
+	height:22px;
+	line-height:22px;
+	z-index:201;
+}
+.downbtn-list-item.last{
+	border-bottom:none;
+}
+.downbtn-list-item span{
+	float:left;
+	*float:none;
+	*zoom:1;
+}
+.downbtn-handler .icon{
+	padding:0 10px;
+}
+.downbtn-list-item .icon,.downbtn-handler .icon{
+	width:16px;
+	height:16px;
+	margin:2px 4px;
+	background-image:url("../images/scenario_icon.png");
+	background-repeat:no-repeat;
+	cursor:pointer;
+}
+.downbtn-list li.downbtn-list-item{
+	padding:0;
+	margin:0;
+	padding-top:0;
+	background:none;
+	color:#000;
+}
+.downbtn-list li.downbtn-list-item span{
+	color:#000;
+	top:0px;
+}
+.view .icon{
+	background-position:-159px 0;
+}
+.edit .icon{
+	background-position:0 0;
+}
+.delete .icon{
+	background-position:-64px 0;
+}
+.operate .icon{
+	background-position:-176px 0;
+}
+.setting .icon{
+	background-position:-95px 0;
+}
+.add-scen .icon{
+	background-position:-144px 0;
+}
+.add-serv .icon{
+	background-position:-127px 0;
+}
+.add-prserv .icon{
+	background-position:-111px 0;
+}
+.up .icon{
+	background-position:-0px -16px;
+	cursor: pointer;
+}
+.down .icon{
+	background-position:-79px 0;
+	cursor: pointer;
+}
+.top .icon{
+	background-position:-32px 0;
+	cursor: pointer;
+}
+.bottom .icon{
+	background-position:-16px 0;
+	cursor: pointer;
+}
+.map-container{
+	width:100%;
+	height:450px;
+	margin-bottom:4px;
+	background:#eee;
+}
+
+.config-content-item{
+	padding:4px 0;
+}
+.config-content-item .config-content-item-title{
+	float:left;
+	height:22px;
+	line-height:22px;
+	margin:0 4px;
+}
+.config-content-item .config-content-item-text{
+	float:left;
+	height:22px;
+	line-height:22px;
+	margin:0 4px;
+}
+.config-content-item-big-text{
+	float:left;
+}
+.config-content-item .cn-ipt{
+	width:400px;
+	height:14px;
+	padding:4px;
+	border:1px solid #ccc;
+	background:url("../images/input_shadow.png") no-repeat;
+}
+.config-content-item .select{
+	float:left;
+	width:158px;
+	height:22px;
+	border:1px solid #ccc;
+	*border:none;
+	background:url("../images/input_shadow.png") no-repeat;
+}
+.config-content-item .select select{
+	width:156px;
+	border:none;
+	background:none;
+}
+.config-content-item textarea{
+	border:1px solid #ccc;
+	background:url("../images/input_shadow.png") no-repeat;
+}
+.service-add-source-menu{
+	*width:736px;
+	border-bottom:1px solid #ccc;
+}
+.service-config-attributes-tab{
+	*width:280px;
+	border-bottom:1px solid #ccc;
+}
+.service-add-source-menu li{
+	position:relative;
+	top:1px;
+	float:left;
+	border:1px solid #ccc;
+	padding:0px 20px;
+	margin-left:20px;
+	line-height:40px;
+	color:#369;
+	cursor:pointer;
+}
+.service-config-attributes-tab li{
+	position:relative;
+	top:1px;
+	float:left;
+	border:1px solid #ccc;
+	padding:0px 10px;
+	margin-left:10px;
+	line-height:30px;
+	color:#369;
+	cursor:pointer;
+}
+.service-add-source-menu li.selected{
+	border-bottom:1px solid #fff;
+}
+.service-config-attributes-tab li.selected{
+	border-bottom:1px solid #fff;
+}
+.service-add-source-type{
+	display:none;
+	width:736px;
+}
+.service-add-source-type.selected{
+	display:block;
+}
+.service-config-attributes-content{
+	display:none;
+	overflow:hidden;
+	overflow-y:auto;
+	width:280px;
+	height:100px;
+}
+.service-config-attributes-content.selected{
+	display:block;
+}
+.service-add-source-type-title{
+	display:block;
+	margin:8px 0;
+}
+.service-add-source-type-list{
+	padding-top:1px;
+	overflow:hidden;
+	overflow-y:auto;
+}
+.service-add-source-type-list dt{
+	padding:6px 20px;
+	margin-top:-1px;
+	border:1px solid #ccc;
+	vertical-align:middle;
+}
+.service-add-source-type-list .show-title{
+	display:inline-block;
+	vertical-align:middle;
+}
+.service-add-source-type-list .show-title img,.service-add-source-type-list .show-title input,.service-add-source-type-list .show-title span{
+	vertical-align:middle;
+}
+.service-add-source-type-list .description{
+	display:inline-block;
+	width:500px;
+	line-height:1.2;
+	vertical-align:middle;
+	text-indent:2em;
+}
+.service-add-source-type-table{
+	width:100%;
+}
+.service-add-source-type-table th{
+	padding:4px 0;
+	text-align:center;
+	background:#ccc;
+	color:#000;
+}
+.service-add-source-type-table td{
+	padding:4px 0;
+	text-align:center;
+}
+.service-add-source-type-table tr.odd td{
+	background:#eee;
+}
+.service-add-options{
+	margin:4px 0;
+}
+.service-add-source-search{
+	margin:8px 0;
+}
+.service-add-source-search .select,.service-add-source-search input,.service-add-source-search button{
+	float:right;
+	margin:0 4px;
+}
+.config-content-item button.aui_state_highlight{
+	height:24px;
+	margin:0 4px;
+}
+.scenario-search-btn{
+	width:60px;
+	height: 25px;
+	line-height: 25px;
+	border: none;
+	background:url("../images/find.png") no-repeat;
+	color: #fff;
+	font-weight: bold;
+	cursor: pointer;
+}

@@ -1,0 +1,88 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>demoapp.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta http-equiv="pragram" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache, must-revalidate"> 
+    <meta http-equiv="expires" content="0"> 
+    <link rel="stylesheet" type="text/css" href="../../css/reset.css"/>
+	<link rel="stylesheet" type="text/css" href="../../css/common.css"/>
+	<link rel="stylesheet" type="text/css" href="../../css/inc.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/demoapp.css"/>
+	<link rel="stylesheet" type="text/css" href="../../lib/artDialog4.1.6/skins/default.css" />
+	<script type="text/javascript" src="../../lib/artDialog4.1.6/artDialog.js"></script>
+	<script type="text/javascript" src="../../lib/jQuery/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" src="../../js/Tianditu.js"></script>
+	<script type="text/javascript" src="../js/DemoApp.js"></script>
+	<script type="text/javascript" src="../js/demoapp-list.js"></script>
+	<script type="text/javascript">
+		Tianditu.showLevel(1,"示范应用","demoapp/page/demoapp.html");
+	</script>
+  </head>
+  
+  <body>
+	<div class="wrapper white94">
+		<div class="demoapp-box">
+			<div class="demoapp-box-title">
+				<span class="now-address"><a href="../../news/page/news.html">内容管理</a></span>
+				<span>>></span>
+				<span><a href="demoapp.html">示范应用</a></span>
+			</div>
+			<div class="demoapp-box-headline">
+				<span>示范应用</span>
+			</div>
+			<div class="demoapp-box-table">
+				<table class="list"> 
+					<caption>
+						<div class="groupbox">
+							<div class="fright">
+								<input type="search fleft" class="search"/><button type="button" class="btn searchbtn" onclick="search()">搜索</button>
+							</div>
+							<div class="fleft">
+								<button type="button" class="btn" onclick="TDT.go('demoapp-add.html')">添加</button><button type="button" class="btn" onclick="delDemoApp()">删除</button>
+							</div>
+						</div>
+					</caption>
+					<thead>
+						<tr><th class="checkth" width="5%"><input id="chooseall" type="checkbox" onclick="TDT.chooseall(this,'demoAppList')"/></th><th class="nameth">标题</th><th class="companyth">链接地址</th><th class="dateth" width="14%">创建时间</th><th class="actionth" width="36%">操作</th></tr>
+					</thead>
+				
+				
+				
+					<tbody id="demoAppTemplate" style="display: none;">
+						<tr rowid="%{rowid}%" class="%{class}%">
+							<td><input type="checkbox" onclick="TDT.brightShow(this, 'demoAppList');"/></td><td>%{title}%</td><td>%{url}%</td><td>%{createTime}%</td>
+							<td><a class="action-btn action-view" href="javascript:void(0);" onclick="goViewDemoApp(this)">查看</a><a class="action-btn action-edit" href="javascript:void(0);" onclick="goEditDemoApp(this)">编辑</a><a class="action-btn action-stick" href="javascript:void(0);" onclick="upToTop(this)">置顶</a><a class="action-btn action-up" href="javascript:void(0);" onclick="up(this)">上移</a><a class="action-btn action-down" href="javascript:void(0);" onclick="down(this)">下移</a><a class="action-btn action-bottom" href="javascript:void(0);" onclick="downToBottom(this)">置底</a></td>
+						</tr>
+					</tbody>
+					
+					
+					<tbody id="demoAppList">
+					</tbody>
+					
+					<tbody id="noData" style="display: none;">
+						<tr>
+							<td colspan="5">暂无记录！</td>
+						</tr>
+					</tbody>
+					
+					
+					<tfoot>
+					<tr><td colspan="5">
+						<div id="pager">
+					</div>
+					</td></tr>
+					</tfoot>
+					
+					
+					
+				</table>
+			</div>
+		</div>
+	</div>
+  </body>
+</html>

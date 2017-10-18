@@ -1,0 +1,82 @@
+/**
+*
+*修改 openlayers 的css样式
+*/
+div.olMap {
+    z-index: 0;
+    padding: 0 !important;
+    margin: 0 !important;
+    /*cursor:url(../images/cur/openhand.cur),url(../images/cur/openhand.cur),auto !important;*/
+}
+
+div.olControlMousePosition {
+    bottom: 3px !important;
+    left: 10px !important;
+    display: block;
+    position: absolute;
+    font-family: Arial;
+    font-size: 12px;
+}
+
+.olControlScaleLine {
+   display: block;
+   position: absolute;
+   left: 10px;
+   bottom: 18px;
+   font-size: xx-small;
+}
+ /*鹰眼样式*/           
+.olControlOverviewMapMaximizeButton{
+	bottom:0px !important;
+}
+    
+/* 鹰眼样式 */
+.olControlOverviewMapElement {
+    background: #d6e3f2;
+    border-top: 2px solid #666;
+    border-left: 2px solid #666;
+}
+
+/*
+.olControlLayerSwitcher .layersDiv .baseLbl,
+.olControlLayerSwitcher .layersDiv .dataLbl {
+    margin-top: 3px;
+    margin-left: 3px;
+    margin-bottom: 3px;
+}
+
+.olControlLayerSwitcher .layersDiv .baseLayersDiv,
+.olControlLayerSwitcher .layersDiv .dataLayersDiv {
+    padding-left: 10px;
+}
+
+*/
+.olImageLoadError {
+    visibility:hidden;
+    opacity: 0;
+    filter: alpha(opacity=0); /* IE */
+}
+
+.olDragDown {
+    cursor:url(../images/cur/closedhand.cur),url(../images/cur/closedhand.cur),auto !important;
+}
+.olControlPanZoomBar  div{
+	 cursor:pointer;
+}
+.olFramedCloudPopupContent {
+    padding: 0 5px;
+    overflow: auto;
+    cursor:default;
+}
+.olPopupContent {
+    padding:5px;
+    overflow: auto;
+    cursor:default;
+} 
+.olPopup{
+	cursor:default;
+} 
+
+/*新增
+  下面样式 为 openlayers 2.12  新增样式
+*/

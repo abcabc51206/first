@@ -1,0 +1,171 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>wfsconfig.html</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=8" />
+		<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+		<meta http-equiv="description" content="this is my page">
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta http-equiv="pragram" content="no-cache">
+		<meta http-equiv="expires" content="0">
+		<link rel="stylesheet" type="text/css" href="../../../css/reset.css" />
+		<link rel="stylesheet" type="text/css" href="../../../css/common.css" />
+		<link rel="stylesheet" type="text/css" href="../../../css/inc.css" />
+		<link rel="stylesheet" type="text/css" href="../css/wfsconfig.css" />
+		<link rel="stylesheet" type="text/css"
+			href="../../../lib/artDialog4.1.6/skins/default.css" />
+		<link rel="stylesheet" type="text/css"
+			href="../../../lib/select-1.0/skins/css/css.css" />
+		<link rel="stylesheet" type="text/css"
+			href="../../../lib/dynatree-1.0.2/src/skin/ui.dynatree.css" />
+		<script type="text/javascript"
+			src="../../../lib/jQuery/jquery-1.7.2.js"></script>
+		<script type="text/javascript"
+			src="../../../lib/jQuery/jquery.form.js"></script>
+		<script type="text/javascript"
+			src="../../../lib/jQuery/jquery.json-2.2.js"></script>
+		<script type="text/javascript"
+			src="../../../lib/jQuery/jquery-ui-1.8.22.custom.min.js"></script>
+		<script type="text/javascript"
+			src="../../../lib/OpenLayers/OpenLayers-min.js"></script>
+		<script type="text/javascript"
+			src="../../../lib/GeoGlobeSDK/GeoGlobeJS.min.js"></script>
+		<script type="text/javascript" src="../../../lib/select-1.0/select.js"></script>
+		<script type="text/javascript"
+			src="../../../lib/artDialog4.1.6/artDialog.js"></script>
+		<script type="text/javascript"
+			src="../../../lib/dynatree-1.0.2/src/jquery.dynatree.js"></script>
+		<script type="text/javascript" src="../../../js/Tianditu.js"></script>
+		<script type="text/javascript" src="../js/Wfsconfig.js"></script>
+		<script type="text/javascript" src="../js/SearchType.js"></script>
+		<script type="text/javascript" src="../js/wfsconfig-edit.js"></script>
+	</head>
+	<body>
+		<div class="wrapper white94">
+			<div class="wfsconfig-box">
+				<div class="wfsconfig-box-title">
+					<span class="now-address"><a
+						href="../../scenario/page/scenario.html">地图管理</a> </span>
+					<span>>></span>
+					<span><a href="wfsconfig.html">地名配置</a> </span>
+				</div>
+				<div class="wfsconfig-box-headline">
+					<span>地名配置</span>
+				</div>
+				<div class="wfsconfig-box-table">
+					<table class="table" border="1">
+						<tr>
+							<td class="register" colspan="5">
+								提示：此兴趣点服务配置信息用于地名查询结果。
+							</td>
+						</tr>
+						<tr>
+							<td class="label">
+								<label>
+									服务地址:
+								</label>
+							</td>
+							<td colspan="5">
+								<span class="shadow-c"> <span class="shadow-left">&nbsp;</span>
+									<input id="srvURL" size="50" class="shadow" /> <span class="shadow-right">&nbsp;</span>
+								</span>
+								<button type="button" class="wfsconfig-button"
+										onclick="checkService()">
+										验证服务
+								</button>
+								<span class="required">*</span>
+							</td>
+						</tr>
+						<tr>
+							<td class="label" style="vertical-align: top;">
+								<label>
+									浮云上显示分类:
+								</label>
+							</td>
+							<td class="right-content station">
+								<ul>
+									<li class="sort-list">
+										<div class="sortlabel">
+											<div for="st-first">
+												第一个分类:
+											</div>
+										</div>
+										<input type="hidden" id="st-first-code" />
+										<div class="sortselect">
+											<input id="st-first">
+										</div>
+										<div class="required">
+											*
+										</div>
+									</li>
+									<div class="clear"></div>
+									<li class="sort-list">
+										<div class="sortlabel">
+											<div for="st-second">
+												第二个分类:
+											</div>
+										</div>
+										<input type="hidden" id="st-second-code" />
+										<div class="sortselect">
+											<input id="st-second">
+										</div>
+										<div class="required">
+											*
+										</div>
+									</li>
+									<div class="clear"></div>
+									<li class="sort-list">
+										<div class="sortlabel">
+											<div for="st-third">
+												第三个分类:
+											</div>
+										</div>
+										<input type="hidden" id="st-third-code" />
+										<div class="sortselect">
+											<input id="st-third">
+										</div>
+										<div class="required">
+											*
+										</div>
+									</li>
+									<div class="clear"></div>
+								</ul>
+							</td>
+						</tr>
+						<tr>
+							<td class="label" nowrap="nowrap" style="vertical-align: middle;">
+								<label>
+									每页显示条数:
+								</label>
+							</td>
+							<td nowrap="nowrap" class="right-content">
+								<span class="shadow-c"> <span class="shadow-left">&nbsp;</span>
+									<input id="pageSize" class="shadow" /> <span class="shadow-right">&nbsp;</span> </span>
+								<span class="required">*</span>
+							</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>
+								<form id="wfsconfigUpdateForm" method="post">
+									<input type="hidden" id="wfsconfig-id" name="wfsconfig.id" />
+									<input type="hidden" id="wfsconfig-srvType" name="wfsconfig.serviceType"/>
+									<input type="hidden" id="wfsconfig-popupShowField" name="wfsconfig.popupShowfield"/>
+									<input type="hidden" id="wfsconfig-srvURL" name="wfsconfig.serviceURL" />
+									<input type="hidden" id="wfsconfig-pageSize" name="wfsconfig.pageSize" /> 
+									<input class="btn" type="button" onclick="saveWfsconfig();"
+										value="保存" />
+								</form>
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
+
+
+
+
+

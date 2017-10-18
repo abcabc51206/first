@@ -1,0 +1,128 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>organization-view.html</title>
+
+		<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+		<meta http-equiv="description" content="this is my page">
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<link rel="stylesheet" type="text/css" href="../../css/reset.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/common.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/inc.css" />
+		<link rel="stylesheet" type="text/css" href="../css/org.css" />
+		<script type="text/javascript"
+			src="../../lib/jQuery/jquery-1.7.2.min.js"></script>
+		<script type="text/javascript" src="../../js/Tianditu.js"></script>
+		<script type="text/javascript" src="../js/Organization.js"></script>
+		<script type="text/javascript" src="../js/organization-view.js"></script>
+		<script type="text/javascript">
+			Tianditu.showLevel(2,"查看机构","user/page/organization-view.html");
+		</script>
+	</head>
+
+	<body>
+		<div class="wrapper white94">
+			<div class="org-box">
+				<div class="org-box-title">
+					查看机构
+				</div>
+				<div class="org-box-table">
+					<form>
+						<table class="table">
+							<tr>
+								<td class="label">
+									<label for="org-code">
+										机构编号:
+									</label>
+								</td>
+								<td>
+									<span id="org-code" class="normal-text"></span>
+								</td>
+							</tr>
+							<tr>
+								<td class="label">
+									<label for="org-name">
+										机构名称:
+									</label>
+								</td>
+								<td>
+									<span id="org-name" class="normal-text"></span>
+								</td>
+							</tr>
+							<tr>
+								<td class="label">
+									<label for="org-parent">
+										上级机构:
+									</label>
+								</td>
+								<td>
+									<span id="org-parent" class="normal-text"></span>
+								</td>
+							</tr>
+							<tr>
+								<td class="label">
+									<label for="org-tel">
+										联系电话:
+									</label>
+								</td>
+								<td>
+									<span id="org-tel" class="normal-text">1111</span>
+								</td>
+							</tr>
+							<tr>
+								<td class="label">
+									<label for="org-fax">
+										传
+										<span class="em-1"></span><span class="em-1"></span>真:
+									</label>
+								</td>
+								<td>
+									<span id="org-fax" class="normal-text"></span>
+								</td>
+							</tr>
+							<tr>
+								<td class="label">
+									<label for="org-zipCode">
+										邮
+										<span class="em-1"></span><span class="em-1"></span>编:
+									</label>
+								</td>
+								<td>
+									<span id="org-zipCode" class="normal-text">1111</span>
+								</td>
+							</tr>
+							<tr>
+								<td class="label">
+									<label for="org-address">
+										地
+										<span class="em-1"></span><span class="em-1"></span>址:
+									</label>
+								</td>
+								<td>
+									<span id="org-address" class="normal-text"></span>
+								</td>
+							</tr>
+							<tr>
+								<td class="tlabel">
+									<label for="org-remark">
+										机构描述:
+									</label>
+								</td>
+								<td>
+									<p id="org-remark" class="normal-text">
+									</p>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<input type="button" class="btn" value="返回"
+										onclick="Tianditu.go('organization.html')" />
+								</td>
+							</tr>
+						</table>
+					</form>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

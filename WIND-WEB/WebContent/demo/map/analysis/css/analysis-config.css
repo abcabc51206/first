@@ -1,0 +1,269 @@
+html{
+	background: #fff;
+}
+html,body{
+	width:100%;
+	padding:0;
+}
+table{
+	padding:0;
+	margin:0;
+}
+.wrapper{
+	width:100%;
+	height:100%;
+}
+.analysisconfig-box-table{
+	position:relative;
+	padding:0 20px;
+}
+
+.analysisconfig-box  div.analysisconfig-box-title{
+	margin-top:5px;
+	padding-left:10px;
+	height:34px;
+	line-height:28px;
+	background:url("../images/title_bg.png") repeat-x;
+}
+.analysisconfig-box-title span,a{
+	color:#000;
+	font-size:13px;
+	font-family:"新宋体";
+}
+.analysisconfig-box-title span.now-address{
+	padding-left:15px;
+	padding-top:2px;
+	background:url("../images/title.png") left center no-repeat;
+}
+.analysisconfig-box-headline{
+	margin-left:20px;
+	padding:10px 0;
+	border-bottom:1px solid #cbcbcb;
+}
+.analysisconfig-box-headline span{
+	color:#333333;
+	font-weight:bold;
+	font-size:14px;
+	font-family:"微软雅黑";
+}
+
+.analysisconfig-nav{
+	height:30px;
+	line-height:30px;
+	padding-left:20px;
+	background:#e8e8e8;
+}
+
+.analysisconfig-nav span{
+	padding:5px 25px;
+	color:#3272a5;
+	font-weight:bold;
+	background:url("../images/car_config.png") no-repeat;
+}
+
+.analysisconfig-nav .analysisconfig-select{
+	background:url("../images/analysis_config_select.png") no-repeat;
+}
+.analysisconfig-table{
+	position:relative;
+	padding:0 20px;
+}
+.analysisconfig-box-table table{	
+	width:100%;
+}
+.analysisconfig-box-table .list{
+	border-collapse:collapse;
+	border:1px solid #6790b7;
+}
+.analysisconfig-box-table .list caption{
+	padding:16px 0;
+}
+.analysisconfig-box-table .list th{
+	background:#1e5c97;
+	border:1px solid #3888e9;
+	padding:12px 0;
+}
+.analysisconfig-box-table .list td{
+	padding:8px 0;
+	text-align:center;
+	color:#3272a6;
+	border:1px solid #00ff00;
+}
+.analysisconfig-box-table .list tfoot td{
+	padding:10px 0;
+	background:#fff;
+	text-algin:left;
+}
+.analysisconfig-box-table .list .odd td{
+	background:#fff;
+}
+.table td{
+	padding:8px 0;
+	color:#0b467a;
+	/*vertical-align:middle;*/
+}
+.analysisconfig-box-table table .label,.analysisconfig-box-table table .tlabel{
+	width:8%;
+}
+.analysisconfig-box-table .table .tlabel{
+	vertical-align:top;
+}
+.label .btn{
+	margin-right:20px;
+}
+.searchbtn{
+	margin-left:-4px;
+}
+
+.fleft .{
+	margin-right:20px;
+}
+
+.normal-text{
+	color:#333;
+	padding:0 4px;
+}
+p.normal-text{text-indent:2em;}
+a.modify-action{text-decoration:underline;}
+
+.analysisconfig-button{
+	height:32px;
+	width:80px;
+}
+.btn-short{
+	width:62px;
+	height:32px;
+	line-height:32px;
+	margin-left:10px;
+	color:#fff;
+	border:none;
+	background: url("../images/btn_short.png") center center no-repeat;
+	cursor:pointer;
+}
+
+.select{
+	color:#0670bb;
+}
+
+.no-border-input{
+	border-left:0px;
+	border-top:0px;
+	border-right:0px;
+	border-bottom:1px;
+	background-color: #F0F4F7;
+}
+
+.no-border-textarea{
+	overflow:auto; 
+	background-attachment:fixed;
+	background-repeat:no-repeat;   
+	border-style:solid;
+	border-color:#FFFFFF;
+	background-color: #F0F4F7;
+}
+
+.validate-tip{
+	color: #666666;
+}
+.lat{
+	position:absolute;
+	left:380px;
+}
+.analysisconfig-panel{
+	position:absolute;
+	padding:16px 0;
+	width:190px;
+}
+.analysisconfig-table{
+	padding-left:200px;
+}
+/*锟斤拷钮锟斤拷式*/
+.analysisconfig-button{
+	position:relative;
+	top:-3px;
+	width:100px;
+	border:none;
+	font-weight:bold;
+	font-size:12px;
+	font-family:"锟斤拷锟斤拷锟斤拷";
+	color:#666666;
+	background:url("../images/analysisconfig_button.png") no-repeat;
+}
+.analysisconfig-button:hover{
+	cursor:pointer;
+	background:url("../images/analysisconfig_button_hover.png") no-repeat;
+}
+
+select{
+	width:200px;
+	height:30px;
+}
+
+.select-bg{
+	position:relative;
+	padding:6px 15px;
+	padding-bottom:8px;
+	background:url("../images/select_bg.png") no-repeat;
+	z-index:1000;
+}
+.label-bg{
+	padding:6px 15px;
+	background:url("../images/label_bg.png") no-repeat;
+}
+.center{
+	padding-left:20px;
+	padding-right:20px;
+}
+table .children{
+	width:100%;
+}
+table .field{
+	margin-bottom:10px;
+}
+table .children select{
+	margin-left:20px;
+}
+table .children label{
+	padding:16 0px;
+}
+table .children td.label{
+	width:100px;
+}
+table .field td{
+	border:1px solid #cedbe1;
+	text-align:center;
+}
+table .field input{
+	/*border-color:#155d94;*/
+}
+table .children .children-select td{
+	color:#ff3300;
+}
+table .field tr:hover td{
+	color:#ff3300;
+}
+.a{
+	position:relative;
+	width:500px;
+	height:200px;
+	padding:10px;
+	margin-top:7px;
+	background:#fff;
+	border:1px solid #8da8b3;
+	overflow-y:scroll;
+	display:none;
+}
+.table{
+	display:none;
+}
+.analysis-address .analysis-button td{
+	padding-top:150px;
+}
+.analysis-address{
+	margin-top:150px;
+}
+
+.table .register{
+	color:#999999;
+	font-size:12px;
+}

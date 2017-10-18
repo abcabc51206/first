@@ -1,0 +1,169 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>userguide.html</title>
+
+		<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+		<meta http-equiv="description" content="this is my page">
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta http-equiv="pragram" content="no-cache">
+		<link rel="stylesheet" type="text/css" href="../../css/reset.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/common.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/inc.css" />
+		<link rel="stylesheet" type="text/css" href="../css/userguide.css" />
+
+
+		<link rel="stylesheet" type="text/css"
+			href="../../lib/artDialog4.1.6/skins/default.css" />
+
+		<link rel="stylesheet" type="text/css"
+			href="../../css/modify-jQuery.css" />
+		<script type="text/javascript"
+			src="../../lib/dynatree-1.0.2/jquery/jquery.js"></script>
+		<script type="text/javascript" src="../../lib/jQuery/jquery.form.js"></script>
+		<script type="text/javascript"
+			src="../../lib/dynatree-1.0.2/jquery/jquery-ui.custom.js"></script>
+
+		<link rel="stylesheet" type="text/css"
+			href="../../lib/dynatree-1.0.2/src/skin/ui.dynatree.css" />
+		<script type="text/javascript"
+			src="../../lib/dynatree-1.0.2/src/jquery.dynatree.min.js"></script>
+
+		<link rel="stylesheet" type="text/css"
+			href="../../lib/dynatree-1.0.2/doc/contextmenu/jquery.contextMenu.css" />
+		<script
+			src="../../lib/dynatree-1.0.2/doc/contextmenu/jquery.contextMenu.js"
+			type="text/javascript"></script>
+
+		<link rel="stylesheet" type="text/css"
+			href="../../lib/artDialog4.1.6/skins/default.css" />
+		<script type="text/javascript"
+			src="../../lib/artDialog4.1.6/artDialog.js"></script>
+
+
+		<script type="text/javascript" src="../../js/Tianditu.js"></script>
+		<script type="text/javascript" src="../js/Userguide.js"></script>
+		<script type="text/javascript" src="../js/userguide-list.js"></script>
+	</head>
+
+	<body>
+		<div class="wrapper white94">
+			<div class="userguide-box">
+				<div class="userguide-box-title">
+					<span class="now-address"><a
+						href="../../news/page/news.html">内容管理</a>
+					</span>
+					<span>>></span>
+					<span><a href="userguide.html">用户指南</a>
+					</span>
+				</div>
+				<div class="userguide-box-headline">
+					<span>用户指南</span>
+				</div>
+				<div class="userguide-box-table">
+					<div id="userguide-panel" class="userguide-panel">
+						<div class="tree-panel">
+							<div class="tree-title">
+								<div class="tree-innertitle">
+									用户指南
+								</div>
+							</div>
+							<div class="tree-container" id="tree-container">
+							</div>
+						</div>
+					</div>
+					<div class="userguide-table">
+						<table class="list">
+							<caption>
+								<div class="groupbox">
+									<div class="fright">
+										<input type="search fleft" class="search" />
+										<button type="button" class="btn searchbtn" onclick="search()">
+											搜索
+										</button>
+									</div>
+									<div class="fleft">
+										<button type="button" class="btn"
+											onclick="Tianditu.go('userguide-add.html')">
+											添加
+										</button>
+										<button type="button" class="btn" onclick="delUserguide()">
+											删除
+										</button>
+									</div>
+								</div>
+							</caption>
+							<thead>
+								<tr>
+									<th class="checkth" width="5%">
+										<input id="chooseall" type="checkbox"
+											onclick="TDT.chooseall(this,'userguideList')" />
+									</th>
+									<th class="nameth">
+										标题
+									</th>
+									<th class="companyth">
+										类型
+									</th>
+									<th class="dateth" width="15%">
+										发布时间
+									</th>
+									<th class="actionth" width="45%">
+										操作
+									</th>
+								</tr>
+							</thead>
+
+							<tbody id="userguideTemplate" style="display: none;">
+								<tr rowid="%{rowid}%" class="%{class}%">
+									<td>
+										<input type="checkbox" onclick="TDT.brightShow(this, 'userguideList');" />
+									</td>
+									<td>
+										%{title}%
+									</td>
+									<td>
+										%{type}%
+									</td>
+									<td>
+										%{createTime}%
+									</td>
+									<td>
+										<a class="action-btn action-view" href="javascript:void(0);" onclick="goViewUserguide(this)">查看</a>
+										<a class="action-btn action-edit" href="javascript:void(0);" onclick="goEditUserguide(this)">编辑</a>
+										<a class="action-btn action-stick" href="javascript:void(0);" onclick="upToTop(this)">置顶</a>
+										<a class="action-btn action-up" href="javascript:void(0);" onclick="up(this)">上移</a>
+										<a class="action-btn action-down" href="javascript:void(0);" onclick="down(this)">下移</a>
+										<a class="action-btn action-bottom" href="javascript:void(0);" onclick="downToBottom(this)">置底</a>
+									</td>
+								</tr>
+							</tbody>
+
+							<tbody id="userguideList">
+							</tbody>
+
+							<tbody id="noData" style="display: none;">
+								<tr>
+									<td colspan="5">
+										暂无记录！
+									</td>
+								</tr>
+							</tbody>
+
+
+							<tfoot>
+								<tr>
+									<td colspan="5">
+										<div id="pager">
+										</div>
+									</td>
+								</tr>
+							</tfoot>
+
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

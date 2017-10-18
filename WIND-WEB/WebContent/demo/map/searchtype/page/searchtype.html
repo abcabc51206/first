@@ -1,0 +1,164 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>research.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta http-equiv="pragram" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache, must-revalidate"> 
+    <meta http-equiv="expires" content="0"> 
+    <link rel="stylesheet" type="text/css" href="../../../css/reset.css"/>
+	<link rel="stylesheet" type="text/css" href="../../../css/common.css"/>
+	<link rel="stylesheet" type="text/css" href="../../../css/inc.css"/>
+	
+	<link rel="stylesheet" type="text/css" href="../../../css/modify-jQuery.css"/>
+  	<script type="text/javascript" src="../../../lib/dynatree-1.0.2/jquery/jquery.js"></script>
+  	<script type="text/javascript" src="../../../lib/jQuery/jquery.form.js"></script>
+  	<script type="text/javascript" src="../../../lib/dynatree-1.0.2/jquery/jquery-ui.custom.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="../../../lib/dynatree-1.0.2/src/skin/ui.dynatree.css"/>
+	<script type="text/javascript" src="../../../lib/dynatree-1.0.2/src/jquery.dynatree.min.js"></script>
+	
+  	<link rel="stylesheet" type="text/css" href="../../../lib/dynatree-1.0.2/doc/contextmenu/jquery.contextMenu.css"/>
+	<script src="../../../lib/dynatree-1.0.2/doc/contextmenu/jquery.contextMenu.js" type="text/javascript"></script>
+	
+	<link rel="stylesheet" type="text/css" href="../../../lib/artDialog4.1.6/skins/default.css" />
+	<script type="text/javascript" src="../../../lib/artDialog4.1.6/artDialog.js"></script>
+	
+	<link rel="stylesheet" type="text/css" href="../css/searchtype.css"/>	
+	<script type="text/javascript" src="../../../js/Tianditu.js"></script>
+	<script type="text/javascript" src="../js/SearchType.js"></script>
+	<script type="text/javascript" src="../js/searchType-list.js"></script>
+	<script type="text/javascript">
+		Tianditu.showLevel(1,"分类搜索","map/searchtype/page/searchtype.html");
+	</script>
+  </head>
+  
+  <body>
+	<div class="wrapper white94">
+		<div class="research-box">
+			<div class="research-box-title">
+				<span class="now-address"><a href="../../scenario/page/scenario.html">地图管理</a></span>
+				<span>>></span>
+				<span><a href="searchtype.html">分类搜索</a></span>
+			</div>
+			<div class="research-box-headline">
+				<span>分类搜索</span>
+			</div>
+			<div class="research-box-table">
+				<div id="research-panel" class="research-panel">
+					<div class="tree-panel">
+						<div class="tree-title"><div class="tree-innertitle">分类搜索</div></div>
+						<div class="tree-container" id="tree-container">
+						</div>
+					</div>
+				</div>
+			<div class="research-table" >
+				<table class="list">
+					<caption>
+						<div class="groupbox">
+							<div class="fright">
+								<input type="search fleft" class="search"/><button type="button" class="btn searchbtn" onclick="searchByKey()">搜索</button>
+							</div>
+							<div class="fleft">
+								<button type="button" class="btn" onclick="TDT.go('searchtype-add.html')">添加</button>
+								<button type="button" class="btn" onclick="delresearch()">删除</button>
+								<button type="button" class="btn" onclick="addImpExcel()">导入Excel</button>
+								<button type="button" class="btn" onclick="addImpService()">服务导入</button>
+								<button type="button" class="btn" onclick="SearchType.fn.expExcel()">导出Excel</button>
+							</div>
+						</div>
+					</caption>
+					<thead>
+						<tr><th class="checkth" width="5%">
+							<input id="chooseall" type="checkbox" onclick="TDT.chooseall(this,'searchTypeList')"/></th>
+							<th class="nameth">分类编码</th>
+							<th class="nameth">分类名称</th>
+							<th class="companyth">上级分类</th>
+							<th class="dateth" width="8%">显示等级</th>
+							<th class="actionth" width="45%;">操作</th></tr>
+					</thead>
+					<tbody id="searchTypeTemplate" style="display: none;">
+						<tr rowid=%{rowid}% class="even">
+							<td><input type="checkbox" name="c1"  onclick="TDT.brightShow(this, 'searchTypeList');"/></td>
+							<td>%{classCode}%</td>
+							<td>%{classChName}%</td>
+							<td>%{parentChName}%</td>
+							<td>%{level}%</td>
+							<td>
+							<a class="action-btn action-view" href="javascript:;" onclick="goViewSearch(this);">查看</a>
+							<a class="action-btn action-edit" href="javascript:;" onclick="goEditSearchType(this);">编辑</a>
+							<a class="action-btn action-stick" href="javascript:void(0);" onclick="upToTop(this)">置顶</a>
+							<a class="action-btn action-up" href="javascript:void(0);" onclick="up(this)">上移</a>
+							<a class="action-btn action-down" href="javascript:void(0);" onclick="down(this)">下移</a>
+							<a class="action-btn action-bottom" href="javascript:void(0);" onclick="downToBottom(this)">置底</a>
+							</td>
+						</tr>
+					</tbody>
+					
+					<tbody id="searchTypeList">
+					
+					</tbody>
+					<tbody style="display: none;" id="nomessage">
+						<tr>	
+							<td colspan="6">
+								暂无记录
+							</td>
+						</tr>
+					</tbody>
+					
+					<tfoot>
+						<tr>
+							<td colspan="6">
+								<div id="pager"> </div>
+							</td>
+						</tr>
+					</tfoot>
+				</table>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div id="addImpExcel"  style="display:none;width:650px;height:400px;background:#fff;padding-top:25px;">
+		<form id="addImpExcelForm"  method="post" enctype="multipart/form-data">
+		<!-- 头文件 -->
+			<table  width="100%" border="0" cellspacing="0" cellpadding="0" class="lh25" align= "center">
+			     <tr>   
+			         <td style="border:none;">文件路径:</td> <td class="textLeft"> 
+			         <input type="file" name="file" style="width: 320px;">
+			          <input type="button" value="上传" onclick="uploadPic('addImpExcelForm');">
+			         </td>
+			     </tr> 
+			     <tr>
+			         <td colspan="2" height="20px;"><span class="required"></span></td>
+			     </tr> 
+			</table> 
+		<!-- 尾文件 --> 
+		</form> 
+	</div>
+	<div id="addImpService"  style="display:none;width:650px;height:400px;background:#fff;padding-top:25px;">
+		<form id="addImpServiceForm"  method="post" enctype="multipart/form-data">
+			<table  width="100%" border="0" cellspacing="0" cellpadding="0" class="lh25" align= "center">
+			     <tr>   
+			         <td style="border:none;">服务地址:</td> <td class="textLeft"> 
+			         <input id="addImpServiceURL" name="url" style="width: 320px;">
+			         <input type="button" value="载入数据" onclick="uploadByRUL('addImpServiceForm');">
+			         </td>
+			     </tr> 
+			     <tr>
+			         <td colspan="2" height="20px;"><span class="required"></span></td>
+			     </tr> 
+			</table>
+		</form>
+	</div>
+  	<!-- Definition of context menu -->
+	<ul id="myMenu" class="contextMenu">
+		<li class="add"><a href="#add">添加</a></li>
+	    <li class="edit"><a href="#edit">编辑</a></li>
+	    <li class="delete"><a href="#delete">删除</a></li>
+	</ul>
+  </body>
+</html>

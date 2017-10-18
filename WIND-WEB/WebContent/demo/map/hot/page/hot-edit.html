@@ -1,0 +1,193 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>hot-edit.html</title>
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="../../../css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="../../../css/common.css"/>
+	<link rel="stylesheet" type="text/css" href="../../../css/inc.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/hot.css"/>
+		<link rel="stylesheet" type="text/css" href="../../../lib/artDialog4.1.6/skins/default.css" />
+		<link rel="stylesheet" type="text/css" href="../../../lib/dynatree-1.0.2/src/skin/ui.dynatree.css"/>
+		<link rel="stylesheet" type="text/css" href="../../../lib/select-1.0/skins/css/css.css"/>
+		<!--
+		<script type="text/javascript" src="../../../lib/jQuery/jquery-1.7.2.min.js"></script>
+		  -->
+		<script type="text/javascript" src="../../../lib/artDialog4.1.6/artDialog.js"></script>
+		<script type="text/javascript" src="../../../lib/jQuery/jquery-1.7.2.js"></script>
+		<script type="text/javascript" src="../../../lib/jQuery/jquery.form.js"></script>
+		<script type="text/javascript" src="../../../lib/jQuery/jquery-ui-1.8.22.custom.min.js"></script>
+		
+		<script type="text/javascript" src="../../../lib/dynatree-1.0.2/src/jquery.dynatree.js"></script>
+		<script type="text/javascript" src="../../../lib/select-1.0/select.js"></script>
+		
+		<script type="text/javascript" src="../../../js/Tianditu.js"></script>
+	
+		<script type="text/javascript" src="../js/Hot.js"></script>
+	<script type="text/javascript" src="../js/hot-edit.js"></script>
+	<script type="text/javascript">
+		Tianditu.showLevel(2,"编辑地图热点","map/hot/page/hot-edit.html");
+	</script>
+  </head>
+  
+  <body>
+	<div class="wrapper white94">
+		<div class="hot-box">
+			<div class="hot-box-title">
+				编辑地图热点
+			</div>
+			<div class="hot-box-table">
+					<form id="uploadForm" method="post" enctype="multipart/form-data">
+						<table class="table">
+							<tr>
+								<td class="label">
+									<label>
+										热点图片:
+									</label>
+								</td>
+								<td>
+									<input type="file" name="file" />
+									<input type="button" value="上传" onclick="uploadPic('uploadForm');" />
+									<span class="required"></span>
+									<input type="hidden" id="file-name" name="fileName" />
+									<input type="hidden" id="file-type" name="fileType" />
+								</td>
+							</tr>
+							<tr>
+								<td class="label">
+								</td>
+								<td>
+									<input type="hidden" id="file-id" name="fileId" />
+									<img id="pic-src" width="100" height="100"
+										src="../images/zwtp.jpg" />
+									<span class="validate-tip">（图片格式为jpg|jpeg|png。）</span>
+								</td>
+							</tr>
+						</table>
+					</form>
+					<form id="hotUpdateForm" method="post">
+						<table class="table">
+							<tr>
+								<td class="label">
+									<label for="hot-type">
+										热点类型:
+									</label>
+								</td>
+								<td>
+									<input id="hot-category" >
+									<span class="required"></span>
+								</td>
+							</tr>
+							<tr>
+								<td class="label">
+									<label for="hot-type">
+										热点名称:
+									</label>
+								</td>
+								<td>
+									<input id="hotName" name="hot.hotName" class="shadow" value=""/>
+									<span class="required">*</span>
+								</td>
+							</tr>
+							<tr>
+								<td class="label">
+									<label for="hot-address">
+										地
+										<span class="em-1"></span><span class="em-1"></span>址:
+									</label>
+								</td>
+								<td>
+									<input id="hot-address" name="hot.address" class="shadow" value=""/>
+									<span class="required"></span>
+								</td>
+							</tr>
+							<tr>
+								<td class="label">
+									<label for="hot-lon">
+										经
+										<span class="em-1"></span><span class="em-1"></span>度:
+									</label>
+								</td>
+								<td>
+									<input id="hot-lon" name="hot.lon" class="shadow" value=""/>
+									<span class="required"></span>
+								</td>
+							</tr>
+							<tr>
+								<td class="label">
+									<label for="hot-lat">
+										纬
+										<span class="em-1"></span><span class="em-1"></span>度:
+									</label>
+								</td>
+								<td>
+									<input id="hot-lat" name="hot.lat" class="shadow" value=""/>
+									<span class="required"></span>
+								</td>
+							</tr>
+							<tr>
+								<td class="label">
+									<label for="hot-zoom">
+										比<span class="em-1-2"></span>例<span class="em-1-2"></span>尺:
+									</label>
+								</td>
+								<td>
+									<select id="hot-zoom" name="hot.zoom" class="shadow" >
+										<option value="1">1</option>
+										<option value="2">2</option>
+										<option value="3">3</option>
+										<option value="4">4</option>
+										<option value="5">5</option>
+										<option value="6">6</option>
+										<option value="7">7</option>
+										<option value="8">8</option>
+										<option value="9">9</option>
+										<option value="10">10</option>
+										<option value="11">11</option>
+										<option value="12">12</option>
+										<option value="13">13</option>
+										<option value="14">14</option>
+										<option value="15">15</option>
+										<option value="16">16</option>
+										<option value="17">17</option>
+										<option value="18">18</option>
+										<option value="19">19</option>
+										<option value="20">20</option>												
+									</select>
+									<span class="required"></span>
+								</td>
+							</tr>
+							<tr>
+								<td class="label">
+									<label for="hot-brief">
+										简
+										<span class="em-1"></span><span class="em-1"></span>介:
+									</label>
+								</td>
+								<td>
+									<textarea id="hot-brief" name="hot.brief"
+										class="shadow" rows="5" cols="60"></textarea>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<input type="hidden" id="hot-fileId" name="hot.fileId"/>
+									<input type="hidden" id="hot-id" name="hot.id"/>
+									<input type="hidden" id="hot-sort" name="hot.sort"/>
+									<input class="btn" type="button" onclick="editHot()" value="保存" />
+									<span class="em-1"></span>
+									<input type="reset" class="btn" value="重置信息" />
+									<span class="em-1"></span>
+									<input type="button" class="btn" value="取消"
+										onclick="TDT.go('hot.html');" />
+								</td>
+							</tr>
+						</table>
+					</form>
+			</div>
+		</div>
+	</div>
+  </body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>标绘服务</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=8" />
+		<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+		<meta http-equiv="description" content="this is my page">
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta http-equiv="pragram" content="no-cache">
+		<meta http-equiv="expires" content="0">
+		<link rel="stylesheet" type="text/css" href="../../../css/reset.css" />
+		<link rel="stylesheet" type="text/css" href="../../../css/common.css" />
+		<link rel="stylesheet" type="text/css" href="../../../css/inc.css" />
+		<link rel="stylesheet" type="text/css" href="../css/plot-config.css" />
+		<link rel="stylesheet" type="text/css"
+			href="../../../lib/artDialog4.1.6/skins/default.css" />
+		<script type="text/javascript"
+			src="../../../lib/artDialog4.1.6/artDialog.js"></script>
+		<script type="text/javascript"
+			src="../../../lib/jQuery/jquery-1.7.2.js"></script>
+		<script type="text/javascript"
+			src="../../../lib/jQuery/jquery.form.js"></script>
+		<script type="text/javascript" src="../../../lib/OpenLayers/OpenLayers-min.js"></script>
+		<script type="text/javascript" src="../../../lib/GeoGlobeSDK/GeoGlobeJS.min.js"></script>
+		<script type="text/javascript" src="../../../lib/jQuery/jquery.json-2.2.js"></script>
+		<script type="text/javascript" src="../../../js/Tianditu.js"></script>
+		<script type="text/javascript" src="../js/PlotSrvconfig.js"></script>
+		<script type="text/javascript" src="../js/plot-config-edit.js"></script>
+	</head>
+	<body>
+		<div class="wrapper white94">
+			<div class="plotconfig-box">
+				<div class="plotconfig-box-title">
+				<span class="now-address"><a href="../../scenario/page/scenario.html">地图管理</a></span>
+				<span>>></span>
+				<span><a href="index.html">标绘配置</a></span>
+			</div>
+			<div class="plotconfig-box-headline">
+				<span>标绘配置</span>
+			</div>
+				<div class="plotconfig-box-table">
+					<div class="plotconfig-nav">
+						<span class="plotconfig-select">标绘服务配置</span>
+					</div>
+					<form id="plotConfUpdateForm" method="post">
+						<table  class="table plot-address">
+							<tr><td class="register" colspan="5">提示：此标绘服务配置信息用于地图标绘功能</td></tr>
+							<tr>
+								<td class="plot-srv-label"><label>标绘服务地址：</label></td>
+								<td>
+									<span class="shadow-c">
+										<span class="shadow-left">&nbsp;</span>
+										<input id="plot-url" type="text" class="shadow">
+										<span class="shadow-right">&nbsp;</span>
+									</span>
+									<button type="button" onclick="getServiceInfo()">
+											获取服务信息
+									</button>
+									<span class="required">*</span>
+								</td>
+							</tr>
+							<tr>
+								<td class="plot-srv-label"><label>点图层：</label></td>
+								<td>
+									<select id="plot-point-layer" class="shadow">
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<td class="plot-srv-label"><label>线图层：</label></td>
+								<td>
+									<select id="plot-line-layer" class="shadow">
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<td class="plot-srv-label"><label>面图层：</label></td>
+								<td>
+									<select id="plot-polygon-layer" class="shadow">
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<td class="plot-srv-label"><label>最大记录条数：</label></td>
+								<td>
+									<span class="shadow-c">
+										<span class="shadow-left">&nbsp;</span>
+										<input id="max-feature" type="text" class="shadow">
+										<span class="shadow-right">&nbsp;</span>
+									</span>
+								</td>
+							</tr>
+							<tr class="plot-button">
+							   <td></td>
+								<td>
+									<input id="sysconf-id" type="hidden" name="sysconf.id"/>
+									<input id="sysconf-argsName" type="hidden" name="sysconf.argsName"/>
+									<input id="sysconf-argsValue" type="hidden" name="sysconf.argsValue"/>
+									<input id="sysconf-argsDesc" type="hidden" name="sysconf.argsDesc"/>
+									<input class="btn" type="button" onclick="resetPlotSrvConf();"
+										value="重置" />
+									<input class="btn" type="button" onclick="savePlotConfig();"
+										value="保存" />
+								</td>
+							</tr>
+						</table>
+					</form>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
+
+
+
+
+

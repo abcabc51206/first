@@ -1,0 +1,102 @@
+html{
+	background: #fff;
+}
+html,body{
+	width:100%;
+	padding:0;
+}
+table{
+	padding:0;
+	margin:0;
+}
+.wrapper{
+	width:100%;
+	height:100%;
+}
+.wfsconfig-box  div.wfsconfig-box-title{
+	margin-top:5px;
+	padding-left:10px;
+	height:34px;
+	line-height:28px;
+	background:url("../images/title_bg.png") repeat-x;
+}
+.wfsconfig-box-title span,a{
+	color:#000;
+	font-size:13px;
+	font-family:"鏂板畫浣�;
+}
+.wfsconfig-box-title span.now-address{
+	padding-left:15px;
+	padding-top:2px;
+	background:url("../images/title.png") left center no-repeat;
+}
+.wfsconfig-box-headline{
+	margin-left:20px;
+	padding:10px 0;
+	border-bottom:1px solid #cbcbcb;
+}
+.wfsconfig-box-headline span{
+	color:#333333;
+	font-weight:bold;
+	font-size:14px;
+	font-family:"寰蒋闆呴粦";
+}
+.wfsconfig-box-table{
+	position:relative;
+	padding:0 20px;
+}
+.wfsconfig-box-table table{	
+	width:100%;
+}
+.wfsconfig-box-table table .label{
+	width:8%;
+}
+.label .btn{
+	margin-right:20px;
+}
+.table td{
+	padding:8px 0;
+	color:#0b467a;
+	/*vertical-align:middle;*/
+}
+/*锟斤拷钮锟斤拷式*/
+.wfsconfig-button{
+	position:relative;
+	top:-3px;
+	width:100px;
+	height:32px;
+	border:none;
+	font-weight:bold;
+	font-size:12px;
+	font-family:"锟斤拷锟斤拷锟斤拷";
+	color:#666666;
+	background:url("../images/wfsconfig_button.png") no-repeat;
+}
+.wfsconfig-button:hover{
+	cursor:pointer;
+	background:url("../images/wfsconfig_button_hover.png") no-repeat;
+}
+.clear{
+	clear:both;
+}
+.sort-list{
+	line-height:30px;
+}
+.sort-list .sortlabel{
+	float:left;
+	padding-top:3px;
+	line-height:18px;
+	width:100px;
+}
+.sort-list .sortselect{
+	float:left;
+	margin-left:10px;
+	line-height:18px;
+	width:240px;
+}
+.sort-list .required{
+	line-height:18px;
+	float:left;
+	width:130px;
+	color:red;
+}

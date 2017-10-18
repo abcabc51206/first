@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>news-view.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="../../css/reset.css"/>
+	<link rel="stylesheet" type="text/css" href="../../css/common.css"/>
+	<link rel="stylesheet" type="text/css" href="../../css/inc.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/news.css"/>
+	<script type="text/javascript" src="../../lib/jQuery/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" src="../../js/Tianditu.js"></script>
+	<script type="text/javascript" src="../js/News.js"></script>
+	<script type="text/javascript" src="../js/news-view.js"></script>
+	<script type="text/javascript">
+		Tianditu.showLevel(2,"查看新闻","news/page/news-view.html");
+	</script>
+  </head>
+  
+  <body style="height: auto;">
+	<div class="wrapper white94">
+		<div class="news-box">
+			<div class="news-box-title">
+				查看新闻
+			</div>
+			<div class="news-box-table">
+				<div class="title">
+					<h1 id="view-news-title"></h1>
+					<p><span id="view-news-time"></span><span>来源：</span><span id="view-news-src"></span></p>
+				</div>
+				<div class="guide">
+					<span>[<span class="read">导读</span>]<span id="view-news-brief"></span>
+					</span>
+				</div>
+				<div class="content">
+						<span id="view-news-html"></span>
+				</div>
+				<div style="text-align: center;">
+					<input type="button" class="btn" value="返回" onclick="TDT.go('news.html');"/>
+				</div>
+			</div>
+		</div>
+	</div>
+  </body>
+</html>

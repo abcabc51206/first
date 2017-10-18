@@ -1,0 +1,100 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>每年操作日志</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta http-equiv="pragram" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache, must-revalidate"> 
+    <meta http-equiv="expires" content="0"> 
+    <link rel="stylesheet" type="text/css" href="../../lib/jQuery/css/smoothness/jquery-ui-1.8.22.custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/reset.css"/>
+	<link rel="stylesheet" type="text/css" href="../../css/common.css"/>
+	<link rel="stylesheet" type="text/css" href="../../css/inc.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/operate.css"/>
+	<link rel="stylesheet" type="text/css" href="../../lib/artDialog4.1.6/skins/default.css" />
+	<script type="text/javascript" src="../../lib/artDialog4.1.6/artDialog.js"></script>
+	<script type="text/javascript" src="../../lib/jQuery/jquery-1.7.2.js"></script>
+	<script type="text/javascript" src="../../lib/jQuery/jquery-ui-1.8.22.custom.min.js"></script>
+	<script type="text/javascript" src="../../js/Tianditu.js"></script>
+	<script type="text/javascript" src="../js/LogFun.js"></script>
+	<script type="text/javascript" src="../js/operate-log-year.js"></script>
+  </head>
+  
+  <body>
+	<div class="wrapper white94">
+		<div class="operate-box">
+			<div class="operate-box-title">
+				<span class="now-address"><a href="operate-log-day.html">日志管理</a></span>
+				<span>>></span>
+				<span><a href="operate-log-year.html">操作日志</a></span>
+			</div>
+			<div class="operate-box-head">
+				<ul>
+					<li onclick="changeSt(1)">每日动态</li>
+					<li onclick="changeSt(2)">每月动态</li>
+					<li onclick="changeSt(3)">过去30天</li>
+					<li class="select">每年动态</li>
+				</ul>
+			</div>
+			<div class="content">
+				<div class="chart">
+					<select id="stYear"></select>
+					<button type="button" onclick="stYear()">查询</button>
+					<span class="pie-chart" onclick="pieOpLog()"></span>
+					<span class="bar-chart" onclick="barOpLog()"></span>
+				</div>
+				<div class="operate-box-table">
+					<div class="operate-table">
+						<table class="list">
+							<thead>
+								<tr>
+									<th class="checkth"><input type="checkbox"/></th>
+									<th class="nameth">用户名</th>
+									<th class="companyth">用户IP</th>
+									<th class="companyth">操作</th>
+									<th class="companyth">模块</th>
+									<th class="companyth">状态</th>
+									<th>访问时间</th></tr>
+							</thead>
+							<tbody id="logFunTemplate" style="display: none;">
+								<tr rowid=%{rowid}%>
+									<td>
+										<input type="checkbox"/>
+									</td>
+									<td>%{userName}%</td>
+									<td>%{userIp}%</td>
+									<td>%{operate}%</td>
+									<td>%{module}%</td>
+									<td>%{state}%</td>
+									<td>%{visitTime}%</td>
+								</tr>
+							</tbody>
+											
+							<tbody id="logFunList">
+							</tbody>
+							
+							<tbody id="noData" style="display: none;">
+								<tr>
+									<td colspan="7">暂无记录！</td>
+								</tr>
+							</tbody>
+							
+							
+							<tfoot>
+								<tr><td colspan="7">
+									<div id="pager">
+								</div>
+								</td></tr>
+							</tfoot>
+							
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,290 @@
+html,body{
+	height: 100%;
+	color:#fff;
+}
+/*
+所有pane内部div被重新定义定位
+*/
+.inner-container{
+	position: relative;
+	width:100%;
+	height:100%;
+}
+
+.logo{
+	float:left;
+	/*width:530px;*/
+	width:830px;
+	height:80px;
+	background:url(../images/logo.png) 20px center no-repeat;
+}
+.guanlizhongxin{
+	float:left;
+	height:80px;
+	width:76px;
+	background:url(../images/guanlizhongxin.png) left 30px no-repeat;
+}
+.logo a{
+	display:block;
+	width:100%;
+	height:100%;
+}
+/*.logo-split{
+	width: 4px;
+	margin: 0 20px;
+	background: url("../images/logo_split.png") center center no-repeat;
+}
+.guanlizhongxin{
+	width: 104px;
+	background: url("../images/logo_guanlizhongxin.png") center center no-repeat;
+}*/
+.site-info{
+	padding: 0  22px;
+	height:20px;
+	line-height:20px;
+	background:#1e5c97;
+}
+.suggest{
+	float:left;
+}
+.suggest span{
+	margin-left:5px;
+}
+.suggest span a:hover{
+	text-decoration:underline;
+}
+.address{
+	text-align: center;
+}
+.address span{
+	margin-left:15px;
+}
+.address span a:hover{
+	text-decoration:underline;
+}
+/*.white94{
+	background: url("../images/white94.jpg") center center repeat;
+}*/
+.yahei{
+	font-family:"微软雅黑","幼圆";
+}
+.btn{
+	position:relative;
+	top:2px;
+	*top:-1px;
+	width:94px;
+	height:32px;
+	line-height:32px;
+	color:#666666;
+	font-size:14px;
+	font-family:"新宋体";
+	border:none;
+	background: url("../images/btn.png") center center no-repeat;
+	cursor:pointer;
+}
+.btn:hover{
+	background:url("../images/btn_hover.png") center center no-repeat;
+}
+.searchbtn{
+	width:120px;
+	color:#fff;
+	font-size:16px;
+	font-weight:bold;
+	background: url("../images/searchbtn.png") center center no-repeat;
+}
+.searchbtn:hover{
+	background: url("../images/searchbtn.png") center center no-repeat;
+}
+input.search{
+	height:32px;
+	line-height:32px;
+	padding-left:30px;
+	border:none;
+	color:#999999;
+	font-size:14px;
+	font-family:"新宋体";
+	background: url("../images/search_ipt_bg.png") left center no-repeat;
+}
+.shadow-left{
+	float:left;
+	padding:8px 3px;
+	background:url("../images/input_ipt_bg_left.png") no-repeat;
+}
+.shadow-right{
+	float:left;
+	padding:8px 5px;
+	background:url("../images/input_ipt_bg_right.png") no-repeat;
+}
+input.shadow{
+	float:left;
+	height:28px;
+	min-width:320px;
+	line-height:28px;
+	padding-left:6px;
+	border:none;
+	background:url(../images/input_ipt_bg_center.png) repeat-x;
+}
+.shadow-c:hover .shadow-left{
+	background:url("../images/input_ipt_bg_left_hover.png") no-repeat;
+}
+.shadow-c:hover .shadow-right{
+	background:url("../images/input_ipt_bg_right_hover.png") no-repeat;
+}
+.shadow-c:hover input.shadow{
+	background:url("../images/input_ipt_bg_center_hover.png") repeat-x;
+	cursor:pointer;
+}
+.label-c{
+	float:left;
+	margin-top:10px;
+	margin-right:20px;
+}
+textarea.shadow{
+	border:1px solid #cccccc;
+}
+
+a.first-page a.prev-page a.next-page a.last-page{
+	color: #5B72B1;
+}
+
+.page-num {
+	display:inline;
+	padding:4px 8px;
+	margin:0 2px;
+	border:1px solid #e7ecf0;
+}
+
+.curr-page-num{
+	display:inline;
+	padding:4px 8px;
+	margin:0 2px;
+	border:1px solid #e7ecf0;
+	color: #000000;
+	font-weight: bold;
+}
+
+
+
+a.action-btn{
+	padding:2px 0;
+	padding-left:18px;
+	margin:0 4px;
+	color:#3272a6;
+}
+.action-btn.action-view{
+	background: url("../images/look.png") left center no-repeat;
+}
+.action-btn.action-edit{
+	background: url("../images/aedit.png") left center no-repeat;
+}
+.action-btn.action-download{
+	background: url("../images/download.png") left center no-repeat;
+}
+.action-btn.action-authorize{
+	background: url("../images/aauthorize.png") left center no-repeat;
+}
+.action-btn.action-role{
+	background: url("../images/arole.png") left center no-repeat;
+}
+.action-btn.action-stop{
+	background: url("../images/astop.png") left center no-repeat;
+}
+.action-btn.action-start{
+	background: url("../images/service.png") left center no-repeat;
+}
+.action-btn.action-delete{
+	background: url("../images/adelete.png") left center no-repeat;
+}
+.action-btn.action-stick{
+	background: url("../images/stick.png") left center no-repeat;
+	
+}
+.action-btn.action-up{
+	background: url("../images/up.png") left center no-repeat;
+}
+.action-btn.action-down{
+	background: url("../images/down.png") left center no-repeat;
+}
+.action-btn.action-bottom{
+	background: url("../images/bottom.png") left center no-repeat;
+}
+span.required{color:red}
+span.em-1-2{
+	padding:0 .25em;
+}
+span.em-1{
+	padding:0 .5em;
+}
+.bold{
+	font-weight:bold;
+}
+/*对话框初始状态隐藏*/
+.hide-dialog{
+	display:none;
+}
+
+.tree-panel .tree-title{
+	border:2px solid #91b1cb;
+	background:#fff;
+}
+.tree-panel .tree-innertitle{
+	line-height:26px;
+	margin:1px;
+	padding:0 4px;
+	color:#fff;
+	font-weight:bold;
+	background:#91b1cb;
+}
+
+/*用于选中checkbox加亮显示*/
+.visitChecked {
+	background: #91B1CB;
+}
+/*添加的下拉框*/
+.add-select{
+	position:relative;
+	z-index:1;
+}
+.add-select.active{
+	z-index:2;
+}
+.add-select input{
+	float: left;
+	width:150px;
+	height: 28px;
+	line-height: 28px;
+	padding:2px 4px;
+	padding-right: 34px;
+	border:none;
+	background: url("../images/select_ipt_bg.png") no-repeat;
+}
+.add-select button{
+	float: left;
+	width: 34px;
+	height: 32px;
+	border:none;
+	background: url("../images/select_down.png") no-repeat;
+}
+.add-select ul{
+	position:absolute;
+	top:28px;
+	left:0;
+	width:212px;
+	border:1px solid #b6b6b6;
+	border-top:none;
+	z-index:3000;
+	background:#f2f1f1;
+	display:none;
+}
+.add-select ul li{
+	padding:10px 0;
+	
+}
+.add-select ul li:hover{
+	cursor:pointer;
+	background:#d0e4f7;
+}
+
+a.disable{
+	color:gray;
+}

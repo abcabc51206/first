@@ -1,0 +1,149 @@
+html,body{
+	padding:0;
+	margin:0;
+}
+.map{
+	position:relative;
+	width:100%;
+	height:100%;
+	background:pink;
+}
+.table{
+	/*position:absolute;*/
+	left:0px;
+	bottom:0px;
+	width:100%;
+	background:transparent;
+}
+.table td{
+	padding:5px 20px;
+	color:#0B467A;
+}
+.table td.correct-label{
+	width:100px;
+	vertical-align: middle;
+}
+
+select{
+	width:200px;
+	height:30px;
+}
+
+.wrapper{
+	width:100%;
+	height:100%;
+}
+.correct-box-table{
+	position:relative;
+	padding:0 20px;
+}
+
+.correct-box  div.correct-box-title{
+	margin-top:5px;
+	padding-left:10px;
+	height:34px;
+	line-height:28px;
+	background:url("../images/title_bg.png") repeat-x;
+}
+.correct-box-title span,a{
+	color:#000;
+	font-size:13px;
+	font-family:"新宋体";
+}
+.correct-box-title span.now-address{
+	padding-left:15px;
+	padding-top:2px;
+	background:url("../images/title.png") left center no-repeat;
+}
+.correct-box-headline{
+	margin-left:20px;
+	padding:5px 0;
+	border-bottom:1px solid #cbcbcb;
+}
+.correct-box-headline span{
+	color:#333333;
+	font-weight:bold;
+	font-size:14px;
+	font-family:"微软雅黑";
+}
+.correct-conf-nav{
+	height:30px;
+	line-height:30px;
+	padding-left:20px;
+	background:#e8e8e8;
+}
+.correct-conf-nav span{
+	padding:5px 25px;
+	color:#3272a5;
+	font-weight:bold;
+	cursor:pointer;
+	background:url("../images/correct_conf.png") no-repeat;
+}
+.correct-conf-nav .correct{
+	padding:5px 25px;
+}
+.correct-conf-nav .correct-conf-select{
+	background:url("../images/correct_conf_select.png") no-repeat;
+}
+
+
+.correct-address{
+	margin-top:50px;
+}
+.correct-address label{
+	padding:16 0px;
+}
+.correct-address input{
+	width:260px;
+}
+.correct-address .correct-button td{
+	padding:120px 0 20px 0;
+}
+.correct-address .correct-button td input{
+	width:100px;
+}
+
+.correct-address .register{
+	padding:20px 0 20px 20px;
+	color:#999999;
+	font-size:12px;
+}
+
+.close{
+	float:right;
+	margin-right:5px;
+	height:20px;
+	width:20px;
+	background:url("../images/close.png") no-repeat;
+}
+.table table{
+	width:100%;
+	border-collapse:collapse;
+}
+.table table td{	
+	padding:5px 10px;
+	font-size:13px;
+	border:1px solid #6790b7;
+}
+.table table th{
+	padding:5px 10px;
+	font-size:14px;	
+	color:#fff;
+	background:#1e5c97;
+}
+.table table tr td{	
+	margin-top:5px;
+	color:#3272a6;
+	background:#fff;
+}
+tfoot{
+	height:30px;
+	color:#3272a6;
+}
+.page .frist{
+	margin-left:30px;
+}
+.page input{
+	width:20px;
+	height:20px;
+}

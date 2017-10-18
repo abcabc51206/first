@@ -1,0 +1,110 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>links-add.html</title>
+		<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+		<meta http-equiv="description" content="this is my page">
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta http-equiv="pragram" content="no-cache">
+		<meta http-equiv="expires" content="0">
+		<link rel="stylesheet" type="text/css" href="../../css/reset.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/common.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/inc.css" />
+		
+		<link rel="stylesheet" type="text/css" href="../css/links.css" />
+		
+		<script type="text/javascript" src="../../lib/jQuery/jquery-1.7.2.min.js"></script>
+		<script type="text/javascript" src="../../lib/jQuery/jquery.form.js"></script>
+		<script type="text/javascript" src="../../lib/jQuery/jquery-ui-1.8.22.custom.min.js"></script>
+
+		<link rel="stylesheet" type="text/css" href="../../lib/artDialog4.1.6/skins/default.css" />
+		<script type="text/javascript" src="../../lib/artDialog4.1.6/artDialog.js"></script>
+		
+		<link rel="stylesheet" type="text/css" href="../../lib/dynatree-1.0.2/src/skin/ui.dynatree.css"/>
+		<script type="text/javascript" src="../../lib/dynatree-1.0.2/src/jquery.dynatree.min.js"></script>
+
+		<link rel="stylesheet" type="text/css" href="../../lib/select-1.0/skins/css/css.css"/>
+		<script type="text/javascript" src="../../lib/select-1.0/select.js"></script>
+		
+		
+		<script type="text/javascript" src="../../js/Tianditu.js"></script>
+		<script type="text/javascript" src="../js/Links.js"></script>
+		<script type="text/javascript" src="../js/links-add.js"></script>
+		<script type="text/javascript">
+			Tianditu.showLevel(2,"添加友情链接","links/page/links-add.html");
+		</script>
+	</head>
+	<body>
+		<div class="wrapper white94">
+			<div class="links-box">
+				<div class="links-box-title">
+					<span class="now-address"><a href="links.html">友情链接</a></span>
+					<span>>></span>
+					<span>添加友情链接</span>
+				</div>
+				<div class="links-box-table">
+					<form id="linksAddForm" method="post">
+						<table class="table">
+							<tr>
+								<td class="label">
+									<label for="links-name">
+										链接名称:
+									</label>
+								</td>
+								<td>
+									<span class="shadow-c">
+										<span class="shadow-left">&nbsp;</span>
+										<input id="links-name" name="links.linksName" class="shadow" />
+										<span class="shadow-right">&nbsp;</span>
+									</span>
+									<span class="required"></span>
+								</td>
+							</tr>
+								<tr>
+								<td class="label">
+									<label for="links-url">
+										链接地址:
+									</label>
+								</td>
+								<td>
+									<span class="shadow-c">
+										<span class="shadow-left">&nbsp;</span>
+										<input id="links-url" name="links.linksUrl" class="shadow" value="http://" />
+										<span class="shadow-right">&nbsp;</span>
+									</span>
+									<span class="required"></span>
+								</td>
+							</tr>
+								<tr>
+								<td class="label">
+									<label for="links-type">
+										链接类别:
+									</label>
+								</td>
+								<td>
+									<input id="links-type"/>
+									<span class="required"></span>
+								</td>
+							</tr>
+							<tr>
+							   <td></td>
+								<td>
+									<input class="btn" type="button" onclick="addLinks()"
+										value="确认提交" />
+									<input type="reset" class="btn" value="重置信息" />
+									<input type="button" class="btn" value="取消"
+										onclick="TDT.go('links.html');" />
+								</td>
+							</tr>
+						</table>
+					</form>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
+
+
+
+
+

@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>cities-view.html</title>
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="../../css/reset.css"/>
+	<link rel="stylesheet" type="text/css" href="../../css/common.css"/>
+	<link rel="stylesheet" type="text/css" href="../../css/inc.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/cities.css"/>
+	<script type="text/javascript" src="../../lib/jQuery/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" src="../../js/Tianditu.js"></script>
+	<script type="text/javascript" src="../js/Cities.js"></script>
+	<script type="text/javascript" src="../js/cities-view.js"></script>
+	<script type="text/javascript">
+		Tianditu.showLevel(2,"查看市区互联","cities/page/cities-view.html");
+	</script>
+  </head>
+  
+  <body>
+	<div class="wrapper white94">
+		<div class="cities-box">
+			<div class="cities-box-title">
+				查看市区互联
+			</div>
+			<div class="cities-box-table">
+				<table class="table">
+					<tr><td colspan="2"><img id="pic-src" width="277" height="104" src="../images/zwtp.jpg"/><input type="hidden" id="file-id"/></td></tr>
+					<tr><td class="label"><label>地区名称:</label></td><td><input id="cities-title" class="no-border-input" readonly="readonly"/></td></tr>
+					<tr><td class="label"><label>链接地址:</label></td><td><input id="cities-url" class="no-border-input" readonly="readonly"/></td></tr>
+					<tr><td class="label"><label>管理地址:</label></td><td><input id="cities-districtManageAdds" class="no-border-input" readonly="readonly"/></td></tr>
+					<tr><td class="label"><label>平台类型:</label></td><td><input id="cities-type" class="no-border-input" readonly="readonly"/></td></tr>
+					<tr><td class="tlabel"><label>备<span class="em-1"></span><span class="em-1"></span>注:</label></td><td><textarea id="cities-brief" class="no-border-textarea" rows="5" cols="60" readonly="readonly"></textarea></td></tr>
+					<tfoot>
+						<tr>
+							<td colspan="2" >
+								<input type="button" class="btn" value="返回" onclick="TDT.go('cities.html');"/>
+							</td>
+						</tr>
+					</tfoot>
+				</table>
+			</div>
+		</div>
+	</div>
+  </body>
+</html>

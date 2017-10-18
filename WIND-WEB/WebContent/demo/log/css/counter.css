@@ -1,0 +1,139 @@
+html{
+	background: #fff;
+}
+html,body{
+	width:100%;
+	padding:0;
+}
+.wrapper{
+	width:100%;
+	height:100%;
+}
+.counter-box  div.counter-box-title{
+	margin-top:5px;
+	padding-left:10px;
+	height:34px;
+	line-height:28px;
+	color:#000;
+	background:url("../images/title_bg.png") repeat-x;
+}
+.counter-box-title span,a{
+	color:#000;
+	font-size:13px;
+	color:#000;
+	font-family:"新宋体";
+}
+.counter-box-title span.now-address{
+	padding-left:15px;
+	padding-top:2px;
+	background:url("../images/title.png") left center no-repeat;
+}
+.counter-box-headline{
+	margin-left:20px;
+	padding:10px 0;
+	border-bottom:1px solid #cbcbcb;
+}
+.counter-box-headline span{
+	color:#333333;
+	font-weight:bold;
+	font-size:14px;
+	font-family:"微软雅黑";
+}
+.counter-box-head{
+	height:30px;
+	line-height:30px;
+	margin:10px 20px 0 20px;
+	background:#e8e8e8;
+}
+.counter-box-head ul{
+	margin-left:10px;
+}
+.counter-box-head ul li{
+	float:left;
+	width:102px;
+	background:url("../images/head_li_bg.png") no-repeat;
+	text-align:center;
+	color:#545454;
+	font-weight:bold;
+	font-size:12px;
+}
+.counter-box-head ul li:hover{
+	cursor:pointer;
+}
+.counter-box-head ul li.select{
+	width:102px;
+	background:url("../images/head_select_bg.png") no-repeat;
+}
+.counter-box-content{
+	height:342px;
+}
+.btn{
+	margin-left:30px;
+}
+.content{
+	display:none;
+	padding:20px;
+}
+.information{
+	float:right;
+	margin-right:20px;
+}
+.content-search{
+	margin-left:20px;
+	margin-top:10px;
+}
+.content-search span{
+	color:#3272a6;
+}
+.counter-box-content .list{
+	border-collapse:collapse;
+	border:1px solid #6790b7;
+}
+.counter-box-content .list th{
+	background:#286aa0;
+	padding:12px 0;
+}
+.counter-box-content .list td{
+	padding:8px 0;
+	text-align:center;
+	color:#3272a6;
+	border:1px solid #6790b7;
+}
+
+.counter-box-content .list .odd td{
+	background:#fff;
+}
+.table td{
+	padding:8px 0;
+	color:#0b467a;
+	vertical-align:middle;
+}
+.counter-box-content table{	
+	width:100%;
+	
+} 
+.counter-table{
+	background:#fff;
+}
+.counter-box-table table{	
+	width:100%;
+}
+.counter-box-table .list{
+	border-collapse:collapse;
+	border:1px solid #6790b7;
+}
+.counter-box-table .list th{
+	background:#286aa0;
+	padding:12px 0;
+}
+.counter-box-table .list td{
+	padding:8px 0;
+	text-align:center;
+	color:#3272a6;
+	border:1px solid #6790b7;
+}
+.counter-box-table .list tfoot td{
+	padding:10px 0;
+	background:#fff;
+	text-algin:left;
+}

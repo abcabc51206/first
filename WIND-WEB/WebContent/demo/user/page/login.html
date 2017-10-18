@@ -1,0 +1,85 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>登录</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="../../css/reset.css"/>
+	<link rel="stylesheet" type="text/css" href="../../css/common.css"/>
+	<link rel="stylesheet" type="text/css" href="../../css/inc.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/login.css"/>
+	<script type="text/javascript" src="../../lib/In/in-min.js" autoload="true" core="../../lib/jQuery/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript">
+		In.add('a1',{path:'../../lib/jQuery/jquery.layout-latest.js',type:'js',charset:'utf-8'});
+		
+		In.ready('a1',function(){
+			var layout=$(".layout-main").layout({
+					center__paneSelector:".layout-center",
+					north__paneSelector:".layout-north",
+					south__paneSelector:".layout-south",
+					north__size:78,
+					south__size:78,
+					spacing_open:0,
+					spacing_closed:0
+					,center__childOptions:{
+						center__paneSelector:".middle-center",
+						south__paneSelector:".middle-south",
+						south__size:36,
+						spacing_open:0,
+						spacing_closed:0
+					}
+			})
+		})
+	</script>
+  </head>
+  
+  <body>
+    <div class="layout-main">
+    	<div class="layout-north">
+    		<div class="inner-container">
+    			<div class="logo-region groupbox">
+    				<div class="logo"></div><div class="logo-split"></div><div class="guanlizhongxin"></div>
+    			</div>
+    		</div>
+    	</div>
+    	<div class="layout-center">
+    		<div class="middle-center login-box white94">
+    			<div class="inner-container login-bg">
+    				<div class="login-box-title yahei">
+	    				欢迎登录
+	    			</div>
+	    			<div class="login-box-form">
+	    				<form>
+	    					<table>
+	    						<caption>
+	    							<span class="icon"></span><span class="caption yahei">请输入您的用户名和密码</span>
+	    						</caption>
+	    						<tr>
+	    							<td class="label"><label for="username">用户名:</label></td><td><input class="text" type="text" id="username"/></td>
+	    						</tr>
+	    						<tr>
+	    							<td class="label"><label for="password">密码:</label></td><td><input class="pwd" type="password" id="password"/></td>
+	    						</tr>
+	    						<tr>
+	    							<td></td><td><label><input type="checkbox"/><span>转向其他站点前提示我</span></label></td>
+	    						</tr>
+	    						<tr>
+	    							<td></td><td class="btn-region"><input type="submit" class="btn submit" value="登录"/><input type="reset" class="btn" value="重置"/></td>
+	    						</tr>
+	    					</table>
+	    				</form>
+	    			</div>
+    			</div>
+    		</div>
+    		<div class="middle-south site-info">
+    			电话：（86）+27-87196288 全国免费技术支持热线：800-880-9008 Copyright 2012 武大吉奥信息技术有限公司 鄂ICP备05007169号
+    		</div>
+    	</div>
+    	<div class="layout-south">
+    		<div class="inner-container"></div>
+    	</div>
+    </div>
+  </body>
+</html>

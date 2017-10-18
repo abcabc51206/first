@@ -1,0 +1,29 @@
+ul.dynatree-container{
+	overflow:hidden;
+	overflow-y:auto;
+	max-height:100px;
+	border:none;
+}
+.ct-sel-ipth-cn{
+	position: relative;
+}
+.ct-sel-ipth-cn input{
+	float: left;
+	width: 150px;
+	height: 26px;
+	line-height: 26px;
+	padding:2px 4px;
+	padding-right: 34px;
+	border:none;
+	background: url("../images/select_ipt_bg.png") no-repeat;
+}
+.ct-sel-ipth-cn .ct-sel-han-cn{
+	float: left;
+	width: 34px;
+	height: 32px;
+	background: url("../images/select_down.png") no-repeat;
+}
+.ct-sel-list-cn{
+	position:absolute;
+	z-index:2;
+}

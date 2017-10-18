@@ -1,0 +1,99 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>role-add.html</title>
+
+		<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+		<meta http-equiv="description" content="this is my page">
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta http-equiv="pragram" content="no-cache">
+
+		<link rel="stylesheet" type="text/css" href="../../css/reset.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/common.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/inc.css" />
+		<link rel="stylesheet" type="text/css" href="../css/role.css" />
+
+		<link rel="stylesheet" type="text/css"
+			href="../../lib/artDialog4.1.6/skins/default.css" />
+		<script type="text/javascript"
+			src="../../lib/artDialog4.1.6/artDialog.js"></script>
+		<script type="text/javascript" src="../../lib/jQuery/jquery-1.7.2.js"></script>
+		<script type="text/javascript" src="../../lib/jQuery/jquery.form.js"></script>
+
+		<script type="text/javascript" src="../../js/Tianditu.js"></script>
+
+		<script type="text/javascript" src="../js/Role.js"></script>
+		<script type="text/javascript" src="../js/role-add.js"></script>
+		<script type="text/javascript">
+			Tianditu.showLevel(2,"添加角色","user/page/role-add.html");
+		</script>
+	</head>
+
+	<body>
+		<div class="wrapper white94">
+			<div class="role-box">
+				<div class="role-box-title">
+					添加角色
+				</div>
+				<div class="role-box-table">
+					<form id="roleAddForm" method="post">
+						<table class="table">
+							<tr>
+								<td class="label">
+									<label for="role-name">
+										角色名称:
+									</label>
+								</td>
+								<td>
+									<span class="shadow-c">
+										<span class="shadow-left">&nbsp;</span>
+											<input id="role-name" name="role.roleName" class="shadow" />
+										<span class="shadow-right">&nbsp;</span>
+									</span>
+									<span class="required"></span>
+								</td>
+							</tr>
+							<tr style="display: none;">
+								<td class="label">
+									<label for="role-status">
+										是否启用:
+									</label>
+								</td>
+								<td>
+									<label>
+										<input checked="checked" type="radio" name="role.roleUsesMark" value="1"/>
+										是
+									</label>
+									<label>
+										<input type="radio" name="role.roleUsesMark" value="0"/>
+										否
+									</label>
+								</td>
+							</tr>
+							<tr>
+								<td class="tlabel">
+									<label for="role-remark">
+										角色描述:
+									</label>
+								</td>
+								<td>
+									<textarea id="role-remark" name="role.roleRemark" class="shadow" cols="60" rows="4"></textarea>
+								</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>
+									<input class="btn" type="button" onclick="addRole()"
+										value="确认提交" />
+									<input type="reset" class="btn" value="重置信息" />
+									<input type="button" class="btn" value="取消"
+										onclick="TDT.go('role.html');" />
+								</td>
+							</tr>
+						</table>
+					</form>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

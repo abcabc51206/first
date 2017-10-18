@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>demoapp-view.html</title>
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="../../css/reset.css"/>
+	<link rel="stylesheet" type="text/css" href="../../css/common.css"/>
+	<link rel="stylesheet" type="text/css" href="../../css/inc.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/demoapp.css"/>
+	<script type="text/javascript" src="../../lib/jQuery/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" src="../../js/Tianditu.js"></script>
+	<script type="text/javascript" src="../js/DemoApp.js"></script>
+	<script type="text/javascript" src="../js/demoapp-view.js"></script>
+	<script type="text/javascript">
+		Tianditu.showLevel(2,"查看示范应用","demoapp/page/demoapp-view.html");
+	</script>
+  </head>
+  
+  <body>
+	<div class="wrapper white94">
+		<div class="demoapp-box">
+			<div class="demoapp-box-title">
+				查看示范应用
+			</div>
+			<div class="demoapp-box-table">
+				<table class="table">
+					<tr><td colspan="2"><img id="pic-src" width="274" height="104" src="../images/zwtp.jpg"/><input type="hidden" id="file-id"/></td></tr>
+					<tr><td class="label"><label>标<span class="em-1"></span><span class="em-1"></span>题:</label></td><td><input id="demoapp-title" class="no-border-input" readonly="readonly"/></td></tr>
+					<tr><td class="label"><label>链接地址:</label></td><td><input id="demoapp-url" class="no-border-input" readonly="readonly"/></td></tr>
+					<tr><td class="tlabel"><label>备<span class="em-1"></span><span class="em-1"></span>注:</label></td><td><textarea id="demoapp-brief" class="no-border-textarea" rows="5" cols="60" readonly="readonly"></textarea></td></tr>
+					<tfoot>
+						<tr>
+							<td colspan="2" >
+								<input type="button" class="btn" value="返回" onclick="TDT.go('demoapp.html');"/>
+							</td>
+						</tr>
+					</tfoot>
+				</table>
+			</div>
+		</div>
+	</div>
+  </body>
+</html>

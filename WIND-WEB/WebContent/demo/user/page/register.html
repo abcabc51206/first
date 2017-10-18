@@ -1,0 +1,124 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>注册</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="../../css/reset.css"/>
+	<link rel="stylesheet" type="text/css" href="../../css/common.css"/>
+	<link rel="stylesheet" type="text/css" href="../../css/inc.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/register.css"/>
+	<script type="text/javascript" src="../../lib/In/in-min.js" autoload="true" core="../../lib/jQuery/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript">
+		In.add('a1',{path:'../../lib/jQuery/jquery.layout-latest.js',type:'js',charset:'utf-8'});
+		
+		In.ready('a1',function(){
+			var layout=$(".layout-main").layout({
+					center__paneSelector:".layout-center",
+					north__paneSelector:".layout-north",
+					south__paneSelector:".layout-south",
+					north__size:78,
+					south__size:78,
+					spacing_open:0,
+					spacing_closed:0
+					,center__childOptions:{
+						center__paneSelector:".middle-center",
+						south__paneSelector:".middle-south",
+						south__size:36,
+						spacing_open:0,
+						spacing_closed:0
+					}
+			})
+		})
+	</script>
+  </head>
+  
+  <body>
+    <div class="layout-main">
+    	<div class="layout-north">
+    		<div class="inner-container">
+    			<div class="logo-region groupbox">
+    				<div class="logo"></div><div class="logo-split"></div><div class="guanlizhongxin"></div>
+    			</div>
+    		</div>
+    	</div>
+    	<div class="layout-center">
+    		<div class="middle-center login-box white94">
+    			<div class="inner-container login-bg">
+    				<div class="register-box-title yahei">
+	    				欢迎注册
+	    			</div>
+	    			<div class="register-box-form">
+	    				<form>
+	    					<table>
+	    						<tr>
+	    							<td class="manner">用<span class="em-1"></span><span class="em-1"></span>户：</td>
+	    							<td>
+	    								<input type="text"/>
+	    								<span class="manner required">*</span>
+	    								<span class="manner">（5-20位字母、数字或者下划线组合，首字符必须为字母。）</span>
+	    							</td>
+	    						</tr>
+	    						<tr>
+	    							<td class="manner">姓<span class="em-1"></span><span class="em-1"></span>名：</td>
+	    							<td><input type="text"/></td>
+	    						</tr>
+	    						<tr>
+	    							<td class="manner">密<span class="em-1"></span><span class="em-1"></span>码：</td>
+	    							<td>
+	    								<input type="password"/>
+	    								<span class="manner required">*</span>
+	    								<span class="manner">（为了账号安全，建议您的密码使用字符+数字等多种不同类型的组合，密码长度大于6位。）</span>
+	    							</td>
+	    						</tr>
+	    						<tr>
+	    							<td class="manner">重复密码：</td>
+	    							<td>
+	    								<input type="password"/>
+	    								<span class="manner required">*</span>
+	    								<span class="manner">（确保密码输入正确。）</span>
+	    							</td>
+	    						</tr>
+	    						<tr>
+	    							<td class="manner">电子邮件：</td>
+	    							<td><input type="text"/><span class="manner required">*</span></td>
+	    						</tr>
+	    						<tr>
+	    							<td class="manner">验<span class="em-1-2"></span>证<span class="em-1-2"></span>码：</td>
+	    							<td><input type="text"/><span class="manner required">*</span></td>
+	    						</tr>
+	    					</table>
+	    					<div class="letter">
+	    						<span>请输入您在下图中看到的字符，不区分大小写。</span>
+	    					</div>
+	    					<div class="number">
+	    						<img src="../images/number.png"/>
+	    						<span>换一张</span>
+	    					</div>
+	    					<div class="check">
+	    						<input type="checkbox"/>
+	    						<span>我已经认真阅读并同意：</span>
+	    						<span class="check-word"><a>天地图.</a></span>
+	    						<span class="check-word"><a>免责声明</a></span>
+	    					</div>
+	    					<button class="button">填好了，完成注册!</button>
+	    					<div>
+	    						<span>>>已经拥有帐号？</span>
+	    						<span class="check-word"><a>直接登录</a></span>
+	    					</div>
+	    				</form>
+	    			</div>
+    			</div>
+    		</div>
+    		<div class="middle-south site-info">
+    			电话：（86）+27-87196288 全国免费技术支持热线：800-880-9008 Copyright 2012 武大吉奥信息技术有限公司 鄂ICP备05007169号
+    		</div>
+    	</div>
+    	<div class="layout-south">
+    		<div class="inner-container"></div>
+    	</div>
+    </div>
+  </body>
+</html>

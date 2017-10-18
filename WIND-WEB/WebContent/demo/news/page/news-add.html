@@ -1,0 +1,234 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>news-add.html</title>
+
+		<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+		<meta http-equiv="description" content="this is my page">
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		
+		<link rel="stylesheet" type="text/css" href="../../css/reset.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/common.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/inc.css" />
+		
+		<link rel="stylesheet" type="text/css" href="../css/news.css" />
+
+		<link rel="stylesheet" type="text/css" href="../../lib/artDialog4.1.6/skins/default.css" />
+		<link rel="stylesheet" type="text/css" href="../../lib/dynatree-1.0.2/src/skin/ui.dynatree.css"/>
+		<link rel="stylesheet" type="text/css" href="../../lib/select-1.0/skins/css/css.css"/>
+		
+		<script type="text/javascript" src="../../lib/artDialog4.1.6/artDialog.js"></script>
+		<script type="text/javascript" src="../../lib/jQuery/jquery-1.7.2.min.js"></script>
+		<script type="text/javascript" src="../../lib/jQuery/jquery.form.js"></script>
+		<script type="text/javascript" src="../../lib/jQuery/jquery-ui-1.8.22.custom.min.js"></script>
+		
+		<script type="text/javascript" src="../../lib/ckeditor/ckeditor.js"></script>
+		<script type="text/javascript" src="../../lib/dynatree-1.0.2/src/jquery.dynatree.min.js"></script>
+		<script type="text/javascript" src="../../lib/select-1.0/select.js"></script>
+		
+		<script type="text/javascript" src="../../js/Tianditu.js"></script>
+		<script type="text/javascript" src="../js/News.js"></script>
+		<script type="text/javascript" src="../js/news-add.js"></script>
+		<script type="text/javascript">
+			Tianditu.showLevel(2,"添加新闻","news/page/news-add.html");
+		</script>
+	</head>
+
+	<body style="height: auto;">
+		<div class="wrapper white94">
+			<div class="news-box">
+				<div class="news-box-title">
+					<span class="now-address"><a href="news.html">新闻公告</a></span>
+					<span>>></span>
+					<span>添加新闻</span>
+				</div>
+				<div class="news-box-table">
+					<form id="uploadForm" method="post" enctype="multipart/form-data">
+						<table class="table">
+							<tr>
+								<td class="label">
+									<label>
+										新闻图片:
+									</label>
+								</td>
+								<td>
+									<input type="file" name="file" />
+									<input type="button" value="上传"
+										onclick="uploadPic('uploadForm');" />
+									<span class="required"></span>
+									<input type="hidden" id="file-name" name="fileName" />
+									<input type="hidden" id="file-type" name="fileType" />
+								</td>
+							</tr>
+							<tr>
+								<td class="label">
+								</td>
+								<td>
+									<input type="hidden" id="file-id" name="fileId" />
+									<img id="pic-src" width="100" height="100"
+										src="../images/zwtp.jpg" />
+									<span class="validate-tip">（图片格式为jpg|jpeg|png。）</span>
+								</td>
+							</tr>
+						</table>
+					</form>
+					<form id="newsAddForm" method="post">
+						<table class="table">
+							<tr>
+								<td class="label">
+									<label for="news-title">
+										标
+										<span class="em-1"></span><span class="em-1"></span>题:
+									</label>
+								</td>
+								<td>
+									<span class="shadow-c">
+										<span class="shadow-left">&nbsp;</span>
+										<input id="news-title" name="news.title" class="shadow" />
+										<span class="shadow-right">&nbsp;</span>
+									</span>
+									<span class="required">*</span>
+								</td>
+							</tr>
+							<tr>
+								<td class="label"></td>
+								<td><span class="validate-tip">（标题长度不能超过50个字符。）</span></td>
+							</tr>
+							<tr>
+								<td class="label">
+									<label for="news-src">
+										来
+										<span class="em-1"></span><span class="em-1"></span>源:
+									</label>
+								</td>
+								<td>
+									<span class="shadow-c">
+										<span class="shadow-left">&nbsp;</span>
+										<input id="news-src" name="news.src" class="shadow" />
+										<span class="shadow-right">&nbsp;</span>
+									</span>
+									<span class="required"></span>
+								</td>
+							</tr>
+							<tr>
+								<td class="label">
+									<label for="news-type">
+										类
+										<span class="em-1"></span><span class="em-1"></span>别:
+									</label>
+								</td>
+								<td>
+									<input id="news-type">
+								</td>
+							</tr>
+							<tr>
+								<td class="label">
+									<label for="news-brief">
+										导
+										<span class="em-1"></span><span class="em-1"></span>读:
+									</label>
+								</td>
+								<td>
+									<textarea id="news-brief" name="news.brief" class="shadow" rows="3" cols="60"></textarea>
+									<span class="required">*</span>
+								</td>
+							</tr>
+							<tr>
+								<td class="label"></td>
+								<td><span class="validate-tip">（导读长度不能超过500个字符。）</span></td>
+							</tr>
+							<tr>
+								<td class="label">
+									<label for="news-content">
+										详细内容:
+									</label>
+								</td>
+								<td>
+									<textarea id="news-content" name="news.htmlTx" class="shadow" rows="10" cols="60"></textarea>
+									
+									<span class="required"><span>
+								</td>
+							</tr>
+							<tr>
+								<td class="label">
+									<label for="news-keyword">
+										关键字:
+									</label>
+								</td>
+								<td>
+									<span class="shadow-c">
+										<span class="shadow-left">&nbsp;</span>
+										<input id="news-keyword" name="news.keyword" class="shadow" />
+										<span class="shadow-right">&nbsp;</span>
+									</span>
+									<span class="required">*</span>
+								</td>
+							</tr>
+							<tr>
+								<td class="label"></td>
+								<td><span class="validate-tip">（多个关键字以“，”分隔,最多100个字符）</span></td>
+							</tr>
+							<tr>
+								<td class="label">
+									<label for="news-author">
+										责任编辑:
+									</label>
+								</td>
+								<td>
+									<span class="shadow-c">
+										<span class="shadow-left">&nbsp;</span>
+										<input id="news-author" name="news.author" class="shadow" />
+										<span class="shadow-right">&nbsp;</span>
+									</span>
+								</td>
+							</tr>
+							<tr style="display: none;">
+								<td class="label">
+									<label>
+										是否审核:
+									</label>
+								</td>
+								<td>
+									<label>
+										<input type="radio" name="news.auditStatus" value="1"/>
+										是
+									</label>
+									<label>
+										<input checked="checked" type="radio" name="news.auditStatus" value="0"/>
+										否
+									</label>
+								</td>
+							</tr>
+							<tr style="display: none;">
+								<td class="tlabel">
+									<label for="news-reviewers">
+										审核人:
+									</label>
+								</td>
+								<td>
+									<span class="shadow-c">
+										<span class="shadow-left">&nbsp;</span>
+										<input id="news-reviewers" name="news.reviewers" class="shadow" />
+										<span class="shadow-right">&nbsp;</span>
+									</span>
+								</td>
+							</tr>
+							<tr>
+							   <td></td>
+								<td>
+									<input type="hidden" id="news-file-id" name="news.fileId"/>
+									<input class="btn" type="button" onclick="addNews()"
+										value="发布" />
+									<input type="reset" class="btn" value="重置" />
+									<input type="button" class="btn" value="取消"
+										onclick="TDT.go('news.html');" />
+								</td>
+							</tr>
+						</table>
+					</form>
+
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>userguide-edit.html</title>
+
+		<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+		<meta http-equiv="description" content="this is my page">
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<link rel="stylesheet" type="text/css" href="../../css/reset.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/common.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/inc.css" />
+
+		<link rel="stylesheet" type="text/css" href="../css/userguide.css" />
+
+		<link rel="stylesheet" type="text/css" href="../../lib/artDialog4.1.6/skins/default.css" />
+		<link rel="stylesheet" type="text/css" href="../../lib/dynatree-1.0.2/src/skin/ui.dynatree.css"/>
+		<link rel="stylesheet" type="text/css" href="../../lib/select-1.0/skins/css/css.css"/>
+		
+		
+		<script type="text/javascript" src="../../lib/artDialog4.1.6/artDialog.js"></script>
+		<script type="text/javascript" src="../../lib/jQuery/jquery-1.7.2.min.js"></script>
+		<script type="text/javascript" src="../../lib/jQuery/jquery.form.js"></script>
+		<script type="text/javascript" src="../../lib/jQuery/jquery-ui-1.8.22.custom.min.js"></script>
+
+		<script type="text/javascript" src="../../lib/ckeditor/ckeditor.js"></script>
+		<script type="text/javascript" src="../../lib/dynatree-1.0.2/src/jquery.dynatree.min.js"></script>
+		<script type="text/javascript" src="../../lib/select-1.0/select.js"></script>
+
+		<script type="text/javascript" src="../../js/Tianditu.js"></script>
+		<script type="text/javascript" src="../js/Userguide.js"></script>
+		<script type="text/javascript" src="../js/userguide-edit.js"></script>
+	</head>
+
+	<body style="height: auto;">
+		<div class="wrapper white94">
+			<div class="userguide-box">
+				<div class="userguide-box-title">
+					编辑用户指南
+				</div>
+				<div class="userguide-box-table">
+					<form id="userguideUpdateForm" method="post">
+						<table class="table">
+							<tr>
+								<td class="label">
+									<label for="userguide-title">
+										标
+										<span class="em-1"></span><span class="em-1"></span>题:
+									</label>
+								</td>
+								<td>
+									<span class="shadow-c">
+										<span class="shadow-left">&nbsp;</span>
+										<input id="userguide-title" name="userguide.title" class="shadow" />
+										<span class="shadow-right">&nbsp;</span>
+									</span>
+									<span class="required">*</span>
+								</td>
+							</tr>
+							<tr>
+								<td class="label"></td>
+								<td><span class="validate-tip">（标题长度不能超过50个字符。）</span></td>
+							</tr>
+							<tr>
+								<td class="label">
+									<label for="userguide-type">
+										类
+										<span class="em-1"></span><span class="em-1"></span>别:
+									</label>
+								</td>
+								<td>
+									<input id="userguide-type">
+							</tr>
+							<tr>
+								<td class="label">
+									<label for="userguide-content">
+										详细内容:
+									</label>
+								</td>
+								<td>
+									<textarea id="userguide-content" name="userguide.htmlTx" class="shadow" rows="2" cols="60"></textarea>
+									<span class="required"><span>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<input type="hidden" id="userguide-id" name="userguide.id"/>
+									<input type="hidden" id="userguide-sort" name="userguide.sort"/>
+									<input class="btn" type="button" onclick="editUserguide()"
+										value="保存" />
+									<span class="em-1"></span>
+									<input type="reset" class="btn" value="重置" />
+									<span class="em-1"></span>
+									<input type="button" class="btn" value="取消"
+										onclick="TDT.go('userguide.html');" />
+								</td>
+								
+							</tr>
+						</table>
+					</form>
+
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

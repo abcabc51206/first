@@ -1,0 +1,115 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>user.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta http-equiv="pragram" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache, must-revalidate"> 
+    <meta http-equiv="expires" content="0"> 
+    <link rel="stylesheet" type="text/css" href="../../css/reset.css"/>
+	<link rel="stylesheet" type="text/css" href="../../css/common.css"/>
+	<link rel="stylesheet" type="text/css" href="../../css/inc.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/user.css"/>
+	<link rel="stylesheet" type="text/css" href="../../lib/jQuery/css/smoothness/jquery-ui-1.8.22.custom.css" />
+	<script type="text/javascript" src="../../lib/jQuery/jquery-1.7.2.js"></script>
+	<script type="text/javascript" src="../../lib/jQuery/jquery.form.js"></script>
+	<script type="text/javascript" src="../../lib/jQuery/jquery-ui-1.8.22.custom.min.js"></script>
+
+	<link rel="stylesheet" type="text/css"
+		href="../../lib/dynatree-1.0.2/src/skin/ui.dynatree.css" />
+	<script type="text/javascript"
+		src="../../lib/dynatree-1.0.2/src/jquery.dynatree.min.js"></script>
+	<link rel="stylesheet" type="text/css"
+			href="../../lib/artDialog4.1.6/skins/default.css" />
+		<script type="text/javascript"
+			src="../../lib/artDialog4.1.6/artDialog.js"></script>
+	<script type="text/javascript" src="../../js/Tianditu.js"></script>
+	<script type="text/javascript" src="../js/User.js"></script>
+	<script type="text/javascript" src="../js/user-list.js"></script>
+	<script type="text/javascript">
+		Tianditu.showLevel(1,"用户管理","user/page/user.html");
+	</script>
+  </head>
+  
+  <body>
+	<div class="wrapper white94">
+		<div class="user-box">
+			<div class="user-box-title">
+				<span class="now-address"><a href="user.html">用户中心</a></span>
+				<span>>></span>
+				<span><a href="user.html">用户管理</a></span>
+			</div>
+			<div class="user-box-headline">
+				<span>用户管理</span>
+			</div>
+			<div class="user-box-table">
+				<table class="list">
+					<caption>
+						<div class="groupbox">
+							<div class="fright">
+								<input type="search fleft" class="search"/><input type="button" class="btn searchbtn" value="搜索" onclick="search()"/>
+							</div>
+							<div class="fleft">
+								<input type="button" class="btn" value="添加" onclick="Tianditu.go('user-add.html#1')"/><input type="button" class="btn" value="删除" onclick="delUser()"/><input type="button" class="btn" value="初始化密码" onclick="initializePwd()"/>
+							</div>
+						</div>
+					</caption>
+					<thead>
+						<tr><th class="checkth" width="5%"><input id="chooseall" type="checkbox"
+											onclick="TDT.chooseall(this,'userList')" /></th><th class="nameth">登录账号</th><th class="companyth">电子邮箱</th><th class="companyth">所属机构</th><th class="statusth" width="5%">状态</th><th class="dateth" width="14%">创建时间</th><th class="actionth" width="36%">操作</th></tr>
+					</thead>
+					<tbody id="userTemplate" style="display: none;" >
+						<tr rowid="%{rowid}%" class="%{class}%">
+							<td><input type="checkbox" onclick="TDT.brightShow(this, 'userList');"/></td><td name="loginName">%{userLoginName}%</td><td>%{email}%</td><td>%{orgName}%</td><td>%{userMark}%</td><td>%{userCreateTime}%</td>
+							<td><a class="action-btn action-view" href="javascript:void(0);" onclick="goViewUser(this)" >查看</a><a class="action-btn action-edit"   href="javascript:void(0);" onclick="goEditUser(this)" >编辑</a><!--<a class="action-btn action-authorize" href="javascript:void(0);" onclick="goViewUserPerm(this)">授权</a> --><a class="action-btn action-role" href="javascript:void(0);" onclick="goViewRolePerm(this)">角色</a><a class="action-btn action-stop" href="javascript:void(0);" %{disabled}% onclick="disabledUser(this, event)">停用</a><a class="action-btn action-start" href="javascript:void(0);" %{enabled}% onclick="enabledUser(this, event)">启用</a></td>
+						</tr>
+						
+					</tbody>
+			        <tbody id="userList">
+					</tbody>
+					
+					<tbody style="display: none;" id="noData">
+						<tr>
+							<td colspan="7">
+								暂无记录
+							</td>
+						</tr>
+					</tbody>
+						
+					<tfoot>
+					<tr><td colspan="7">
+						<div id="pager">
+					</div>
+					</td></tr>
+					</tfoot>
+					
+					
+					
+				</table>
+			</div>
+		</div>
+	</div>
+	<div id="user-panel" class="hide-dialog">
+		<div class="normal-text">
+			当前用户:
+			<span class="bold" id="currLoginName"></span>
+		</div>
+		<div class="tree-panel">
+			<form id="userPermForm" method="post">
+				<div class="tree-title">
+					<div class="tree-innertitle">
+						功能列表
+					</div>
+				</div>
+				<div class="tree-container" id="tree-container">
+				</div>
+				<input type="hidden" id="loginName" name="user.userLoginName"/>
+				<input type="hidden" id="permIds" name="permIds"/>
+			</form>
+		</div>
+	</div>
+  </body>
+</html>

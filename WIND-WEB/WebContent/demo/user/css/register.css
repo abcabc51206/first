@@ -1,0 +1,94 @@
+.layout-main{
+	width:926px;
+	height:100%;
+	min-height:780px;
+	height:780px;
+	margin:0 auto;
+}
+.register-box{
+	border:2px solid #034076;
+}
+.register-bg{
+	background: url("../images/register_form_bg.png") 20px bottom no-repeat;
+}
+.register-box-title{
+	padding:12px 0;
+	margin:16px 38px;
+	border-bottom:1px solid #2d6fa4;
+	color:#3272a5;
+	font-size:14px;
+	font-weight:bold;
+}
+.register-box-form{
+	position:absolute;
+	left:40px;
+	color:#666666;
+}
+.register-box-form table tr td{
+	padding:10px 0;
+	font-size:14px;
+}
+.register-box-form table tr td input{
+	height:30px;
+	width:206px;
+	line-height:30px;
+	padding-left:6px;
+	border:1px solid #c9c9c9;
+}
+.required{
+	padding:10px 15px;
+}
+.letter span{
+	padding-left:60px;
+	font-size:14px;
+}
+.number{
+	margin-left:60px;
+	margin-top:15px;
+}
+.number span{
+	position:relative;
+	top:-15px;
+	left:10px;
+	padding-bottom:2px;
+	color:#1848b5;
+	font-size:14px;
+	border-bottom:1px solid #245394;
+	cursor:pointer;
+}
+.check span{
+	font-size:14px;
+}
+.check-word{
+	margin-left:10px;
+	color:#1848b5;
+}
+.check .check-word a{
+	font-size:14px;
+}
+.check-word a{
+	color:#1848b5;
+	cursor:pointer;
+}
+.button{
+	height:32px;
+	width:238px;
+	line-height:32px;
+	margin:10px 5px;
+	text-align:center;
+	background:url("../images/button_bg.png") no-repeat;
+	color:#fff;
+	font-weight:bold;
+	border:none;
+}
+.manner{
+	*position:relative;
+	*top:-10px;
+}
+.white94{
+	background:url("../images/all_bg.png") repeat;
+}
+
+
+
+

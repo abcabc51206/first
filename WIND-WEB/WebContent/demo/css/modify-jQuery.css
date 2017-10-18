@@ -1,0 +1,7 @@
+/*对dynatree样式重写*/
+ul.dynatree-container{
+	overflow:hidden;
+	overflow-y:auto;
+	border:none;
+	background:none;
+}
